@@ -14,6 +14,14 @@ const AnimeVideoSchema = Joi.object()
   })
   .options({ abortEarly: false });
 
+// Anime Search
+const AnimeSearchSchema = Joi.object()
+  .keys({
+    query: Joi.string().trim().min(1).max(1500).required(),
+    page: Joi.number().min(1).max(20).required(),
+  })
+  .options({ abortEarly: false });
+
 module.exports = {
   validator: (schema) => (req, res, next) => {
     const result = schema.validate(req.params);
@@ -29,5 +37,6 @@ module.exports = {
   schemas: {
     AnimeNameSchema,
     AnimeVideoSchema,
+    AnimeSearchSchema,
   },
 };

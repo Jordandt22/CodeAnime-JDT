@@ -1,13 +1,16 @@
 const cheerio = require("cheerio");
 const { GOGOANIME: GOGOANIME_URL } = require("../../config/urls");
+const { getPage, getAnimePage } = require("../../utils/scraping.util");
 const {
-  getPage,
-  getAnimePage,
-  formatAnimeData,
-  formatAnimeEpData,
-  formatAnimeVideoData,
-} = require("../../utils/scraping.util");
-const { formatSlug } = require("../../utils/global.util");
+  anime: { formatAnimeData, formatEpsSection },
+  episodes: { formatAnimeEpsData, formatEpData },
+  video: { formatAnimeVideoData, formatVideoSourceData },
+  search: { formatSearchData },
+  recent: { formatRecentData },
+  list: { formatAnimeListData },
+  ongoing: { formatOngoingAnime },
+} = require("../../utils/formating.util");
+const { formatSlug, formatAnimeSlug } = require("../../utils/global.util");
 
 module.exports = {
   scrapeAnime: async (animeSlug) => {
@@ -90,10 +93,12 @@ module.exports = {
     const epSections = [];
     $(animeEpsInfoClass + "li").each((i, listElem) => {
       const $list = cheerio.load($(listElem).html());
-      epSections.push({
-        ep_start: Number($list("a").attr("ep_start")),
-        ep_end: Number($list("a").attr("ep_end")),
-      });
+      epSections.push(
+        formatEpsSection(
+          Number($list("a").attr("ep_start")),
+          Number($list("a").attr("ep_end"))
+        )
+      );
     });
     const totalEps =
       epSections.length > 0 ? epSections[epSections.length - 1].ep_end : 0;
@@ -137,12 +142,12 @@ module.exports = {
       const slug = formatSlug($elem("a").attr("href"));
       const num = Number(slug.split("episode-")[1]);
       const lang = $elem("div.cate").text();
-      episodes.push({ slug, num, lang });
+      episodes.push(formatEpData(slug, num, lang));
     });
 
     return {
       error: null,
-      data: formatAnimeEpData(episodes, epSection, epsParams),
+      data: formatAnimeEpsData(episodes, epSection, epsParams),
     };
   },
   scrapeAnimeVideo: async (epSlug) => {
@@ -152,7 +157,9 @@ module.exports = {
     // Anime Info
     const animeInfoLink = $(".anime-info a");
     const title = animeInfoLink.text();
-    const animeSlug = animeInfoLink.attr("href").replace("/category/", "");
+    if (!title) return { error: { response: { status: 404 } }, data: null };
+
+    const animeSlug = formatAnimeSlug(animeInfoLink.attr("href"));
 
     // Video
     const src = $(".anime_video_body_watch_items iframe").attr("src");
@@ -169,7 +176,7 @@ module.exports = {
         .text()
         .trim()
         .replace("Choose this server", "");
-      videoSources.push({ src, name });
+      videoSources.push(formatVideoSourceData(src, name));
     });
 
     return {
@@ -184,6 +191,133 @@ module.exports = {
         next ? formatSlug(next) : null,
         videoSources
       ),
+    };
+  },
+  scrapeSearchedAnime: async (query, page) => {
+    const { error, $ } = await getAnimePage(
+      GOGOANIME_URL,
+      `/search.html?keyword=${query.replace(" ", "%20")}&page=${page}`
+    );
+    if (error) return { error, data: null };
+
+    // Searched Data
+    const searchedData = [];
+    $("ul.items li").each((i, elem) => {
+      const $elem = cheerio.load($(elem).html());
+      const image = $elem("img").attr("src");
+      const animeSlug = formatAnimeSlug($elem(".img a").attr("href"));
+      const title = $elem("p.name").text();
+      const subText = $elem("p.released").text();
+      searchedData.push(formatAnimeListData(image, animeSlug, title, subText));
+    });
+
+    // Searched Page Data
+    const pages = [];
+    $("ul.pagination-list li").each((i, elem) => {
+      const $elem = cheerio.load($(elem).html());
+      const page = $elem("a").attr("data-page");
+      pages.push(page);
+    });
+
+    return {
+      error: null,
+      data:
+        searchedData.length > 0
+          ? formatSearchData(searchedData, pages.length)
+          : null,
+    };
+  },
+  scrapeRecentAnime: async () => {
+    const { error, $ } = await getAnimePage(GOGOANIME_URL, "");
+    if (error) return { error, data: null };
+
+    const anime = [];
+    $("ul.items li").each((i, elem) => {
+      const $elem = cheerio.load($(elem).html());
+      const image = $elem("img").attr("src");
+      const epSlug = formatSlug($elem(".img a").attr("href"));
+      const title = $elem("p.name").text();
+      const subText = $elem("p.episode").text();
+      anime.push(formatRecentData(image, epSlug, title, subText));
+    });
+
+    return {
+      error: null,
+      data: {
+        anime,
+      },
+    };
+  },
+  scrapePopularAnime: async () => {
+    const { error, $ } = await getAnimePage(GOGOANIME_URL, "/popular.html");
+    if (error) return { error, data: null };
+
+    const anime = [];
+    $("ul.items li").each((i, elem) => {
+      const $elem = cheerio.load($(elem).html());
+      const image = $elem("img").attr("src");
+      const animeSlug = formatAnimeSlug($elem(".img a").attr("href"));
+      const title = $elem("p.name").text();
+      const subText = $elem("p.released").text();
+      anime.push(formatAnimeListData(image, animeSlug, title, subText));
+    });
+
+    return {
+      error: null,
+      data: {
+        anime,
+      },
+    };
+  },
+  scrapeOngoingAnime: async () => {
+    const { error, $ } = await getPage(
+      "https://ajax.gogo-load.com/ajax/page-recent-release-ongoing.html?page=1"
+    );
+    if (error) return { error, data: null };
+
+    const anime = [];
+    $(".added_series_body ul li").each((i, elem) => {
+      const $elem = cheerio.load($(elem).html());
+      const image = $elem(".thumbnail-popular")
+        .attr("style")
+        .split("'")[1]
+        .replace("'", "");
+      const animeSlug = formatAnimeSlug($elem("a").attr("href"));
+      const title = $elem("a").attr("title");
+      const subText = $elem("p.genres").text();
+      const epSlug = formatSlug($elem("a").last().attr("href"));
+      const latestEp = $elem("a").last().text();
+      anime.push(
+        formatOngoingAnime(image, animeSlug, title, subText, epSlug, latestEp)
+      );
+    });
+
+    return {
+      error: null,
+      data: {
+        anime,
+      },
+    };
+  },
+  scrapeNewSeasonAnime: async () => {
+    const { error, $ } = await getAnimePage(GOGOANIME_URL, "/new-season.html");
+    if (error) return { error, data: null };
+
+    const anime = [];
+    $("ul.items li").each((i, elem) => {
+      const $elem = cheerio.load($(elem).html());
+      const image = $elem("img").attr("src");
+      const animeSlug = formatAnimeSlug($elem(".img a").attr("href"));
+      const title = $elem("p.name").text();
+      const subText = $elem("p.released").text();
+      anime.push(formatAnimeListData(image, animeSlug, title, subText));
+    });
+
+    return {
+      error: null,
+      data: {
+        anime,
+      },
     };
   },
 };
