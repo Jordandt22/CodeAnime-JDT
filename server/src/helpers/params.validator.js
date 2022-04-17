@@ -22,6 +22,21 @@ const AnimeSearchSchema = Joi.object()
   })
   .options({ abortEarly: false });
 
+// Anime Genre
+const AnimeGenreSchema = Joi.object()
+  .keys({
+    genreSlug: Joi.string().trim().min(1).max(150).required(),
+    page: Joi.number().min(1).max(20).required(),
+  })
+  .options({ abortEarly: false });
+
+// Page
+const PageSchema = Joi.object()
+  .keys({
+    page: Joi.number().min(1).max(20).required(),
+  })
+  .options({ abortEarly: false });
+
 module.exports = {
   validator: (schema) => (req, res, next) => {
     const result = schema.validate(req.params);
@@ -38,5 +53,7 @@ module.exports = {
     AnimeNameSchema,
     AnimeVideoSchema,
     AnimeSearchSchema,
+    AnimeGenreSchema,
+    PageSchema,
   },
 };

@@ -28,22 +28,32 @@ module.exports = {
   },
   ANIME_RECENT_KEY: {
     name: "anime_recent",
-    params: ["animeSource"],
+    params: ["animeSource", "page"],
     expiresIn: 60 * 60 * 3,
   },
   ANIME_POPULAR_KEY: {
     name: "anime_popular",
-    params: ["animeSource"],
+    params: ["animeSource", "page"],
     expiresIn: 60 * 60 * 3,
   },
   ANIME_ONGOING_KEY: {
     name: "anime_ongoing",
-    params: ["animeSource"],
+    params: ["animeSource", "page"],
     expiresIn: 60 * 60 * 3,
   },
   ANIME_NEW_SEASON_KEY: {
     name: "anime_new_season",
-    params: ["animeSource"],
+    params: ["animeSource", "page"],
     expiresIn: 60 * 60 * 3,
+  },
+  ANIME_GENRE_KEY: {
+    name: "anime_genre",
+    params: ["animeSource", "genreSlug", "page"],
+    expiresIn: 60 * 60 * 6,
+  },
+  ANIME_GENRES_KEY: {
+    name: "anime_genres",
+    params: ["animeSource"],
+    expiresIn: 60 * 60 * 12,
   },
 };

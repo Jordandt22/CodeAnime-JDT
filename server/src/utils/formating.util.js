@@ -1,3 +1,11 @@
+const formatPagination = (totalPages, currentPage) => {
+  const formatedTotalPages = Number(totalPages);
+  return {
+    totalPages: formatedTotalPages <= 20 ? formatedTotalPages : 20,
+    currentPage: Number(currentPage),
+  };
+};
+
 module.exports = {
   anime: {
     formatAnimeData: (
@@ -74,7 +82,11 @@ module.exports = {
     }),
   },
   search: {
-    formatSearchData: (search, totalPages) => ({ search, totalPages }),
+    formatSearchData: (search, totalPages, currentPage, query) => ({
+      search,
+      ...formatPagination(totalPages, currentPage),
+      query,
+    }),
   },
   recent: {
     formatRecentData: (image, epSlug, title, subText) => ({
@@ -90,6 +102,10 @@ module.exports = {
       animeSlug,
       title,
       subText: subText.trim(),
+    }),
+    formatAnimeBrowseData: (anime, totalPages, currentPage) => ({
+      anime,
+      ...formatPagination(totalPages, currentPage),
     }),
   },
   ongoing: {
@@ -107,6 +123,17 @@ module.exports = {
       subText: subText.trim(),
       epSlug,
       latestEp,
+    }),
+  },
+  genre: {
+    formatGenreData: (genreSlug, genre) => ({
+      genreSlug: genreSlug.split("/genre/")[1],
+      genre,
+    }),
+    formatAnimeGenreData: (anime, totalPages, currentPage, genreSlug) => ({
+      anime,
+      ...formatPagination(totalPages, currentPage),
+      genreSlug,
     }),
   },
 };

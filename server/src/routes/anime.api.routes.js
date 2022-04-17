@@ -8,10 +8,18 @@ const {
   getPopularAnime,
   getOngoingAnime,
   getNewSeasonAnime,
+  getAnimeGenres,
+  getAnimeByGenre,
 } = require("../controllers/anime.api.ct");
 const {
-  validator,
-  schemas: { AnimeNameSchema, AnimeVideoSchema, AnimeSearchSchema },
+  validator: paramValidator,
+  schemas: {
+    AnimeNameSchema,
+    AnimeVideoSchema,
+    AnimeSearchSchema,
+    AnimeGenreSchema,
+    PageSchema,
+  },
 } = require("../helpers/params.validator");
 const {
   validator: bodyValidator,
@@ -27,6 +35,8 @@ const {
   ANIME_POPULAR_KEY,
   ANIME_ONGOING_KEY,
   ANIME_NEW_SEASON_KEY,
+  ANIME_GENRES_KEY,
+  ANIME_GENRE_KEY,
 } = require("../redis/redis.keys");
 
 // Anime API
@@ -36,25 +46,52 @@ const {
 // GET - Get Searched Anime Data
 animeRouter.get(
   "/search/:query/page/:page",
-  validator(AnimeSearchSchema),
+  paramValidator(AnimeSearchSchema),
   checkCacheData(ANIME_SEARCH_KEY),
   getSearchedAnime
 );
 
 // GET - Get Recent Anime
-animeRouter.get("/recent", checkCacheData(ANIME_RECENT_KEY), getRecentAnime);
+animeRouter.get(
+  "/recent/page/:page",
+  paramValidator(PageSchema),
+  checkCacheData(ANIME_RECENT_KEY),
+  getRecentAnime
+);
 
 // GET - Get Popular Anime
-animeRouter.get("/popular", checkCacheData(ANIME_POPULAR_KEY), getPopularAnime);
+animeRouter.get(
+  "/popular/page/:page",
+  paramValidator(PageSchema),
+  checkCacheData(ANIME_POPULAR_KEY),
+  getPopularAnime
+);
 
 // GET - Get Ongoing Anime
-animeRouter.get("/ongoing", checkCacheData(ANIME_ONGOING_KEY), getOngoingAnime);
+animeRouter.get(
+  "/ongoing/page/:page",
+  paramValidator(PageSchema),
+  checkCacheData(ANIME_ONGOING_KEY),
+  getOngoingAnime
+);
 
 // GET - Get New Season Anime
 animeRouter.get(
-  "/new-season",
+  "/new-season/page/:page",
+  paramValidator(PageSchema),
   checkCacheData(ANIME_NEW_SEASON_KEY),
   getNewSeasonAnime
+);
+
+// GET - Get Anime By Genre
+animeRouter.get("/genres", checkCacheData(ANIME_GENRES_KEY), getAnimeGenres);
+
+// GET - Get Anime By Genre
+animeRouter.get(
+  "/genre/:genreSlug/page/:page",
+  paramValidator(AnimeGenreSchema),
+  checkCacheData(ANIME_GENRE_KEY),
+  getAnimeByGenre
 );
 
 // ---- Anime ----
@@ -62,7 +99,7 @@ animeRouter.get(
 // GET - Get Anime Video
 animeRouter.get(
   "/video/:epSlug",
-  validator(AnimeVideoSchema),
+  paramValidator(AnimeVideoSchema),
   checkCacheData(ANIME_VIDEO_KEY),
   getAnimeVideo
 );
@@ -78,7 +115,7 @@ animeRouter.post(
 // GET - Get Anime Data
 animeRouter.get(
   "/:animeSlug",
-  validator(AnimeNameSchema),
+  paramValidator(AnimeNameSchema),
   checkCacheData(ANIME_KEY),
   getAnime
 );

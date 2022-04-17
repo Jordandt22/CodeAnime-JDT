@@ -7,10 +7,38 @@ const {
   video: { formatAnimeVideoData, formatVideoSourceData },
   search: { formatSearchData },
   recent: { formatRecentData },
-  list: { formatAnimeListData },
+  list: { formatAnimeListData, formatAnimeBrowseData },
   ongoing: { formatOngoingAnime },
+  genre: { formatGenreData, formatAnimeGenreData },
 } = require("../../utils/formating.util");
 const { formatSlug, formatAnimeSlug } = require("../../utils/global.util");
+
+// Get Anime List Data
+const getAnimeListData = ($) => {
+  const anime = [];
+  $("ul.items li").each((i, elem) => {
+    const $elem = cheerio.load($(elem).html());
+    const image = $elem("img").attr("src");
+    const animeSlug = formatAnimeSlug($elem(".img a").attr("href"));
+    const title = $elem("p.name").text();
+    const subText = $elem(`p.released`).text();
+    anime.push(formatAnimeListData(image, animeSlug, title, subText));
+  });
+
+  return anime;
+};
+
+// Get Total Pages
+const getTotalPages = ($) => {
+  const pages = [];
+  $("ul.pagination-list li").each((i, elem) => {
+    const $elem = cheerio.load($(elem).html());
+    const page = $elem("a").attr("data-page");
+    pages.push(page);
+  });
+
+  return Number(pages[pages.length - 1]);
+};
 
 module.exports = {
   scrapeAnime: async (animeSlug) => {
@@ -50,10 +78,9 @@ module.exports = {
           const genres = [];
           $type("a").each((i, genreElem) => {
             const $genre = cheerio.load($(genreElem).html());
-            genres.push({
-              link: $(genreElem).attr("href").split("/genre/")[1],
-              genre: $genre.text(),
-            });
+            genres.push(
+              formatGenreData($(genreElem).attr("href"), $genre.text())
+            );
           });
           typeObj.genres = genres;
           break;
@@ -201,34 +228,21 @@ module.exports = {
     if (error) return { error, data: null };
 
     // Searched Data
-    const searchedData = [];
-    $("ul.items li").each((i, elem) => {
-      const $elem = cheerio.load($(elem).html());
-      const image = $elem("img").attr("src");
-      const animeSlug = formatAnimeSlug($elem(".img a").attr("href"));
-      const title = $elem("p.name").text();
-      const subText = $elem("p.released").text();
-      searchedData.push(formatAnimeListData(image, animeSlug, title, subText));
-    });
+    const searchedData = getAnimeListData($);
 
     // Searched Page Data
-    const pages = [];
-    $("ul.pagination-list li").each((i, elem) => {
-      const $elem = cheerio.load($(elem).html());
-      const page = $elem("a").attr("data-page");
-      pages.push(page);
-    });
+    const totalPages = getTotalPages($);
 
     return {
       error: null,
       data:
         searchedData.length > 0
-          ? formatSearchData(searchedData, pages.length)
+          ? formatSearchData(searchedData, totalPages, page, query)
           : null,
     };
   },
-  scrapeRecentAnime: async () => {
-    const { error, $ } = await getAnimePage(GOGOANIME_URL, "");
+  scrapeRecentAnime: async (page) => {
+    const { error, $ } = await getAnimePage(GOGOANIME_URL, `?page=${page}`);
     if (error) return { error, data: null };
 
     const anime = [];
@@ -241,37 +255,31 @@ module.exports = {
       anime.push(formatRecentData(image, epSlug, title, subText));
     });
 
+    const totalPages = getTotalPages($);
+
     return {
       error: null,
-      data: {
-        anime,
-      },
+      data: formatAnimeBrowseData(anime, totalPages, page),
     };
   },
-  scrapePopularAnime: async () => {
-    const { error, $ } = await getAnimePage(GOGOANIME_URL, "/popular.html");
+  scrapePopularAnime: async (page) => {
+    const { error, $ } = await getAnimePage(
+      GOGOANIME_URL,
+      `/popular.html?page=${page}`
+    );
     if (error) return { error, data: null };
 
-    const anime = [];
-    $("ul.items li").each((i, elem) => {
-      const $elem = cheerio.load($(elem).html());
-      const image = $elem("img").attr("src");
-      const animeSlug = formatAnimeSlug($elem(".img a").attr("href"));
-      const title = $elem("p.name").text();
-      const subText = $elem("p.released").text();
-      anime.push(formatAnimeListData(image, animeSlug, title, subText));
-    });
+    const anime = getAnimeListData($);
+    const totalPages = getTotalPages($);
 
     return {
       error: null,
-      data: {
-        anime,
-      },
+      data: formatAnimeBrowseData(anime, totalPages, page),
     };
   },
-  scrapeOngoingAnime: async () => {
+  scrapeOngoingAnime: async (page) => {
     const { error, $ } = await getPage(
-      "https://ajax.gogo-load.com/ajax/page-recent-release-ongoing.html?page=1"
+      `https://ajax.gogo-load.com/ajax/page-recent-release-ongoing.html?page=${page}`
     );
     if (error) return { error, data: null };
 
@@ -291,33 +299,63 @@ module.exports = {
         formatOngoingAnime(image, animeSlug, title, subText, epSlug, latestEp)
       );
     });
+    const totalPages = getTotalPages($);
 
     return {
       error: null,
-      data: {
-        anime,
-      },
+      data: formatAnimeBrowseData(anime, totalPages, page),
     };
   },
-  scrapeNewSeasonAnime: async () => {
-    const { error, $ } = await getAnimePage(GOGOANIME_URL, "/new-season.html");
+  scrapeNewSeasonAnime: async (page) => {
+    const { error, $ } = await getAnimePage(
+      GOGOANIME_URL,
+      `/new-season.html?page=${page}`
+    );
     if (error) return { error, data: null };
 
-    const anime = [];
-    $("ul.items li").each((i, elem) => {
+    const anime = getAnimeListData($);
+    const totalPages = getTotalPages($);
+
+    return {
+      error: null,
+      data: formatAnimeBrowseData(anime, totalPages, page),
+    };
+  },
+  scrapeAnimeGenres: async () => {
+    const { error, $ } = await getAnimePage(GOGOANIME_URL, "");
+    if (error) return { error, data: null };
+
+    const genres = [];
+    $("li.genre ul li").each((i, elem) => {
       const $elem = cheerio.load($(elem).html());
-      const image = $elem("img").attr("src");
-      const animeSlug = formatAnimeSlug($elem(".img a").attr("href"));
-      const title = $elem("p.name").text();
-      const subText = $elem("p.released").text();
-      anime.push(formatAnimeListData(image, animeSlug, title, subText));
+      const genreSlug = $elem("a").attr("href");
+      const genre = $elem("a").text();
+
+      if (genre.toLowerCase() !== "hentai")
+        genres.push(formatGenreData(genreSlug, genre));
     });
 
     return {
       error: null,
       data: {
-        anime,
+        genres,
       },
+    };
+  },
+  scrapeAnimeByGenre: async (genreSlug, page) => {
+    const { error, $ } = await getAnimePage(
+      GOGOANIME_URL,
+      `/genre/${genreSlug}?page=${page}`
+    );
+    if (error) return { error, data: null };
+
+    // Anime Genre Data
+    const anime = getAnimeListData($);
+    const totalPages = getTotalPages($);
+
+    return {
+      error: null,
+      data: formatAnimeGenreData(anime, totalPages, page, genreSlug),
     };
   },
 };
