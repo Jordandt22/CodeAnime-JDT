@@ -13,7 +13,10 @@ const getPage = async (url) => {
       return { error: false, $: cheerio.load(response.data) };
     })
     .catch((err) => {
-      if (!err.response) return console.log(err);
+      if (!err.response) {
+        console.log(err);
+        return { error: { response: { status: 500 } }, $: null };
+      }
 
       const { status, statusText } = err.response;
       console.log(status, statusText);

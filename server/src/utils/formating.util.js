@@ -127,7 +127,7 @@ module.exports = {
   },
   genre: {
     formatGenreData: (genreSlug, genre) => ({
-      genreSlug: genreSlug.split("/genre/")[1],
+      genreSlug,
       genre,
     }),
     formatAnimeGenreData: (anime, totalPages, currentPage, genreSlug) => ({

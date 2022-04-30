@@ -1,3 +1,4 @@
 module.exports = {
-  GOGOANIME: "https://gogoanime.fi",
+  GOGOANIME: "https://gogoanime.sk",
+  // ANIMEFOX: "https://animefox.tv",
 };

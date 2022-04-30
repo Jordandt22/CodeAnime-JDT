@@ -79,7 +79,10 @@ module.exports = {
           $type("a").each((i, genreElem) => {
             const $genre = cheerio.load($(genreElem).html());
             genres.push(
-              formatGenreData($(genreElem).attr("href"), $genre.text())
+              formatGenreData(
+                $(genreElem).attr("href").split("/genre/")[1],
+                $genre.text()
+              )
             );
           });
           typeObj.genres = genres;
@@ -332,7 +335,7 @@ module.exports = {
       const genre = $elem("a").text();
 
       if (genre.toLowerCase() !== "hentai")
-        genres.push(formatGenreData(genreSlug, genre));
+        genres.push(formatGenreData(genreSlug.split("/genre/")[1], genre));
     });
 
     return {
