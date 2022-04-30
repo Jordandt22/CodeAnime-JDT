@@ -1,0 +1,56 @@
+// Navbar Styles
+.navbar {
+  background: linear-gradient(180deg, #000000 51.04%, rgba(0, 0, 0, 0) 98.44%);
+  padding: $spacer 0;
+
+  .navbar__title {
+    font-size: $main-fs * 1.25;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+
+    span {
+      color: $primary-clr;
+    }
+  }
+
+  .navbar__link {
+    padding: 0 $spacer-small;
+    color: white;
+    font-size: $main-fs * 0.75;
+    // font-weight: bold;
+    text-decoration: none;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .navbar__search {
+    margin-left: $spacer-small;
+    background: $light-sec-bg;
+    border-radius: $border-radius;
+    padding: 2.5px $spacer-small;
+    box-shadow: 0 0 5px black;
+
+    input {
+      outline: none;
+      border: none;
+      background: transparent;
+      width: 100%;
+      color: white;
+      font-family: $main-ft;
+      font-size: $main-fs * 0.75;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    .icon {
+      color: white;
+      transform: rotate(90deg);
+    }
+  }
+}

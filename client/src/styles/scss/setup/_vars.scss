@@ -1,0 +1,24 @@
+/* Variables */
+
+/* Colors */
+$primary-clr: #2424ff;
+$primary-bg: #00000c;
+$dark-sec-bg: #0F0F0F;
+$light-sec-bg: #1E1E1F;
+$black-shadow: rgba(0, 0, 0, 0.5);
+
+/* Font */
+$main-fs: 1.5rem;
+$md-fs: $main-fs * 1.5;
+$lg-fs: $md-fs * 1.5;
+$main-ft: 'Teko', sans-serif;
+
+/* Spacers */
+$spacer-small: 1rem;
+$spacer: $spacer-small * 2;
+$spacer-md: $spacer * 2;
+$spacer-lg: $spacer-md * 2;
+$spacer-xlg: $spacer-lg * 2;
+
+/* Borders */
+$border-radius: 5px;

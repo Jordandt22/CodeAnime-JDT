@@ -1,0 +1,31 @@
+// Alerts Styles
+
+// Error
+.alert__error {
+  $error-clr: rgb(250, 30, 30);
+  position: fixed;
+  left: $spacer-lg;
+  bottom: 10vh;
+  min-width: 20vw;
+  padding: $spacer-small * 0.75 $spacer-small;
+  border-left: 6px solid $error-clr;
+  border-radius: $border-radius * 0.5;
+  background: $dark-sec-bg;
+  animation: slide-in 1000ms forwards ease-out;
+
+  .icon {
+    color: $error-clr;
+    font-size: $main-fs * 1.25;
+  }
+
+  h4 {
+    color: $primary-clr;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  p {
+    color: grey;
+    font-size: $main-fs * 0.75;
+  }
+}

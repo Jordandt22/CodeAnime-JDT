@@ -1,0 +1,20 @@
+// Setup
+@import "setup/reset";
+@import "setup/vars";
+@import "utils/alignments";
+@import "utils/animations";
+
+// Layout
+@import "./layout/navbar/navbar";
+@import "./layout/alerts/alerts";
+
+// My Styles
+body {
+  background: $primary-bg;
+  font-family: $main-ft;
+}
+
+.App {
+  margin: 0 $spacer-lg;
+  font-family: $main-ft;
+}

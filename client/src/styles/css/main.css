@@ -1,0 +1,391 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+/* My Code */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Variables */
+/* Colors */
+/* Font */
+/* Spacers */
+/* Borders */
+.between-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.around-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.center-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.center-vertical {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(-50vw);
+            transform: translateX(-50vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(-50vw);
+            transform: translateX(-50vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.navbar {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(51.04%, #000000), color-stop(98.44%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(180deg, #000000 51.04%, rgba(0, 0, 0, 0) 98.44%);
+  padding: 2rem 0;
+}
+
+.navbar .navbar__title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .navbar__title span {
+  color: #2424ff;
+}
+
+.navbar .navbar__link {
+  padding: 0 1rem;
+  color: white;
+  font-size: 1.125rem;
+  text-decoration: none;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.navbar .navbar__link:hover {
+  opacity: 0.5;
+}
+
+.navbar .navbar__search {
+  margin-left: 1rem;
+  background: #1E1E1F;
+  border-radius: 5px;
+  padding: 2.5px 1rem;
+  -webkit-box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px black;
+}
+
+.navbar .navbar__search input {
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 100%;
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-size: 1.125rem;
+}
+
+.navbar .navbar__search input::-webkit-input-placeholder {
+  color: white;
+}
+
+.navbar .navbar__search input:-ms-input-placeholder {
+  color: white;
+}
+
+.navbar .navbar__search input::-ms-input-placeholder {
+  color: white;
+}
+
+.navbar .navbar__search input::placeholder {
+  color: white;
+}
+
+.navbar .navbar__search .icon {
+  color: white;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.alert__error {
+  position: fixed;
+  left: 8rem;
+  bottom: 10vh;
+  min-width: 20vw;
+  padding: 0.75rem 1rem;
+  border-left: 6px solid #fa1e1e;
+  border-radius: 2.5px;
+  background: #0F0F0F;
+  -webkit-animation: slide-in 1000ms forwards ease-out;
+          animation: slide-in 1000ms forwards ease-out;
+}
+
+.alert__error .icon {
+  color: #fa1e1e;
+  font-size: 1.875rem;
+}
+
+.alert__error h4 {
+  color: #2424ff;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.alert__error p {
+  color: grey;
+  font-size: 1.125rem;
+}
+
+body {
+  background: #00000c;
+  font-family: "Teko", sans-serif;
+}
+
+.App {
+  margin: 0 8rem;
+  font-family: "Teko", sans-serif;
+}
+/*# sourceMappingURL=main.css.map */
