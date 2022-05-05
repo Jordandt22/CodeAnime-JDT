@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home/Home";
 import NavBar from "./components/layout/Nav/Navbar";
 import ErrorAlert from "./components/layout/Alerts/ErrorAlert";
+import Footer from "./components/layout/Footer/Footer";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
 
         {/* Alerts */}
         <ErrorAlert />
+
+        {/* Footer */}
+        <Footer />
       </BrowserRouter>
     </div>
   );

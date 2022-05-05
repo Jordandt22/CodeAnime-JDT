@@ -617,6 +617,86 @@ html {
   color: grey;
 }
 
+.footer {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: #0F0F0F;
+  padding: 3rem 8rem;
+  padding-bottom: 2rem;
+  width: 100vw;
+  -webkit-transform: translateX(-8rem);
+          transform: translateX(-8rem);
+  margin-top: 4rem;
+}
+
+.footer .footer__about {
+  margin-right: 12rem;
+}
+
+.footer .footer__about .about__info {
+  margin-bottom: 8rem;
+}
+
+.footer .footer__about .about__info h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer .footer__about .about__info h2 span {
+  color: #2424ff;
+}
+
+.footer .footer__about .about__info p {
+  color: grey;
+  font-size: 1.05rem;
+  max-width: 40ch;
+  line-height: 1.5rem;
+}
+
+.footer .footer__about .about__copyright {
+  color: grey;
+  font-size: 0.975rem;
+  margin-right: 0.75rem;
+}
+
+.footer .footer__links {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.footer .links__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 2rem;
+}
+
+.footer .links__section h6 {
+  color: grey;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.footer .links__section a:hover {
+  text-decoration: underline;
+}
+
+.footer .links__section .section__link {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  min-width: 20ch;
+}
+
 .home-container {
   padding-top: 10rem !important;
 }
