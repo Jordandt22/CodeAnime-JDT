@@ -1,17 +1,24 @@
 // Setup
 @import "setup/reset";
 @import "setup/vars";
+@import "setup/global";
 @import "utils/alignments";
 @import "utils/animations";
 
 // Layout
 @import "./layout/navbar/navbar";
 @import "./layout/alerts/alerts";
+@import "./layout/anime/anime-section";
+@import "./layout/anime/anime-card";
+
+// Pages
+@import "./pages/Home/home";
 
 // My Styles
 body {
   background: $primary-bg;
   font-family: $main-ft;
+  overflow-x: hidden;
 }
 
 .App {

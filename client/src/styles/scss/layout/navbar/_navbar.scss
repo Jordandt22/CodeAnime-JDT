@@ -1,7 +1,11 @@
 // Navbar Styles
 .navbar {
-  background: linear-gradient(180deg, #000000 51.04%, rgba(0, 0, 0, 0) 98.44%);
-  padding: $spacer 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #000000, rgba(0, 0, 0, 0) 98.44%);
+  padding: $spacer $spacer-lg;
+  z-index: 100;
 
   .navbar__title {
     font-size: $main-fs * 1.25;
@@ -18,7 +22,6 @@
     padding: 0 $spacer-small;
     color: white;
     font-size: $main-fs * 0.75;
-    // font-weight: bold;
     text-decoration: none;
     transition: all 200ms ease-out;
 
@@ -31,7 +34,7 @@
     margin-left: $spacer-small;
     background: $light-sec-bg;
     border-radius: $border-radius;
-    padding: 2.5px $spacer-small;
+    padding: 3.5px $spacer-small;
     box-shadow: 0 0 5px black;
 
     input {
@@ -51,6 +54,7 @@
     .icon {
       color: white;
       transform: rotate(90deg);
+      font-size: $main-fs * 0.8;
     }
   }
 }

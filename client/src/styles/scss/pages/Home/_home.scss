@@ -1,0 +1,329 @@
+// Home Page Styles
+.home-container {
+  padding-top: $spacer-lg * 1.25 !important;
+}
+
+// Spotlight
+.anime-spotlight {
+  padding-bottom: 0 !important;
+}
+
+.spotlight__background,
+.spotlight__shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.spotlight__shadow {
+  background: rgba(black, 0.9);
+}
+
+.spotlight__main {
+  display: flex;
+  justify-content: space-between;
+
+  .spotlight__anime {
+    display: flex;
+  }
+
+  // Anime Image
+  .anime__image-box {
+    position: relative;
+    width: 15vw;
+    height: 40vh;
+    box-shadow: 0 0 10px black;
+
+    .anime__image {
+      width: 100%;
+      height: 100%;
+    }
+
+    .anime__latestEp {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0, black, rgba(0, 0, 0, 0) 98.44%);
+      padding-top: 30vh;
+      padding-bottom: $spacer-small;
+
+      p {
+        color: white;
+        text-align: center;
+        font-size: $main-fs * 0.8;
+      }
+    }
+  }
+
+  // Anime Info
+  .anime__info {
+    margin-left: $spacer;
+
+    h3 {
+      color: grey;
+      font-weight: normal;
+      font-size: $main-fs;
+      margin-bottom: $spacer-small * 0.5;
+    }
+
+    .anime__title {
+      color: white;
+      font-weight: bold;
+      font-size: $main-fs * 1.25;
+      text-decoration: none;
+      transition: all 200ms ease-out;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .anime__subText {
+      color: grey;
+      font-size: $main-fs * 0.9;
+      margin-top: $spacer-small;
+      margin-bottom: $spacer-md;
+    }
+
+    .watch__btn,
+    .info__btn {
+      outline: none;
+      border: none;
+      padding: 5px $spacer;
+      color: white;
+      text-decoration: none;
+      font-size: $main-fs * 0.9;
+      border-radius: $border-radius;
+      background: black;
+      transition: all 200ms ease-out;
+
+      .icon {
+        margin-right: 4px;
+      }
+
+      p {
+        transform: translateY(2px);
+      }
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+
+    .watch__btn {
+      background: $primary-clr;
+      margin-right: $spacer;
+    }
+  }
+}
+
+.spotlight__buttons {
+  display: flex;
+  flex-direction: column;
+
+  .spotlight__button {
+    outline: none;
+    border: none;
+    background: rgba($light-sec-bg, 0.75);
+    box-shadow: 0 0 5px black;
+    padding: $spacer-small * 0.5;
+    margin-bottom: $spacer-small;
+    border-radius: $border-radius;
+    transition: all 200ms ease-out;
+
+    .icon {
+      color: white;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: $primary-clr;
+    }
+  }
+}
+
+// Vector
+.vector {
+  transform: translate(-20vw, 5vh);
+  z-index: -1;
+
+  div {
+    background: $primary-bg;
+    width: 200vw;
+    height: 5vh;
+    transform: translateY(-2vh);
+    z-index: -1;
+  }
+
+  path {
+    stroke: $primary-clr;
+    stroke-width: 3px;
+  }
+}
+
+// Genre Anime
+.genre-anime {
+  $br: $border-radius * 0.5;
+  margin-top: $spacer;
+  background: $dark-sec-bg;
+  width: 30%;
+  height: 75vh;
+  border-radius: $br;
+  box-shadow: 0 0 5px 5px black;
+
+  .genre-anime__header {
+    background: $light-sec-bg;
+    border-top-left-radius: $br;
+    border-top-right-radius: $br;
+    padding: $spacer-small $spacer-small * 1.5;
+
+    .genre-title {
+      color: white;
+      font-weight: normal;
+      font-size: $main-fs * 1.25;
+      text-decoration: none;
+      transition: all 200ms ease-out;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .none {
+    color: grey;
+    margin: $spacer $spacer-small;
+    text-align: center;
+    font-size: $main-fs * 0.8;
+  }
+
+  .genre-anime__view-more {
+    background: $light-sec-bg;
+    padding: $spacer-small 0;
+    border-bottom-left-radius: $br;
+    border-bottom-right-radius: $br;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: $main-fs * 0.9;
+      transition: all 200ms ease-out;
+
+      .icon {
+        font-size: $main-fs * 0.9;
+        transform: translateY(-0.25vh);
+        margin-left: $spacer-small * 0.5;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.genre-anime__list {
+  padding: $spacer-small * 0.5 $spacer-small * 1.5;
+
+  .list__anime {
+    align-items: flex-start;
+    margin: $spacer-small 0;
+
+    .anime__image {
+      width: 4vw;
+      height: 10vh;
+      border-radius: $border-radius * 0.5;
+      margin-right: $spacer-small;
+      transition: all 200ms ease-out;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+
+    .anime__title {
+      display: block;
+      color: white;
+      text-decoration: none;
+      font-size: $main-fs * 0.85;
+      max-width: 30ch;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      color: grey;
+      margin-top: 2.5px;
+    }
+  }
+}
+
+// Anime Genres
+.anime-genres {
+  margin-top: $spacer-lg;
+
+  .anime-genres__title {
+    color: white;
+    color: white;
+    font-weight: bold;
+    font-size: $main-fs * 1.25;
+    text-decoration: none;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .anime-genres__list-box {
+    margin-top: $spacer;
+    background: $light-sec-bg;
+    border-radius: $border-radius;
+    padding: $spacer-small * 1.5;
+
+    .list__view-all {
+      color: white;
+      text-decoration: none;
+      font-size: $main-fs * 0.9;
+      margin-top: $spacer * 1.5;
+      transition: all 200ms ease-out;
+
+      .icon {
+        font-size: $main-fs * 0.9;
+        transform: translateY(-0.25vh);
+        margin-left: $spacer-small * 0.5;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .anime-genres__list {
+    flex-wrap: wrap;
+    gap: $spacer-small $spacer * 0.75;
+
+    .list__genre {
+      text-decoration: none;
+      color: white;
+      background: $primary-bg;
+      padding: $spacer-small * 0.5 $spacer;
+      border-radius: $border-radius;
+      transition: all 200ms ease-out;
+
+      &:hover {
+        background: $primary-clr;
+      }
+    }
+  }
+}

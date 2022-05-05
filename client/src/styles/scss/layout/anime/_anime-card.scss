@@ -1,0 +1,60 @@
+// Anime Card Styles
+.anime-card {
+  width: 10vw;
+  animation: grow 500ms forwards ease-out;
+
+  .anime-card__image-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: $spacer-small;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.95);
+
+      .image__hover {
+        opacity: 1;
+      }
+    }
+
+    .anime-card__image {
+      width: 100%;
+      height: 30vh;
+      border-radius: $border-radius;
+      box-shadow: 0 0 5px 5px black;
+    }
+
+    .image__hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $black-shadow;
+      opacity: 0;
+      border-radius: $border-radius;
+      transition: all 300ms ease-out;
+
+      .icon {
+        font-size: $main-fs * 3;
+        color: white;
+      }
+    }
+  }
+
+  .anime__title {
+    color: white;
+    max-width: 80%;
+    text-decoration: none;
+    font-size: $main-fs * 0.65;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    color: grey;
+  }
+}

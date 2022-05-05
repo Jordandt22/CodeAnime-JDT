@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
 
 // API Route
 app.use(
-  `/api/${API_VERSION}/anime/:animeSource`,
+  `/${API_VERSION}/api/anime/:animeSource`,
   checkAnimeSource,
   require("./routes/anime.api.routes")
 );

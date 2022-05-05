@@ -1,0 +1,13 @@
+// Global Styles
+.container {
+  padding: 0 !important;
+  margin: 0 !important;
+  padding-bottom: $spacer-lg !important;
+}
+
+.text-overflow {
+  max-width: 40ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

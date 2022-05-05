@@ -1,0 +1,115 @@
+// Anime Section Styles
+.anime-section {
+  z-index: 10;
+  background: $primary-bg;
+  height: 50vh;
+  transform: translateY(-2.5vh);
+  margin-bottom: $spacer-md * 1.5;
+
+  .anime-section__none {
+    color: grey;
+    font-size: $main-fs;
+  }
+}
+
+// Anime Section Header
+.anime-section__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacer-md;
+
+  .header__title {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size: $main-fs * 1.25;
+    text-decoration: none;
+    transition: all 200ms ease-out;
+
+    &::after {
+      position: absolute;
+      bottom: -2.5vh;
+      left: 0;
+      content: "";
+      width: 40%;
+      height: 0.35vh;
+      background: grey;
+      transition: all 200ms ease-out;
+    }
+
+    &:hover {
+      opacity: 0.5;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .header__tab {
+    width: 2.5vw;
+    height: 0.65vh;
+    background: grey;
+    margin-left: $spacer-small;
+    border-radius: $border-radius;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  }
+
+  .active {
+    background: $primary-clr;
+  }
+}
+
+// Anime
+.anime-section__anime {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  .anime-section__button {
+    position: absolute;
+    outline: none;
+    border: none;
+    background: transparent;
+    top: 50%;
+    transform: translateY(-100%);
+    z-index: 5;
+
+    .icon {
+      color: white;
+      font-size: $main-fs * 2;
+      transition: all 200ms ease-out;
+    }
+  }
+
+  .button__prev {
+    left: -5vw;
+
+    &:hover {
+      cursor: pointer;
+
+      .icon {
+        color: $primary-clr;
+        transform: translateX(-1vw);
+      }
+    }
+  }
+
+  .button__next {
+    right: -5vw;
+
+    &:hover {
+      cursor: pointer;
+
+      .icon {
+        color: $primary-clr;
+        transform: translateX(1vw);
+      }
+    }
+  }
+}
