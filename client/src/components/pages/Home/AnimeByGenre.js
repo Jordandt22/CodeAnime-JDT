@@ -9,6 +9,10 @@ import { ArrowForwardIos } from "@mui/icons-material";
 // Contexts
 import { useQueryHook } from "../../../context/Query/Query.context";
 
+// Components
+import AnimeByGenreSkeleton from "../../templates/Skeletons/AnimeByGenreSkeleton";
+import ErrorMessage from "../../layout/Errors/ErrorMessage";
+
 function AnimeByGenre(props) {
   const { title: genreTitle, link, genre } = props;
   const navigate = useNavigate();
@@ -16,9 +20,9 @@ function AnimeByGenre(props) {
   const { isLoading, isError, error, data } = useGetAnimeByGenre(1, genre);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <AnimeByGenreSkeleton genreTitle={genreTitle} link={link} />;
   } else if (isError) {
-    return <p>{error.message}</p>;
+    return <ErrorMessage message={error.message} />;
   }
 
   const { anime } = data.data.data;

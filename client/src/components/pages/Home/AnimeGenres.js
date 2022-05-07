@@ -8,14 +8,18 @@ import { ArrowForwardIos } from "@mui/icons-material";
 // Contexts
 import { useQueryHook } from "../../../context/Query/Query.context";
 
+// Components
+import AnimeGenresSkeleton from "../../templates/Skeletons/AnimeGenresSkeleton";
+import AnimeGenresError from "../../templates/Errors/AnimeGenresError";
+
 function AnimeGenres() {
   const { useGetAnimeGenres } = useQueryHook();
   const { isLoading, isError, error, data } = useGetAnimeGenres();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <AnimeGenresSkeleton />;
   } else if (isError) {
-    return <p>{error.message}</p>;
+    return <AnimeGenresError message={error.message} />;
   }
 
   const { genres } = data.data.data;

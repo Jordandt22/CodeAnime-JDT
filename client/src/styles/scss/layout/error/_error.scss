@@ -1,0 +1,29 @@
+// Error Styles
+.error-message {
+  width: 30vw;
+  background: white;
+  border-radius: $border-radius;
+
+  .error__icon {
+    background: red;
+    padding: $spacer-md;
+    color: white;
+    font-size: $main-fs;
+    border-radius: $border-radius;
+    border-bottom-left-radius: $border-radius * 3;
+    border-bottom-right-radius: $border-radius * 3;
+
+    .icon {
+      color: white;
+      font-size: $main-fs * 1.5;
+      margin-right: $spacer-small * 0.5;
+    }
+  }
+
+  p {
+    color: grey;
+    text-align: center;
+    padding: $spacer 0;
+    font-size: $main-fs;
+  }
+}

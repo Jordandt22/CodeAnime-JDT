@@ -1,0 +1,52 @@
+// Anime Skeletons
+
+// Anime Card
+.anime-card-skel {
+  .anime-card__image {
+    background: $dark-sec-bg;
+  }
+
+  .anime__title {
+    background: white;
+    width: 80%;
+    height: 1.5vh;
+  }
+
+  .anime__subText {
+    background: grey;
+    width: 50%;
+    margin-top: 2.5px;
+    height: 1vh;
+  }
+}
+
+// Genre Anime
+.genre-anime-skeleton {
+  .anime__info {
+    width: 100%;
+  }
+
+  .anime__image {
+    background: $light-sec-bg;
+  }
+
+  .anime__title {
+    width: 70%;
+    height: 1.5vh;
+    background: white;
+    margin-bottom: 5px;
+  }
+
+  .anime__subText {
+    width: 50%;
+    height: 1vh;
+    background: grey;
+  }
+}
+
+// Anime Genres
+.anime-genres-skeleton {
+  .list__genre {
+    width: 6.5vw;
+  }
+}

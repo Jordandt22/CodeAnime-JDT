@@ -272,11 +272,12 @@
   margin-top: $spacer-lg;
 
   .anime-genres__title {
-    color: white;
+    display: block;
     color: white;
     font-weight: bold;
     font-size: $main-fs * 1.25;
     text-decoration: none;
+    margin-bottom: $spacer;
     transition: all 200ms ease-out;
 
     &:hover {
@@ -285,7 +286,6 @@
   }
 
   .anime-genres__list-box {
-    margin-top: $spacer;
     background: $light-sec-bg;
     border-radius: $border-radius;
     padding: $spacer-small * 1.5;

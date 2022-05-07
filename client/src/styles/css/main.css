@@ -697,6 +697,77 @@ html {
   min-width: 20ch;
 }
 
+.error-message {
+  width: 30vw;
+  background: white;
+  border-radius: 5px;
+}
+
+.error-message .error__icon {
+  background: red;
+  padding: 4rem;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.error-message .error__icon .icon {
+  color: white;
+  font-size: 2.25rem;
+  margin-right: 0.5rem;
+}
+
+.error-message p {
+  color: grey;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.5rem;
+}
+
+.anime-card-skel .anime-card__image {
+  background: #0F0F0F;
+}
+
+.anime-card-skel .anime__title {
+  background: white;
+  width: 80%;
+  height: 1.5vh;
+}
+
+.anime-card-skel .anime__subText {
+  background: grey;
+  width: 50%;
+  margin-top: 2.5px;
+  height: 1vh;
+}
+
+.genre-anime-skeleton .anime__info {
+  width: 100%;
+}
+
+.genre-anime-skeleton .anime__image {
+  background: #1E1E1F;
+}
+
+.genre-anime-skeleton .anime__title {
+  width: 70%;
+  height: 1.5vh;
+  background: white;
+  margin-bottom: 5px;
+}
+
+.genre-anime-skeleton .anime__subText {
+  width: 50%;
+  height: 1vh;
+  background: grey;
+}
+
+.anime-genres-skeleton .list__genre {
+  width: 6.5vw;
+}
+
 .home-container {
   padding-top: 10rem !important;
 }
@@ -994,11 +1065,12 @@ html {
 }
 
 .anime-genres .anime-genres__title {
-  color: white;
+  display: block;
   color: white;
   font-weight: bold;
   font-size: 1.875rem;
   text-decoration: none;
+  margin-bottom: 2rem;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
@@ -1008,7 +1080,6 @@ html {
 }
 
 .anime-genres .anime-genres__list-box {
-  margin-top: 2rem;
   background: #1E1E1F;
   border-radius: 5px;
   padding: 1.5rem;
