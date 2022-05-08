@@ -15,6 +15,8 @@ import Ongoing from "./components/pages/Ongoing/Ongoing";
 import NewSeason from "./components/pages/NewSeason/NewSeason";
 import GenreAnime from "./components/pages/GenreAnime/GenreAnime";
 import Genres from "./components/pages/Genres/Genres";
+import ComingSoon from "./components/pages/ComingSoon/ComingSoon";
+import NotFound from "./components/pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -24,8 +26,9 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<ComingSoon />} />
 
-          {/* Anime */}
+          {/* Anime Browse */}
           <Route exact path="/search/:query" element={<Search />} />
           <Route exact path="/recent" element={<Recent />} />
           <Route exact path="/popular" element={<Popular />} />
@@ -34,8 +37,15 @@ function App() {
           <Route exact path="/genre/:genre" element={<GenreAnime />} />
           <Route exact path="/genres" element={<Genres />} />
 
+          {/* Anime Information */}
+          <Route exact path="/anime/:animeSlug" element={<ComingSoon />} />
+          <Route exact path="/watch/:epSlug" element={<ComingSoon />} />
+
+          {/* User */}
+          <Route exact path="/myanime" element={<ComingSoon />} />
+
           {/* Not Found */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         {/* Alerts */}

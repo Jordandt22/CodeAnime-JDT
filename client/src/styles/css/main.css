@@ -196,6 +196,7 @@ html {
 }
 
 .page-container {
+  min-height: 100vh;
   padding-top: 10rem !important;
 }
 
@@ -274,23 +275,53 @@ html {
           align-items: center;
 }
 
-@-webkit-keyframes slide-in {
+@-webkit-keyframes slide-in-left {
   0% {
+    opacity: 0;
     -webkit-transform: translateX(-50vw);
             transform: translateX(-50vw);
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
 }
 
-@keyframes slide-in {
+@keyframes slide-in-left {
   0% {
+    opacity: 0;
     -webkit-transform: translateX(-50vw);
             transform: translateX(-50vw);
   }
   100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50vw);
+            transform: translateX(50vw);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50vw);
+            transform: translateX(50vw);
+  }
+  100% {
+    opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -319,6 +350,24 @@ html {
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -407,8 +456,8 @@ html {
   border-left: 6px solid #fa1e1e;
   border-radius: 2.5px;
   background: #0F0F0F;
-  -webkit-animation: slide-in 1000ms forwards ease-out;
-          animation: slide-in 1000ms forwards ease-out;
+  -webkit-animation: slide-in-left 1000ms forwards ease-out;
+          animation: slide-in-left 1000ms forwards ease-out;
 }
 
 .alert__error .icon {
@@ -417,9 +466,9 @@ html {
 }
 
 .alert__error h4 {
-  color: #2424ff;
+  color: white;
   margin-bottom: 4px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .alert__error p {
@@ -1307,10 +1356,6 @@ html {
   width: 0.3vw;
 }
 
-.genres-container {
-  min-height: 100vh;
-}
-
 .genres-container .genres__title {
   display: block;
   color: white;
@@ -1359,5 +1404,79 @@ body {
 .App {
   margin: 0 8rem;
   font-family: "Teko", sans-serif;
+}
+
+.coming-soon {
+  color: white;
+  font-size: 2.25rem;
+}
+
+.not-found-container {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.not-found-container .not-found-404 {
+  width: 40%;
+  margin-bottom: 2rem;
+}
+
+.not-found-container .not-found-404 h1 {
+  color: #2424ff;
+  font-size: 16.875rem;
+  font-weight: normal;
+}
+
+.not-found-container .not-found-404 .left {
+  opacity: 0;
+  -webkit-animation: slide-in-left 1000ms forwards ease-out 500ms;
+          animation: slide-in-left 1000ms forwards ease-out 500ms;
+}
+
+.not-found-container .not-found-404 .right {
+  opacity: 0;
+  -webkit-animation: slide-in-right 1000ms forwards ease-out 500ms;
+          animation: slide-in-right 1000ms forwards ease-out 500ms;
+}
+
+.not-found-container .not-found-404 h2 {
+  color: white;
+  font-size: 13.5rem;
+  font-weight: normal;
+  opacity: 0;
+  -webkit-animation: fade-in 2000ms forwards ease-out 500ms;
+          animation: fade-in 2000ms forwards ease-out 500ms;
+}
+
+.not-found-container p,
+.not-found-container a {
+  opacity: 0;
+  -webkit-animation: fade-in 1000ms forwards ease-out 1500ms;
+          animation: fade-in 1000ms forwards ease-out 1500ms;
+}
+
+.not-found-container p {
+  color: white;
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.not-found-container a {
+  text-decoration: none;
+  color: grey;
+  font-size: 1.5rem;
+  border: 2px solid grey;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  padding-top: 0.65rem;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.not-found-container a:hover {
+  background: #2424ff;
+  color: white;
+  border-color: #2424ff;
 }
 /*# sourceMappingURL=main.css.map */

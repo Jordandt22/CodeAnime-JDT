@@ -36,3 +36,72 @@ body {
   margin: 0 $spacer-lg;
   font-family: $main-ft;
 }
+
+// Coming Soon
+.coming-soon {
+  color: white;
+  font-size: $md-fs;
+}
+
+// Not Found
+.not-found-container {
+  display: flex !important;
+
+  .not-found-404 {
+    width: 40%;
+    margin-bottom: $spacer;
+
+    h1 {
+      color: $primary-clr;
+      font-size: $lg-fs * 5;
+      font-weight: normal;
+    }
+
+    .left {
+      opacity: 0;
+      animation: slide-in-left 1000ms forwards ease-out 500ms;
+    }
+
+    .right {
+      opacity: 0;
+      animation: slide-in-right 1000ms forwards ease-out 500ms;
+    }
+
+    h2 {
+      color: white;
+      font-size: $lg-fs * 4;
+      font-weight: normal;
+      opacity: 0;
+      animation: fade-in 2000ms forwards ease-out 500ms;
+    }
+  }
+
+  p,
+  a {
+    opacity: 0;
+    animation: fade-in 1000ms forwards ease-out 1500ms;
+  }
+
+  p {
+    color: white;
+    font-size: $md-fs;
+    margin-bottom: $spacer;
+  }
+
+  a {
+    text-decoration: none;
+    color: grey;
+    font-size: $main-fs;
+    border: 2px solid grey;
+    border-radius: $border-radius * 5;
+    padding: $spacer-small * 0.5 $spacer;
+    padding-top: $spacer-small * 0.65;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      background: $primary-clr;
+      color: white;
+      border-color: $primary-clr;
+    }
+  }
+}
