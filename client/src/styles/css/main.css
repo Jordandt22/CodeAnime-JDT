@@ -476,6 +476,38 @@ html {
   font-size: 1.125rem;
 }
 
+.small-device-alert {
+  padding-top: 4rem !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.small-device-alert h1 {
+  color: white;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.small-device-alert h1 span {
+  color: #2424ff;
+}
+
+.small-device-alert p {
+  width: 35ch;
+  color: white;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+}
+
+.small-device-alert strong {
+  margin-top: 4rem;
+  color: white;
+  font-size: 1.875rem;
+}
+
 .anime-section {
   z-index: 10;
   background: #00000c;

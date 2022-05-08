@@ -29,3 +29,34 @@
     font-size: $main-fs * 0.75;
   }
 }
+
+// Small Device Alert
+.small-device-alert {
+  padding-top: $spacer-md !important;
+  display: flex !important;
+
+  h1 {
+    color: white;
+    font-size: $md-fs;
+    text-align: center;
+    margin-bottom: $spacer;
+
+    span {
+      color: $primary-clr;
+    }
+  }
+
+  p {
+    width: 35ch;
+    color: white;
+    text-align: center;
+    line-height: $spacer * 1.5;
+    font-size: $main-fs;
+  }
+
+  strong {
+    margin-top: $spacer-md;
+    color: white;
+    font-size: $main-fs * 1.25;
+  }
+}
