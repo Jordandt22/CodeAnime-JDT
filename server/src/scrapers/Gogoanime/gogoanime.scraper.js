@@ -37,7 +37,7 @@ const getTotalPages = ($) => {
     pages.push(page);
   });
 
-  return Number(pages[pages.length - 1]);
+  return pages.length === 0 ? 1 : Number(pages[pages.length - 1]);
 };
 
 module.exports = {
@@ -226,7 +226,7 @@ module.exports = {
   scrapeSearchedAnime: async (query, page) => {
     const { error, $ } = await getAnimePage(
       GOGOANIME_URL,
-      `/search.html?keyword=${query.replace(" ", "%20")}&page=${page}`
+      `/search.html?keyword=${query.replace("_", " ")}&page=${page}`
     );
     if (error) return { error, data: null };
 

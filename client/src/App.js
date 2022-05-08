@@ -8,6 +8,7 @@ import Home from "./components/pages/Home/Home";
 import NavBar from "./components/layout/Nav/Navbar";
 import ErrorAlert from "./components/layout/Alerts/ErrorAlert";
 import Footer from "./components/layout/Footer/Footer";
+import Search from "./components/pages/Search/Search";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/search/:query" element={<Search />} />
 
           {/* Not Found */}
           {/* <Route path="*" element={<NotFound />} /> */}

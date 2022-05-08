@@ -5,3 +5,5 @@ export const NEW_SEASON_ANIME_KEY = (page) => `NEW_SEASON_ANIME-PAGE:${page}`;
 export const ANIME_BY_GENRE_KEY = (page, genre) =>
   `ANIME_BY_GENRE:${genre}-PAGE:${page}`;
 export const ANIME_GENRES_KEY = () => `ANIME_GENRES`;
+export const SEARCHED_ANIME_KEY = (page, query) =>
+  `SEARCHED_ANIME-QUERY:${query}-PAGE:${page}`;

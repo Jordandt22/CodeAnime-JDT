@@ -1,0 +1,19 @@
+// Anime Links Styles
+.anime-links {
+  margin-bottom: $spacer-md;
+
+  .anime-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: $light-sec-bg;
+    padding: $spacer-small * 0.5 $spacer;
+    border-radius: $border-radius;
+    margin-right: $spacer;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      background: $dark-sec-bg;
+    }
+  }
+}

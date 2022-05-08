@@ -1,0 +1,70 @@
+// Anime List Styles
+.anime-list-container {
+  display: flex !important;
+
+  .anime-list-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
+    gap: $spacer $spacer-small;
+    width: 100%;
+  }
+
+  .none {
+    color: grey;
+    font-size: $main-fs;
+  }
+
+  .anime-list__nav {
+    margin-top: $spacer-lg;
+
+    .nav__btn {
+      outline: none;
+      border: none;
+      background: transparent;
+
+      .icon {
+        color: white;
+        font-size: $main-fs * 1.25;
+        transition: all 200ms ease-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .icon {
+          color: $primary-clr;
+        }
+      }
+    }
+
+    .nav__page-btn {
+      $s: 3rem;
+      outline: none;
+      border: none;
+      width: $s;
+      height: $s;
+      background: white;
+      color: black;
+      border-radius: 50%;
+      margin: 0 $spacer-small * 0.5;
+      transition: all 350ms ease-out;
+
+      p {
+        font-family: $main-ft;
+        font-size: $main-fs;
+        transform: translateY(0.25vh);
+      }
+
+      &:hover {
+        cursor: pointer;
+        background: $light-sec-bg;
+        color: white;
+      }
+    }
+
+    .active {
+      background: $primary-clr;
+      color: white;
+    }
+  }
+}

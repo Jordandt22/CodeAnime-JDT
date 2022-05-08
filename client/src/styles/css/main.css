@@ -617,6 +617,102 @@ html {
   color: grey;
 }
 
+.anime-links {
+  margin-bottom: 4rem;
+}
+
+.anime-links .anime-link {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #1E1E1F;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  margin-right: 2rem;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.anime-links .anime-link:hover {
+  background: #0F0F0F;
+}
+
+.anime-list-container {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.anime-list-container .anime-list-grid {
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-columns: (minmax(10vw, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
+  gap: 2rem 1rem;
+  width: 100%;
+}
+
+.anime-list-container .none {
+  color: grey;
+  font-size: 1.5rem;
+}
+
+.anime-list-container .anime-list__nav {
+  margin-top: 8rem;
+}
+
+.anime-list-container .anime-list__nav .nav__btn {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.anime-list-container .anime-list__nav .nav__btn .icon {
+  color: white;
+  font-size: 1.875rem;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.anime-list-container .anime-list__nav .nav__btn:hover {
+  cursor: pointer;
+}
+
+.anime-list-container .anime-list__nav .nav__btn:hover .icon {
+  color: #2424ff;
+}
+
+.anime-list-container .anime-list__nav .nav__page-btn {
+  outline: none;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  -webkit-transition: all 350ms ease-out;
+  transition: all 350ms ease-out;
+}
+
+.anime-list-container .anime-list__nav .nav__page-btn p {
+  font-family: "Teko", sans-serif;
+  font-size: 1.5rem;
+  -webkit-transform: translateY(0.25vh);
+          transform: translateY(0.25vh);
+}
+
+.anime-list-container .anime-list__nav .nav__page-btn:hover {
+  cursor: pointer;
+  background: #1E1E1F;
+  color: white;
+}
+
+.anime-list-container .anime-list__nav .active {
+  background: #2424ff;
+  color: white;
+}
+
 .footer {
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -1166,6 +1262,33 @@ html {
 
 .anime-genres .anime-genres__list .list__genre:hover {
   background: #2424ff;
+}
+
+.search-container {
+  min-height: 100vh;
+  padding-top: 10rem !important;
+}
+
+.search__header h2 {
+  position: relative;
+  color: white;
+  font-size: 2.25rem;
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+}
+
+.search__header h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1vh;
+  bottom: 0;
+  background: #2424ff;
+  width: 0.3vw;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

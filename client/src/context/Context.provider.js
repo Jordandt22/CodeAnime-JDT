@@ -3,6 +3,7 @@ import React from "react";
 // Contexts
 import AnimeSourceContextProvider from "./AnimeSource/AnimeSource.context";
 import QueryContextProvider from "./Query/Query.context";
+import SearchContextProvider from "./Search/Search.context";
 import AnimeSpotlightContextProvider from "./Spotlight/Spotlight.context";
 
 function ContextProvider(props) {
@@ -10,7 +11,7 @@ function ContextProvider(props) {
     <AnimeSourceContextProvider>
       <QueryContextProvider>
         <AnimeSpotlightContextProvider>
-          {props.children}
+          <SearchContextProvider>{props.children}</SearchContextProvider>
         </AnimeSpotlightContextProvider>
       </QueryContextProvider>
     </AnimeSourceContextProvider>

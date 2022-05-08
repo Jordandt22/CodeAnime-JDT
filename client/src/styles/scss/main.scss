@@ -10,14 +10,21 @@
 @import "./layout/alerts/alerts";
 @import "./layout/anime/anime-section";
 @import "./layout/anime/anime-card";
+@import "./layout/anime/anime-links";
+@import "./layout/anime/anime-list";
 @import "./layout/footer/footer";
 @import "./layout/error/error";
 @import "./layout/skeletons/anime-skeletons";
 
 // Pages
-@import "./pages/Home/home";
+@import "./pages/home/home";
+@import "./pages/search/search";
 
 // My Styles
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: $primary-bg;
   font-family: $main-ft;

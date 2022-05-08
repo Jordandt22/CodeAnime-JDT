@@ -9,6 +9,7 @@ import {
   getNewSeasonAnime,
   getAnimeByGenre,
   getAnimeGenres,
+  getSearchedAnime,
 } from "../../API/api.js";
 
 // Contexts
@@ -20,6 +21,7 @@ import {
   NEW_SEASON_ANIME_KEY,
   ANIME_BY_GENRE_KEY,
   ANIME_GENRES_KEY,
+  SEARCHED_ANIME_KEY,
 } from "./Query.keys";
 
 // Query Context
@@ -100,6 +102,12 @@ export default (props) => {
   const useGetAnimeGenres = () =>
     useAPIQuery(createKey(ANIME_GENRES_KEY()), () => getAnimeGenres(source));
 
+  // Get Search Anime
+  const useGetSearchedAnime = (page, query) =>
+    useAPIQuery(createKey(SEARCHED_ANIME_KEY(page, query)), () =>
+      getSearchedAnime(source, { page, query })
+    );
+
   return (
     <QueryContext.Provider
       value={{
@@ -109,6 +117,7 @@ export default (props) => {
         useGetNewSeasonAnime,
         useGetAnimeByGenre,
         useGetAnimeGenres,
+        useGetSearchedAnime,
       }}
     >
       {props.children}
