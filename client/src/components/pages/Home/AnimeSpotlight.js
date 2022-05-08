@@ -15,15 +15,19 @@ import {
 import { useQueryHook } from "../../../context/Query/Query.context.js";
 import { useAnimeSpotlight } from "../../../context/Spotlight/Spotlight.context.js";
 
+// Components
+import AnimeSpotlightSkeleton from "../../templates/Skeletons/AnimeSpotlightSkeleton";
+import AnimeSpotlightError from "../../templates/Errors/AnimeSpotlightError.js";
+
 function AnimeSpotlight() {
   const { currentAnime, prevAnime, nextAnime } = useAnimeSpotlight();
   const { useGetOngoingAnime } = useQueryHook();
   const { isLoading, isError, error, data } = useGetOngoingAnime(1);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <AnimeSpotlightSkeleton />;
   } else if (isError) {
-    return <p>{error.message}</p>;
+    return <AnimeSpotlightError message={error.message} />;
   }
 
   const { anime } = data.data.data;

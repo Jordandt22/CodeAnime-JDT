@@ -50,3 +50,46 @@
     width: 6.5vw;
   }
 }
+
+// Anime Spotlight
+.anime-spotlight-skeleton {
+  .anime__image {
+    background: $light-sec-bg !important;
+    border-radius: $border-radius;
+  }
+
+  .anime__title {
+    background: white;
+    width: 40vw;
+    height: 3vh;
+  }
+
+  .skeleton__subTexts {
+    margin-top: $spacer;
+    margin-bottom: $spacer-md;
+
+    .anime__subText {
+      height: 1.25vh;
+      background: grey;
+      margin: $spacer-small 0 !important;
+    }
+
+    .subText__1 {
+      width: 15vw;
+    }
+    .subText__2 {
+      width: 25vw;
+    }
+    .subText__3 {
+      width: 35vw;
+    }
+    .subText__4 {
+      width: 15vw;
+    }
+  }
+
+  .watch__btn,
+  .info__btn {
+    width: 7.5vw;
+  }
+}

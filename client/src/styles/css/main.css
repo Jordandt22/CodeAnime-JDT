@@ -768,6 +768,49 @@ html {
   width: 6.5vw;
 }
 
+.anime-spotlight-skeleton .anime__image {
+  background: #1E1E1F !important;
+  border-radius: 5px;
+}
+
+.anime-spotlight-skeleton .anime__title {
+  background: white;
+  width: 40vw;
+  height: 3vh;
+}
+
+.anime-spotlight-skeleton .skeleton__subTexts {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.anime-spotlight-skeleton .skeleton__subTexts .anime__subText {
+  height: 1.25vh;
+  background: grey;
+  margin: 1rem 0 !important;
+}
+
+.anime-spotlight-skeleton .skeleton__subTexts .subText__1 {
+  width: 15vw;
+}
+
+.anime-spotlight-skeleton .skeleton__subTexts .subText__2 {
+  width: 25vw;
+}
+
+.anime-spotlight-skeleton .skeleton__subTexts .subText__3 {
+  width: 35vw;
+}
+
+.anime-spotlight-skeleton .skeleton__subTexts .subText__4 {
+  width: 15vw;
+}
+
+.anime-spotlight-skeleton .watch__btn,
+.anime-spotlight-skeleton .info__btn {
+  width: 7.5vw;
+}
+
 .home-container {
   padding-top: 10rem !important;
 }
@@ -838,7 +881,7 @@ html {
 }
 
 .spotlight__main .anime__info {
-  margin-left: 2rem;
+  margin-left: 3rem;
 }
 
 .spotlight__main .anime__info h3 {
