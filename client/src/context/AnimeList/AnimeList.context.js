@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
 
-// Search Context
-export const SearchContext = createContext();
-export const useSearch = () => useContext(SearchContext);
+// Anime List Context
+export const AnimeListContext = createContext();
+export const useAnimeList = () => useContext(AnimeListContext);
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => {
@@ -12,7 +12,7 @@ export default (props) => {
     setCurPage((pg) => (pg >= totalPages - 1 ? totalPages - 1 : pg + 1));
 
   return (
-    <SearchContext.Provider
+    <AnimeListContext.Provider
       value={{
         currentPage,
         setCurPage,
@@ -21,6 +21,6 @@ export default (props) => {
       }}
     >
       {props.children}
-    </SearchContext.Provider>
+    </AnimeListContext.Provider>
   );
 };

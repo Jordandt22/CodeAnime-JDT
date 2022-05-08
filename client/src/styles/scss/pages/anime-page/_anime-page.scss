@@ -1,17 +1,18 @@
 // Search Page Styles
-.search-container {
+.anime-page-container {
   min-height: 100vh;
   padding-top: $spacer-lg * 1.25 !important;
 }
 
 // Header
-.search__header {
+.anime-page__header {
   h2 {
     position: relative;
     color: white;
     font-size: $main-fs * 1.5;
     padding-left: $spacer;
     margin-bottom: $spacer * 1.5;
+    text-transform: capitalize;
 
     &::before {
       content: "";

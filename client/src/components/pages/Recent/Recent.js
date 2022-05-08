@@ -1,26 +1,23 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
 // MUI
 import { Container, Box } from "@mui/material";
 
 // Components
 import AnimeLinks from "../../layout/Anime/AnimeLinks";
-import SearchQuery from "./SearchQuery";
+import RecentQuery from "./RecentQuery";
 
-function Search() {
-  const { query } = useParams();
-
+function Recent() {
   return (
     <Container className="container anime-page-container">
       <Box className="anime-page__header">
-        <h2>Search Results for "{query}"</h2>
+        <h2>Recent Anime</h2>
         <AnimeLinks />
       </Box>
 
-      <SearchQuery query={query} />
+      <RecentQuery />
     </Container>
   );
 }
 
-export default Search;
+export default Recent;

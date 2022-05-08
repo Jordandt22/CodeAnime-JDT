@@ -9,13 +9,11 @@ import AnimeList from "../../layout/Anime/AnimeList";
 import AnimeListSkeleton from "../../templates/Skeletons/AnimeListSkeleton";
 import ErrorMessage from "../../layout/Errors/ErrorMessage";
 
-function SearchQuery(props) {
-  const { query } = props;
+function RecentQuery() {
   const { currentPage } = useAnimeList();
-  const { useGetSearchedAnime } = useQueryHook();
-  const { isLoading, isError, error, data } = useGetSearchedAnime(
-    currentPage + 1,
-    query.toLowerCase().replace(/ /g, "_")
+  const { useGetRecentAnime } = useQueryHook();
+  const { isLoading, isError, error, data } = useGetRecentAnime(
+    currentPage + 1
   );
 
   if (isLoading) {
@@ -24,14 +22,14 @@ function SearchQuery(props) {
     return <ErrorMessage message={error.message} />;
   }
 
-  const { search, totalPages } = data.data.data;
+  const { anime, totalPages } = data.data.data;
   return (
     <AnimeList
-      anime={search}
+      anime={anime}
       totalPages={totalPages}
-      noneText={`Sorry, we couldn't find any anime for "${query}".`}
+      noneText="Sorry, there aren't any Recent Anime available currently."
     />
   );
 }
 
-export default SearchQuery;
+export default RecentQuery;

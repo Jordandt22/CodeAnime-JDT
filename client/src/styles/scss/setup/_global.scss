@@ -5,6 +5,10 @@
   padding-bottom: $spacer-lg !important;
 }
 
+.page-container {
+  padding-top: $spacer-lg * 1.25 !important;
+}
+
 .text-overflow {
   max-width: 40ch;
   text-overflow: ellipsis;

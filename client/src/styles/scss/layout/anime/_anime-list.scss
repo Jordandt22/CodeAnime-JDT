@@ -37,6 +37,20 @@
       }
     }
 
+    .disabled {
+      .icon {
+        color: grey;
+      }
+
+      &:hover {
+        cursor: not-allowed;
+
+        .icon {
+          color: red;
+        }
+      }
+    }
+
     .nav__page-btn {
       $s: 3rem;
       outline: none;

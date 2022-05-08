@@ -27,7 +27,7 @@ function AnimeCard(props) {
       <NavLink to={link} className="anime__title text-overflow">
         {title}
       </NavLink>
-      <p>{subText}</p>
+      <p className="text-overflow">{subText.replace("Genres: ", "")}</p>
     </Box>
   );
 }

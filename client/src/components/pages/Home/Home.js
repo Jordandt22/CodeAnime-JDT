@@ -14,7 +14,7 @@ import AnimeGenres from "./AnimeGenres";
 
 function Home() {
   return (
-    <Container className="container home-container">
+    <Container className="container page-container home-container">
       <AnimeSpotlight />
       <Vector />
       <RecentAnime />

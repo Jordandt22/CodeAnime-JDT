@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { useQuery } from "react-query";
 
 // API
@@ -36,6 +36,12 @@ export default (props) => {
   } = useAnimeSource();
   const createKey = (key) => `${source}_${key}`;
 
+  // Query Error
+  const [queryError, setQueryError] = useState({
+    status: null,
+    message: null,
+  });
+
   // API Query
   const useAPIQuery = (key, queryFn) =>
     useQuery(key, queryFn, {
@@ -65,7 +71,10 @@ export default (props) => {
         return retry;
       },
       retryDelay: (retryCount) => retryCount * 500,
-      onError: (error) => console.log(error),
+      onError: (error) => {
+        const { status, message } = error?.response?.data;
+        if (status && message) setQueryError({ status, message });
+      },
     });
 
   // Get Ongoing Anime
@@ -111,6 +120,7 @@ export default (props) => {
   return (
     <QueryContext.Provider
       value={{
+        queryError,
         useGetOngoingAnime,
         useGetRecentAnime,
         useGetPopularAnime,

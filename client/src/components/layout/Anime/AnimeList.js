@@ -6,7 +6,7 @@ import { Container, Box } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 
 // Contexts
-import { useSearch } from "../../../context/Search/Search.context";
+import { useAnimeList } from "../../../context/AnimeList/AnimeList.context";
 
 // Components
 import AnimeCard from "../../templates/Anime/AnimeCard";
@@ -15,7 +15,9 @@ function AnimeList(props) {
   const { anime, noneText } = props;
   const totalPages = props.totalPages >= 5 ? 5 : props.totalPages;
   const { pathname } = useLocation();
-  const { currentPage, setCurPage, prevPage, nextPage } = useSearch();
+  const { currentPage, setCurPage, prevPage, nextPage } = useAnimeList();
+  const isPrevDisabled = currentPage === 0;
+  const isNextDisabled = currentPage === totalPages - 1;
 
   // Resetting Scroll View When Page # Changes
   useEffect(() => {
@@ -52,7 +54,14 @@ function AnimeList(props) {
 
       {anime.length > 0 && (
         <Box className="anime-list__nav row">
-          <button type="button" className="nav__btn" onClick={prevPage}>
+          <button
+            type="button"
+            className={`nav__btn ${
+              isPrevDisabled ? "disabled" : "not-disabled"
+            }`}
+            disabled={isPrevDisabled}
+            onClick={prevPage}
+          >
             <ArrowBackIosNew className="icon" />
           </button>
 
@@ -73,7 +82,10 @@ function AnimeList(props) {
 
           <button
             type="button"
-            className="nav__btn"
+            className={`nav__btn ${
+              isNextDisabled ? "disabled" : "not-disabled"
+            }`}
+            disabled={isNextDisabled}
             onClick={() => nextPage(totalPages)}
           >
             <ArrowForwardIos className="icon" />

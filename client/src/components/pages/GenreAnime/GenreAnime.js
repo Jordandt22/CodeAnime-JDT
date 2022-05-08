@@ -6,21 +6,22 @@ import { Container, Box } from "@mui/material";
 
 // Components
 import AnimeLinks from "../../layout/Anime/AnimeLinks";
-import SearchQuery from "./SearchQuery";
+import GenreAnimeQuery from "./GenreAnimeQuery";
 
-function Search() {
-  const { query } = useParams();
+function GenreAnime() {
+  const { genre } = useParams();
+  const formatedGenre = genre.toLowerCase().replace(/-/g, " ");
 
   return (
     <Container className="container anime-page-container">
       <Box className="anime-page__header">
-        <h2>Search Results for "{query}"</h2>
+        <h2>Top {formatedGenre} Anime</h2>
         <AnimeLinks />
       </Box>
 
-      <SearchQuery query={query} />
+      <GenreAnimeQuery genre={genre} formatedGenre={formatedGenre} />
     </Container>
   );
 }
 
-export default Search;
+export default GenreAnime;
