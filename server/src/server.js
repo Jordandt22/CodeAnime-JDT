@@ -11,10 +11,16 @@ const { checkAnimeSource } = require("./middlewares/anime.mw");
 const app = express();
 
 // Middleware
+const { NODE_ENV, WEB_URL } = process.env;
+const notProduction = NODE_ENV !== "production";
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: notProduction ? "http://localhost:3000" : WEB_URL,
+  })
+);
 app.use(express.json());
-if (process.env.NODE_ENV !== "production") {
+if (notProduction) {
   app.use(morgan("dev"));
 } else {
   app.enable("trust proxy");

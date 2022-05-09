@@ -7,16 +7,19 @@ const host = isProduction ? REDIS_HOST : "localhost";
 let client = null;
 (async () => {
   // Creating a Redis Client
-  client = redis.createClient({ port, host });
-
-  // Production Password
-  if (isProduction) client.auth(REDIS_PASSWORD);
+  client = redis.createClient(
+    isProduction
+      ? {
+          socket: { port, host },
+          password: REDIS_PASSWORD,
+        }
+      : { socket: { port, host } }
+  );
 
   client.on("error", (err) => console.log("Redis Client Error", err));
 
   await client.connect();
 })();
-
 // Checking Redis Client Connection
 client.on("connect", () =>
   console.log(`Connected to Redis on Port: ${port}...`)
