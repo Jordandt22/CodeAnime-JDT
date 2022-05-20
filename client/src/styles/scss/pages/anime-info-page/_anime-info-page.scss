@@ -1,0 +1,132 @@
+// Anime Info Page Styles
+.anime-info-container {
+  .anime__subText {
+    max-width: 90ch !important;
+    line-height: $spacer;
+  }
+
+  .spotlight__background,
+  .spotlight__shadow {
+    height: 125vh;
+  }
+}
+
+// Secondary Title
+.anime-info__secTitle {
+  margin-bottom: $spacer-small;
+
+  p {
+    font-size: $main-fs * 0.75;
+    margin-right: $spacer-small * 2;
+  }
+
+  .dot {
+    position: relative;
+
+    &::after {
+      $s: 0.35rem;
+      content: "";
+      position: absolute;
+      right: -1.35rem;
+      top: 50%;
+      transform: translateY(-75%);
+      width: $s;
+      height: $s;
+      border-radius: 50%;
+      background: grey;
+    }
+  }
+}
+
+// Genres
+.anime-info__genre {
+  background: $primary-bg;
+  color: white;
+  padding: $spacer-small * 0.5 $spacer;
+  margin-right: $spacer;
+  border-radius: $border-radius;
+  text-decoration: none;
+  font-size: $main-fs * 0.7;
+  transition: all 150ms ease-out;
+
+  &:hover {
+    transform: translateY(-2vh);
+  }
+}
+
+// Episodes
+.anime-eps-container {
+  z-index: 10;
+  transform: translateY(-5vh);
+
+  h1 {
+    color: white;
+    font-size: $main-fs * 1.5;
+  }
+
+  .none {
+    color: grey;
+    font-size: $main-fs * 0.9;
+    margin-top: $spacer;
+  }
+}
+
+.episodes {
+  margin-top: $spacer-md;
+}
+
+.episodes__ep {
+  width: 75%;
+  background: $light-sec-bg !important;
+  padding: $spacer-small $spacer-small;
+  border-left: 4px solid $primary-clr;
+  margin-bottom: $spacer;
+  transition: all 200ms ease-out;
+  opacity: 0;
+  animation: fade-in 1500ms forwards ease-out 200ms;
+
+  p {
+    color: white;
+    font-size: $main-fs * 0.8;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-2vh);
+
+    p {
+      color: yellow;
+    }
+  }
+}
+
+// Anime Episode Tabs
+.anime-eps__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $spacer;
+
+  .tabs__tab {
+    outline: none;
+    border: none;
+    background: white;
+    font-size: $main-fs * 0.65;
+    font-family: $main-ft;
+    margin-right: $spacer;
+    margin-bottom: $spacer-small;
+    padding: $spacer-small * 0.25 $spacer;
+    border-radius: $border-radius * 2;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      cursor: pointer;
+      background: rgba($primary-clr, 0.5);
+      color: white;
+    }
+  }
+
+  .active {
+    background: $primary-clr;
+    color: white;
+  }
+}

@@ -91,5 +91,11 @@
   .watch__btn,
   .info__btn {
     width: 7.5vw;
+    margin-right: $spacer-small;
   }
+}
+
+// Anime Info Episodes
+.episodes__ep-skeleton {
+  height: 7.5vh !important;
 }

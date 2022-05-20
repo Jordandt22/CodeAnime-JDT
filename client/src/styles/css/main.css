@@ -1009,6 +1009,11 @@ html {
 .anime-spotlight-skeleton .watch__btn,
 .anime-spotlight-skeleton .info__btn {
   width: 7.5vw;
+  margin-right: 1rem;
+}
+
+.episodes__ep-skeleton {
+  height: 7.5vh !important;
 }
 
 .anime-spotlight {
@@ -1088,6 +1093,7 @@ html {
 }
 
 .spotlight__main .anime__info .anime__title {
+  display: block;
   color: white;
   font-weight: bold;
   font-size: 1.875rem;
@@ -1105,6 +1111,7 @@ html {
   font-size: 1.35rem;
   margin-top: 1rem;
   margin-bottom: 4rem;
+  max-width: 80ch;
 }
 
 .spotlight__main .anime__info .watch__btn,
@@ -1423,11 +1430,149 @@ html {
   background: #2424ff;
 }
 
+.anime-info-container .anime__subText {
+  max-width: 90ch !important;
+  line-height: 2rem;
+}
+
+.anime-info-container .spotlight__background,
+.anime-info-container .spotlight__shadow {
+  height: 125vh;
+}
+
+.anime-info__secTitle {
+  margin-bottom: 1rem;
+}
+
+.anime-info__secTitle p {
+  font-size: 1.125rem;
+  margin-right: 2rem;
+}
+
+.anime-info__secTitle .dot {
+  position: relative;
+}
+
+.anime-info__secTitle .dot::after {
+  content: "";
+  position: absolute;
+  right: -1.35rem;
+  top: 50%;
+  -webkit-transform: translateY(-75%);
+          transform: translateY(-75%);
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: grey;
+}
+
+.anime-info__genre {
+  background: #00000c;
+  color: white;
+  padding: 0.5rem 2rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.anime-info__genre:hover {
+  -webkit-transform: translateY(-2vh);
+          transform: translateY(-2vh);
+}
+
+.anime-eps-container {
+  z-index: 10;
+  -webkit-transform: translateY(-5vh);
+          transform: translateY(-5vh);
+}
+
+.anime-eps-container h1 {
+  color: white;
+  font-size: 2.25rem;
+}
+
+.anime-eps-container .none {
+  color: grey;
+  font-size: 1.35rem;
+  margin-top: 2rem;
+}
+
+.episodes {
+  margin-top: 4rem;
+}
+
+.episodes__ep {
+  width: 75%;
+  background: #1E1E1F !important;
+  padding: 1rem 1rem;
+  border-left: 4px solid #2424ff;
+  margin-bottom: 2rem;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  opacity: 0;
+  -webkit-animation: fade-in 1500ms forwards ease-out 200ms;
+          animation: fade-in 1500ms forwards ease-out 200ms;
+}
+
+.episodes__ep p {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.episodes__ep:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-2vh);
+          transform: translateY(-2vh);
+}
+
+.episodes__ep:hover p {
+  color: yellow;
+}
+
+.anime-eps__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.anime-eps__tabs .tabs__tab {
+  outline: none;
+  border: none;
+  background: white;
+  font-size: 0.975rem;
+  font-family: "Teko", sans-serif;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.25rem 2rem;
+  border-radius: 10px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.anime-eps__tabs .tabs__tab:hover {
+  cursor: pointer;
+  background: rgba(36, 36, 255, 0.5);
+  color: white;
+}
+
+.anime-eps__tabs .active {
+  background: #2424ff;
+  color: white;
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  position: relative;
   background: #00000c;
   font-family: "Teko", sans-serif;
   overflow-x: hidden;
@@ -1510,5 +1655,29 @@ body {
   background: #2424ff;
   color: white;
   border-color: #2424ff;
+}
+
+.btt-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  background: #2424ff;
+  border-radius: 50%;
+  z-index: 1000;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.btt-btn .icon {
+  color: white;
+  font-size: 1.725rem;
+}
+
+.btt-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 /*# sourceMappingURL=main.css.map */

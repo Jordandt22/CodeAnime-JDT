@@ -70,6 +70,7 @@
     }
 
     .anime__title {
+      display: block;
       color: white;
       font-weight: bold;
       font-size: $main-fs * 1.25;
@@ -86,6 +87,7 @@
       font-size: $main-fs * 0.9;
       margin-top: $spacer-small;
       margin-bottom: $spacer-md;
+      max-width: 80ch;
     }
 
     .watch__btn,

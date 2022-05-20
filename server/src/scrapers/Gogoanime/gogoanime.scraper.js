@@ -81,7 +81,7 @@ module.exports = {
             genres.push(
               formatGenreData(
                 $(genreElem).attr("href").split("/genre/")[1],
-                $genre.text()
+                $genre.text().replace(", ", "")
               )
             );
           });

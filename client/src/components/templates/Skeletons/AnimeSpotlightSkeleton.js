@@ -4,7 +4,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 // MUI
 import { Container, Box, Skeleton } from "@mui/material";
 
-function AnimeSpotlightSkeleton() {
+function AnimeSpotlightSkeleton(props) {
+  const { secHeaderText, showGenres } = props;
+
   return (
     <Container className="container anime-spotlight anime-spotlight-skeleton">
       <LazyLoadImage
@@ -21,7 +23,7 @@ function AnimeSpotlightSkeleton() {
 
           {/* Anime Info */}
           <Box className="anime__info">
-            <h3>Spotlight #1</h3>
+            <h3>{secHeaderText ? secHeaderText : "Spotlight #1"}</h3>
             <Skeleton variant="text" className="anime__title" />
             <Box className="skeleton__subTexts">
               <Skeleton variant="text" className="anime__subText subText__1" />
@@ -31,8 +33,19 @@ function AnimeSpotlightSkeleton() {
             </Box>
 
             <Box className="row">
-              <Skeleton variant="rectangular" className="watch__btn" />
-              <Skeleton variant="rectangular" className="info__btn" />
+              {!showGenres ? (
+                <>
+                  <Skeleton variant="rectangular" className="watch__btn" />
+                  <Skeleton variant="rectangular" className="info__btn" />
+                </>
+              ) : (
+                <>
+                  <Skeleton variant="rectangular" className="info__btn" />
+                  <Skeleton variant="rectangular" className="info__btn" />
+                  <Skeleton variant="rectangular" className="info__btn" />
+                  <Skeleton variant="rectangular" className="info__btn" />
+                </>
+              )}
             </Box>
           </Box>
         </Box>

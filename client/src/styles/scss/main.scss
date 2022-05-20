@@ -20,13 +20,16 @@
 @import "./pages/home/home";
 @import "./pages/anime-page/anime-page";
 @import "./pages/genres/genres";
+@import "./pages/anime-info-page/anime-info-page";
 
 // My Styles
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  position: relative;
   background: $primary-bg;
   font-family: $main-ft;
   overflow-x: hidden;
@@ -103,5 +106,29 @@ body {
       color: white;
       border-color: $primary-clr;
     }
+  }
+}
+
+// Back To Top Button
+.btt-btn {
+  $s: 3.5rem;
+  width: $s;
+  height: $s;
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  background: $primary-clr;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all 200ms ease-out;
+
+  .icon {
+    color: white;
+    font-size: $main-fs * 1.15;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.25);
   }
 }

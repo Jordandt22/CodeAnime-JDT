@@ -10,6 +10,8 @@ import {
   getAnimeByGenre,
   getAnimeGenres,
   getSearchedAnime,
+  getAnime,
+  getAnimeEpisodes,
 } from "../../API/api.js";
 
 // Contexts
@@ -22,6 +24,8 @@ import {
   ANIME_BY_GENRE_KEY,
   ANIME_GENRES_KEY,
   SEARCHED_ANIME_KEY,
+  ANIME_KEY,
+  ANIME_EPISODES_KEY,
 } from "./Query.keys";
 
 // Query Context
@@ -117,6 +121,18 @@ export default (props) => {
       getSearchedAnime(source, { page, query })
     );
 
+  // Get Anime
+  const useGetAnime = (animeSlug) =>
+    useAPIQuery(createKey(ANIME_KEY(animeSlug)), () =>
+      getAnime(source, { animeSlug })
+    );
+
+  // Get Anime Episodes
+  const useGetAnimeEpisodes = (epsParams, epSection) =>
+    useAPIQuery(createKey(ANIME_EPISODES_KEY(epsParams, epSection)), () =>
+      getAnimeEpisodes(source, { epsParams, epSection })
+    );
+
   return (
     <QueryContext.Provider
       value={{
@@ -128,6 +144,8 @@ export default (props) => {
         useGetAnimeByGenre,
         useGetAnimeGenres,
         useGetSearchedAnime,
+        useGetAnime,
+        useGetAnimeEpisodes,
       }}
     >
       {props.children}

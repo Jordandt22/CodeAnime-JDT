@@ -32,3 +32,14 @@ export const getAnimeGenres = async (animeSource) =>
 // GET - Search Anime
 export const getSearchedAnime = async (animeSource, { page, query }) =>
   await Axios.get(getAnimeURI(animeSource) + `/search/${query}/page/${page}`);
+
+// GET - Anime Information
+export const getAnime = async (animeSource, { animeSlug }) =>
+  await Axios.get(getAnimeURI(animeSource) + `/${animeSlug}`);
+
+// GET - Anime Episodes
+export const getAnimeEpisodes = async (animeSource, { epsParams, epSection }) =>
+  await Axios.post(getAnimeURI(animeSource) + "/episodes", {
+    ...epsParams,
+    epSection,
+  });
