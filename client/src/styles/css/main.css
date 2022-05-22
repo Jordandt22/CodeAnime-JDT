@@ -407,7 +407,7 @@ html {
 
 .navbar .navbar__search {
   margin-left: 1rem;
-  background: #1E1E1F;
+  background: #1e1e1f;
   border-radius: 5px;
   padding: 3.5px 1rem;
   -webkit-box-shadow: 0 0 5px black;
@@ -455,7 +455,7 @@ html {
   padding: 0.75rem 1rem;
   border-left: 6px solid #fa1e1e;
   border-radius: 2.5px;
-  background: #0F0F0F;
+  background: #0f0f0f;
   -webkit-animation: slide-in-left 1000ms forwards ease-out;
           animation: slide-in-left 1000ms forwards ease-out;
 }
@@ -511,9 +511,6 @@ html {
 .anime-section {
   z-index: 10;
   background: #00000c;
-  height: 50vh;
-  -webkit-transform: translateY(-2.5vh);
-          transform: translateY(-2.5vh);
   margin-bottom: 6rem;
 }
 
@@ -667,6 +664,7 @@ html {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 5px 5px black;
           box-shadow: 0 0 5px 5px black;
+  background: #1e1e1f;
 }
 
 .anime-card .anime-card__image-box .image__hover {
@@ -713,7 +711,7 @@ html {
   display: block;
   text-decoration: none;
   color: white;
-  background: #1E1E1F;
+  background: #1e1e1f;
   padding: 0.5rem 2rem;
   border-radius: 5px;
   margin-right: 2rem;
@@ -722,7 +720,7 @@ html {
 }
 
 .anime-links .anime-link:hover {
-  background: #0F0F0F;
+  background: #0f0f0f;
 }
 
 .anime-links .active {
@@ -808,7 +806,7 @@ html {
 
 .anime-list-container .anime-list__nav .nav__page-btn:hover {
   cursor: pointer;
-  background: #1E1E1F;
+  background: #1e1e1f;
   color: white;
 }
 
@@ -821,17 +819,13 @@ html {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background: #0F0F0F;
+  background: #0f0f0f;
   padding: 3rem 8rem;
   padding-bottom: 2rem;
   width: 100vw;
   -webkit-transform: translateX(-8rem);
           transform: translateX(-8rem);
   margin-top: 4rem;
-}
-
-.footer .footer__about {
-  margin-right: 12rem;
 }
 
 .footer .footer__about .about__info {
@@ -927,7 +921,7 @@ html {
 }
 
 .anime-card-skel .anime-card__image {
-  background: #0F0F0F;
+  background: #0f0f0f;
 }
 
 .anime-card-skel .anime__title {
@@ -948,7 +942,7 @@ html {
 }
 
 .genre-anime-skeleton .anime__image {
-  background: #1E1E1F;
+  background: #1e1e1f;
 }
 
 .genre-anime-skeleton .anime__title {
@@ -969,7 +963,7 @@ html {
 }
 
 .anime-spotlight-skeleton .anime__image {
-  background: #1E1E1F !important;
+  background: #1e1e1f !important;
   border-radius: 5px;
 }
 
@@ -1033,7 +1027,7 @@ html {
 .watch-skeleton .watch__video {
   width: 50vw;
   height: 55vh;
-  background: #0F0F0F;
+  background: #0f0f0f;
 }
 
 .watch-skeleton .watch__btn {
@@ -1056,7 +1050,7 @@ html {
   left: 0;
   bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   z-index: -1;
 }
 
@@ -1085,11 +1079,13 @@ html {
   height: 40vh;
   -webkit-box-shadow: 0 0 10px black;
           box-shadow: 0 0 10px black;
+  border-radius: 5px;
 }
 
 .spotlight__main .anime__image-box .anime__image {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 
 .spotlight__main .anime__image-box .anime__latestEp {
@@ -1217,12 +1213,12 @@ html {
 }
 
 .vector div {
+  position: absolute;
+  bottom: -15vh;
   background: #00000c;
-  width: 200vw;
+  width: 150vw;
   height: 20vh;
-  -webkit-transform: translateY(-2vh);
-          transform: translateY(-2vh);
-  z-index: -1;
+  z-index: 0;
 }
 
 .vector path {
@@ -1232,16 +1228,16 @@ html {
 
 .genre-anime {
   margin-top: 2rem;
-  background: #0F0F0F;
+  background: #0f0f0f;
   width: 30%;
-  height: 75vh;
+  min-height: 75vh;
   border-radius: 2.5px;
   -webkit-box-shadow: 0 0 5px 5px black;
           box-shadow: 0 0 5px 5px black;
 }
 
 .genre-anime .genre-anime__header {
-  background: #1E1E1F;
+  background: #1e1e1f;
   border-top-left-radius: 2.5px;
   border-top-right-radius: 2.5px;
   padding: 1rem 1.5rem;
@@ -1268,7 +1264,7 @@ html {
 }
 
 .genre-anime .genre-anime__view-more {
-  background: #1E1E1F;
+  background: #1e1e1f;
   padding: 1rem 0;
   border-bottom-left-radius: 2.5px;
   border-bottom-right-radius: 2.5px;
@@ -1355,7 +1351,7 @@ html {
 }
 
 .anime-genres .anime-genres__list-box {
-  background: #1E1E1F;
+  background: #1e1e1f;
   border-radius: 5px;
   padding: 1.5rem;
 }
@@ -1444,7 +1440,7 @@ html {
 .genres-container .list__genre {
   color: white;
   font-size: 1.2rem;
-  background: #1E1E1F;
+  background: #1e1e1f;
   text-decoration: none;
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -1517,8 +1513,6 @@ html {
 .anime-eps-container {
   background: #00000c;
   z-index: 10;
-  -webkit-transform: translateY(-15vh);
-          transform: translateY(-15vh);
 }
 
 .anime-eps-container h1 {
@@ -1538,7 +1532,7 @@ html {
 
 .episodes__ep {
   width: 75%;
-  background: #1E1E1F !important;
+  background: #1e1e1f !important;
   padding: 1rem 1rem;
   border-left: 4px solid #2424ff;
   margin-bottom: 2rem;
@@ -1626,7 +1620,7 @@ html {
 .watch__video {
   width: 50vw;
   height: 55vh;
-  background: #0F0F0F;
+  background: #0f0f0f;
   -webkit-box-shadow: 0 0 10px 5px black;
           box-shadow: 0 0 10px 5px black;
   margin-bottom: 2rem;
@@ -1670,7 +1664,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #1E1E1F;
+  background: #1e1e1f;
   margin-left: 2rem;
 }
 
@@ -1804,5 +1798,219 @@ body {
   cursor: pointer;
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .navbar {
+    padding: 2rem 4rem;
+  }
+  .navbar .navbar__title {
+    font-size: 1.5rem;
+  }
+  .navbar .navbar__link {
+    font-size: 0.9rem;
+  }
+  .navbar .navbar__search {
+    padding: 2.5px 0.8rem;
+  }
+  .navbar .navbar__search input {
+    font-size: 0.975rem;
+  }
+  .navbar .navbar__search .icon {
+    font-size: 0.975rem;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .footer {
+    padding: 3rem 4rem;
+    -webkit-transform: translateX(-4rem);
+            transform: translateX(-4rem);
+    margin-top: 4rem;
+  }
+  .footer .footer__about .about__info h2 {
+    margin-bottom: 0.8rem;
+  }
+  .footer .footer__about .about__info p {
+    font-size: 1.05rem;
+    max-width: 35ch;
+  }
+  .footer .footer__about .about__copyright {
+    font-size: 0.75rem;
+  }
+  .footer .links__section {
+    margin-right: 1rem;
+  }
+  .footer .links__section h6 {
+    font-size: 0.975rem;
+    margin-bottom: 1rem;
+  }
+  .footer .links__section .section__link {
+    font-size: 1.05rem;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .anime-section {
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+  }
+  .anime-section .anime-section__none {
+    font-size: 1.5rem;
+  }
+  .anime-section__header {
+    margin-bottom: 3rem;
+  }
+  .anime-section__header .header__title {
+    font-size: 1.5rem;
+  }
+  .anime-section__header .header__title::after {
+    bottom: -1.5vh;
+    width: 65%;
+    height: 0.35vh;
+  }
+  .anime-section__header .header__tab {
+    width: 3vw;
+  }
+  .anime-section__anime .anime-section__button .icon {
+    font-size: 2.25rem;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .anime-card .anime-card__image-box {
+    margin-bottom: 0.5rem;
+  }
+  .anime-card .anime-card__image-box .anime-card__image {
+    height: 20vh;
+  }
+  .anime-card .anime-card__image-box .image__hover {
+    display: none;
+  }
+  .anime-card .anime__title {
+    max-width: 70%;
+    font-size: 0.975rem;
+    margin-bottom: 2.5px;
+  }
+  .anime-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .spotlight__main .anime__image-box {
+    position: relative;
+    width: 15vw;
+    height: 30vh;
+  }
+  .spotlight__main .anime__image-box .anime__latestEp p {
+    font-size: 0.975rem;
+  }
+  .spotlight__main .anime__info {
+    margin-left: 2rem;
+  }
+  .spotlight__main .anime__info h3 {
+    font-size: 1.2rem;
+  }
+  .spotlight__main .anime__info .anime__title {
+    max-width: 30ch;
+  }
+  .spotlight__main .anime__info .anime__subText {
+    font-size: 1.2rem;
+  }
+  .spotlight__main .anime__info .watch__btn,
+  .spotlight__main .anime__info .info__btn {
+    padding: 6.5px 2rem;
+    font-size: 1.125rem;
+  }
+  .spotlight__main .anime__info .watch__btn .icon,
+  .spotlight__main .anime__info .info__btn .icon {
+    margin-right: 6px;
+  }
+  .genre-anime {
+    min-height: 55vh;
+  }
+  .genre-anime .genre-anime__header .genre-title {
+    font-size: 1.5rem;
+  }
+  .genre-anime .genre-anime__view-more a {
+    font-size: 1.2rem;
+  }
+  .genre-anime .genre-anime__view-more a .icon {
+    font-size: 1.2rem;
+  }
+  .genre-anime__list {
+    padding: 0.25rem 1.25rem;
+  }
+  .genre-anime__list .list__anime .anime__image {
+    height: 7.5vh;
+  }
+  .genre-anime__list .list__anime .anime__title {
+    font-size: 1.05rem;
+    max-width: 25ch;
+  }
+  .genre-anime__list .list__anime p {
+    font-size: 0.75rem;
+  }
+  .anime-genres {
+    margin-top: 4rem;
+  }
+  .anime-genres .anime-genres__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .anime-genres .anime-genres__list-box {
+    padding: 1.5rem;
+  }
+  .anime-genres .anime-genres__list-box .list__view-all {
+    font-size: 1.125rem;
+    margin-top: 2.5rem;
+  }
+  .anime-genres .anime-genres__list-box .list__view-all .icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .anime-info-container .anime__subText {
+    max-width: 80ch !important;
+    max-height: 20vh;
+  }
+  .anime-info-container .spotlight__background,
+  .anime-info-container .spotlight__shadow {
+    height: 100vh;
+  }
+  .anime-eps-container {
+    margin-top: 1rem;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .watch__video {
+    width: 55vw;
+    height: 45vh;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .App {
+    margin: 0 4rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

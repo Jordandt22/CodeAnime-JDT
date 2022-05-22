@@ -1,0 +1,30 @@
+// Anime Card Media Query
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .anime-card {
+    .anime-card__image-box {
+      margin-bottom: $spacer-small * 0.5;
+
+      .anime-card__image {
+        height: 20vh;
+      }
+
+      .image__hover {
+        display: none;
+      }
+    }
+
+    .anime__title {
+      max-width: 70%;
+      font-size: $main-fs * 0.65;
+      margin-bottom: 2.5px;
+    }
+
+    p {
+      font-size: $main-fs * 0.6;
+    }
+  }
+}

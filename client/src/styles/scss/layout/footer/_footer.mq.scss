@@ -1,0 +1,42 @@
+// Footer Media Queries
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .footer {
+    padding: $spacer * 1.5 $md-pad;
+    transform: translateX($md-pad * -1);
+    margin-top: $spacer-md;
+
+    .footer__about {
+      .about__info {
+        h2 {
+          margin-bottom: $spacer-small * 0.8;
+        }
+
+        p {
+          font-size: $main-fs * 0.7;
+          max-width: 35ch;
+        }
+      }
+
+      .about__copyright {
+        font-size: $main-fs * 0.5;
+      }
+    }
+
+    .links__section {
+      margin-right: $spacer-small;
+
+      h6 {
+        font-size: $main-fs * 0.65;
+        margin-bottom: $spacer-small;
+      }
+
+      .section__link {
+        font-size: $main-fs * 0.7;
+      }
+    }
+  }
+}

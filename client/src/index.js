@@ -13,18 +13,13 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
-// Context
-import ContextProvider from "./context/Context.provider";
-
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={new QueryClient()}>
       <Provider store={store}>
-        <ContextProvider>
-          <App />
-        </ContextProvider>
+        <App />
       </Provider>
 
       {/* React Query Dev Tools */}

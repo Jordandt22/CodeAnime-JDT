@@ -1,0 +1,21 @@
+// Main Media Queries
+
+// Layout
+@import "./layout/navbar/navbar.mq";
+@import "./layout/footer/footer.mq";
+@import "./layout/anime/anime-section.mq";
+@import "./layout/anime/anime-card.mq";
+
+// Pages
+@import "./pages/home/home.mq";
+@import "./pages/anime-info-page/anime-info-page.mq";
+@import "./pages/watch/watch.mq";
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .App {
+    margin: 0 $md-pad;
+  }
+}

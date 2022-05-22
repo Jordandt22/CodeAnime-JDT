@@ -2,15 +2,13 @@
 .footer {
   align-items: flex-start;
   background: $dark-sec-bg;
-  padding: $spacer * 1.5 $spacer-lg;
+  padding: $spacer * 1.5 $lg-pad;
   padding-bottom: $spacer;
   width: 100vw;
-  transform: translateX($spacer-lg * -1);
+  transform: translateX($lg-pad * -1);
   margin-top: $spacer-md;
 
   .footer__about {
-    margin-right: $spacer-lg * 1.5;
-
     .about__info {
       margin-bottom: $spacer-lg;
 

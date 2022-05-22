@@ -1,0 +1,30 @@
+// Navbar Media Query
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .navbar {
+    padding: $spacer $md-pad;
+
+    .navbar__title {
+      font-size: $main-fs;
+    }
+
+    .navbar__link {
+      font-size: $main-fs * 0.6;
+    }
+
+    .navbar__search {
+      padding: 2.5px $spacer-small * 0.8;
+
+      input {
+        font-size: $main-fs * 0.65;
+      }
+
+      .icon {
+        font-size: $main-fs * 0.65;
+      }
+    }
+  }
+}

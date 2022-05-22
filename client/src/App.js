@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // MUI
 import { useMediaQuery } from "@mui/material";
 
+// Context
+import ContextProvider from "./context/Context.provider";
+
 // Components
 import Home from "./components/pages/Home/Home";
 import NavBar from "./components/layout/Nav/Navbar";
@@ -37,37 +40,39 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
+        <ContextProvider>
+          <NavBar />
 
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<ComingSoon />} />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/about" element={<ComingSoon />} />
 
-          {/* Anime Browse */}
-          <Route exact path="/search/:query" element={<Search />} />
-          <Route exact path="/recent" element={<Recent />} />
-          <Route exact path="/popular" element={<Popular />} />
-          <Route exact path="/ongoing" element={<Ongoing />} />
-          <Route exact path="/new-season" element={<NewSeason />} />
-          <Route exact path="/genre/:genre" element={<GenreAnime />} />
-          <Route exact path="/genres" element={<Genres />} />
+            {/* Anime Browse */}
+            <Route exact path="/search/:query" element={<Search />} />
+            <Route exact path="/recent" element={<Recent />} />
+            <Route exact path="/popular" element={<Popular />} />
+            <Route exact path="/ongoing" element={<Ongoing />} />
+            <Route exact path="/new-season" element={<NewSeason />} />
+            <Route exact path="/genre/:genre" element={<GenreAnime />} />
+            <Route exact path="/genres" element={<Genres />} />
 
-          {/* Anime Information */}
-          <Route exact path="/anime/:animeSlug" element={<Anime />} />
-          <Route exact path="/watch/:epSlug" element={<Watch />} />
+            {/* Anime Information */}
+            <Route exact path="/anime/:animeSlug" element={<Anime />} />
+            <Route exact path="/watch/:epSlug" element={<Watch />} />
 
-          {/* User */}
-          <Route exact path="/myanime" element={<ComingSoon />} />
+            {/* User */}
+            <Route exact path="/myanime" element={<ComingSoon />} />
 
-          {/* Not Found */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            {/* Not Found */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
 
-        {/* Alerts */}
-        <ErrorAlert />
+          {/* Alerts */}
+          <ErrorAlert />
 
-        {/* Footer */}
-        <Footer />
+          {/* Footer */}
+          <Footer />
+        </ContextProvider>
       </BrowserRouter>
     </div>
   );

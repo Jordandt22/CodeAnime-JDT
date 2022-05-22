@@ -35,7 +35,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="footer row">
+    <footer className="footer between-row">
       <Box className="footer__about">
         <Box className="about__info">
           <h2>

@@ -34,7 +34,7 @@ function AnimeByGenre(props) {
         </NavLink>
       </header>
 
-      {anime.length > 0 ? (
+      {anime && anime.length > 0 ? (
         <Box className="genre-anime__list">
           {anime.slice(0, 5).map((ani) => {
             const { animeSlug, title: animeTitle, subText, image } = ani;

@@ -30,7 +30,7 @@ function AnimeGenres() {
       </NavLink>
 
       <Box className="anime-genres__list-box center-vertical">
-        <Box className="anime-genres__list between-row">
+        <Box className="anime-genres__list center">
           {genres.slice(0, 18).map((genre) => {
             const { genreSlug, genre: genreName } = genre;
 

@@ -1,0 +1,43 @@
+// Anime Section Media Query
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .anime-section {
+    margin-top: $spacer-small;
+    margin-bottom: $spacer-md * 1.5;
+
+    .anime-section__none {
+      font-size: $main-fs;
+    }
+  }
+
+  // Anime Section Header
+  .anime-section__header {
+    margin-bottom: $spacer * 1.5;
+
+    .header__title {
+      font-size: $main-fs;
+
+      &::after {
+        bottom: -1.5vh;
+        width: 65%;
+        height: 0.35vh;
+      }
+    }
+
+    .header__tab {
+      width: 3vw;
+    }
+  }
+
+  // Anime
+  .anime-section__anime {
+    .anime-section__button {
+      .icon {
+        font-size: $main-fs * 1.5;
+      }
+    }
+  }
+}

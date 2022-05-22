@@ -42,7 +42,7 @@ function AnimeInfo(props) {
       subText={summary}
       displayButtons={
         <>
-          {genres.slice(0, 6).map((g) => {
+          {genres.slice(0, 5).map((g) => {
             const { genreSlug, genre } = g;
 
             return (

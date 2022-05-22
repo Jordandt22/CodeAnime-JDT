@@ -37,7 +37,7 @@ body {
 }
 
 .App {
-  margin: 0 $spacer-lg;
+  margin: 0 $lg-pad;
   font-family: $main-ft;
 }
 
@@ -133,3 +133,6 @@ body {
     transform: scale(1.25);
   }
 }
+
+// Media Queries
+@import "./main.mq";
