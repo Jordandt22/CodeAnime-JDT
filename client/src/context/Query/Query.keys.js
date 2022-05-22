@@ -14,3 +14,4 @@ export const ANIME_EPISODES_KEY = (epsParams, epSection) => {
 
   return `ANIME_EPISODES-ANIMEALIAS:${animeAlias}-DEFAULTEP:${defaultEp}-MOVIEID:${movieID}-EPSTART:${ep_start}-EPEND:${ep_end}`;
 };
+export const ANIME_VIDEO_KEY = (epSlug) => `ANIME-EPSLUG:${epSlug}`;

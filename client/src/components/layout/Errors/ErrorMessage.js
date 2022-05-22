@@ -16,7 +16,13 @@ function ErrorMessage(props) {
       <Box className="error__icon center">
         <ErrorOutline className="icon" /> Error {queryError.status}
       </Box>
-      <p>{queryError.message ? queryError.message : message}</p>
+      <p>
+        {queryError.message
+          ? queryError.message
+          : message
+          ? message
+          : "Sorry, a problem occured."}
+      </p>
     </Box>
   );
 }

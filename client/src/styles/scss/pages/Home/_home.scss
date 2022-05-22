@@ -149,13 +149,14 @@
 
 // Vector
 .vector {
+  position: relative;
   transform: translate(-20vw, 5vh);
   z-index: -1;
 
   div {
     background: $primary-bg;
     width: 200vw;
-    height: 5vh;
+    height: 20vh;
     transform: translateY(-2vh);
     z-index: -1;
   }

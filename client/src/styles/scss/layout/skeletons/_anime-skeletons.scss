@@ -99,3 +99,35 @@
 .episodes__ep-skeleton {
   height: 7.5vh !important;
 }
+
+// Watch
+.watch-skeleton {
+  .watch__title {
+    width: 40vw;
+    height: 2.5vh;
+    background: white;
+  }
+
+  .watch__subTitle {
+    width: 20vw;
+    height: 2vh;
+    background: grey;
+    margin-top: $spacer-small * 0.5;
+    margin-bottom: $spacer;
+  }
+
+  .watch__video {
+    width: 50vw;
+    height: 55vh;
+    background: $dark-sec-bg;
+  }
+
+  .watch__btn {
+    $s: 2.5rem;
+    width: $s;
+    height: $s;
+    background: $primary-clr;
+    border-radius: $border-radius;
+    margin-right: $spacer-small;
+  }
+}

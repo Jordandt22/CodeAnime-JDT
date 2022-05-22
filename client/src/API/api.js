@@ -37,9 +37,13 @@ export const getSearchedAnime = async (animeSource, { page, query }) =>
 export const getAnime = async (animeSource, { animeSlug }) =>
   await Axios.get(getAnimeURI(animeSource) + `/${animeSlug}`);
 
-// GET - Anime Episodes
+// POST - Anime Episodes
 export const getAnimeEpisodes = async (animeSource, { epsParams, epSection }) =>
   await Axios.post(getAnimeURI(animeSource) + "/episodes", {
     ...epsParams,
     epSection,
   });
+
+// GET - Anime Video
+export const getAnimeVideo = async (animeSource, { epSlug }) =>
+  await Axios.get(getAnimeURI(animeSource) + `/video/${epSlug}`);

@@ -12,6 +12,7 @@ import {
   getSearchedAnime,
   getAnime,
   getAnimeEpisodes,
+  getAnimeVideo,
 } from "../../API/api.js";
 
 // Contexts
@@ -26,6 +27,7 @@ import {
   SEARCHED_ANIME_KEY,
   ANIME_KEY,
   ANIME_EPISODES_KEY,
+  ANIME_VIDEO_KEY,
 } from "./Query.keys";
 
 // Query Context
@@ -47,7 +49,7 @@ export default (props) => {
   });
 
   // API Query
-  const useAPIQuery = (key, queryFn) =>
+  const useAPIQuery = (key, queryFn, options) =>
     useQuery(key, queryFn, {
       staleTime: 1000 * 60 * 60 * 5,
       keepPreviousData: true,
@@ -79,6 +81,7 @@ export default (props) => {
         const { status, message } = error?.response?.data;
         if (status && message) setQueryError({ status, message });
       },
+      ...options,
     });
 
   // Get Ongoing Anime
@@ -129,8 +132,18 @@ export default (props) => {
 
   // Get Anime Episodes
   const useGetAnimeEpisodes = (epsParams, epSection) =>
-    useAPIQuery(createKey(ANIME_EPISODES_KEY(epsParams, epSection)), () =>
-      getAnimeEpisodes(source, { epsParams, epSection })
+    useAPIQuery(
+      createKey(ANIME_EPISODES_KEY(epsParams, epSection)),
+      () => getAnimeEpisodes(source, { epsParams, epSection }),
+      { keepPreviousData: false }
+    );
+
+  // Get Anime Video
+  const useGetAnimeVideo = (epSlug) =>
+    useAPIQuery(
+      createKey(ANIME_VIDEO_KEY(epSlug)),
+      () => getAnimeVideo(source, { epSlug }),
+      { keepPreviousData: false }
     );
 
   return (
@@ -146,6 +159,7 @@ export default (props) => {
         useGetSearchedAnime,
         useGetAnime,
         useGetAnimeEpisodes,
+        useGetAnimeVideo,
       }}
     >
       {props.children}

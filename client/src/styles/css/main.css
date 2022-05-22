@@ -1016,6 +1016,34 @@ html {
   height: 7.5vh !important;
 }
 
+.watch-skeleton .watch__title {
+  width: 40vw;
+  height: 2.5vh;
+  background: white;
+}
+
+.watch-skeleton .watch__subTitle {
+  width: 20vw;
+  height: 2vh;
+  background: grey;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.watch-skeleton .watch__video {
+  width: 50vw;
+  height: 55vh;
+  background: #0F0F0F;
+}
+
+.watch-skeleton .watch__btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #2424ff;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
 .anime-spotlight {
   padding-bottom: 0 !important;
 }
@@ -1182,6 +1210,7 @@ html {
 }
 
 .vector {
+  position: relative;
   -webkit-transform: translate(-20vw, 5vh);
           transform: translate(-20vw, 5vh);
   z-index: -1;
@@ -1190,7 +1219,7 @@ html {
 .vector div {
   background: #00000c;
   width: 200vw;
-  height: 5vh;
+  height: 20vh;
   -webkit-transform: translateY(-2vh);
           transform: translateY(-2vh);
   z-index: -1;
@@ -1433,6 +1462,8 @@ html {
 .anime-info-container .anime__subText {
   max-width: 90ch !important;
   line-height: 2rem;
+  max-height: 30vh;
+  overflow-y: scroll;
 }
 
 .anime-info-container .spotlight__background,
@@ -1484,9 +1515,10 @@ html {
 }
 
 .anime-eps-container {
+  background: #00000c;
   z-index: 10;
-  -webkit-transform: translateY(-5vh);
-          transform: translateY(-5vh);
+  -webkit-transform: translateY(-15vh);
+          transform: translateY(-15vh);
 }
 
 .anime-eps-container h1 {
@@ -1564,6 +1596,99 @@ html {
 .anime-eps__tabs .active {
   background: #2424ff;
   color: white;
+}
+
+.watch-container {
+  padding-bottom: 16rem !important;
+}
+
+.watch-container .watch__title {
+  color: white;
+  text-decoration: none;
+  font-size: 2.25rem;
+  font-weight: bold;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.watch-container .watch__title:hover {
+  opacity: 0.5;
+}
+
+.watch-container h3 {
+  color: grey;
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.watch__video {
+  width: 50vw;
+  height: 55vh;
+  background: #0F0F0F;
+  -webkit-box-shadow: 0 0 10px 5px black;
+          box-shadow: 0 0 10px 5px black;
+  margin-bottom: 2rem;
+}
+
+.watch__video-nav {
+  color: #2424ff;
+  text-decoration: none;
+  margin-right: 1rem;
+  border-radius: 5px;
+  padding: 7.5px;
+  border: 2px solid #2424ff;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.watch__video-nav:hover {
+  background: rgba(36, 36, 255, 0.25);
+}
+
+.watch__disabled {
+  color: grey;
+  border-color: grey;
+}
+
+.watch__disabled:hover {
+  cursor: not-allowed;
+}
+
+.video-row {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.watch__video-sources {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #1E1E1F;
+  margin-left: 2rem;
+}
+
+.watch__video-sources p {
+  color: white;
+  padding: 1rem;
+  padding-right: 2rem;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.watch__video-sources p:hover {
+  cursor: pointer;
+  background: #2424ff;
+}
+
+.watch__video-sources .active {
+  background: #2424ff;
 }
 
 html {

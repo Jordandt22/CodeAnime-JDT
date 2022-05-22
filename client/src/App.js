@@ -22,6 +22,7 @@ import ComingSoon from "./components/pages/ComingSoon/ComingSoon";
 import NotFound from "./components/pages/NotFound/NotFound";
 import SmallDeviceAlert from "./components/layout/Alerts/SmallDeviceAlert";
 import Anime from "./components/pages/Anime/Anime";
+import Watch from "./components/pages/Watch/Watch";
 
 function App() {
   const isSmallDevice = useMediaQuery("(max-width:767px)", { noSsr: true });
@@ -53,7 +54,7 @@ function App() {
 
           {/* Anime Information */}
           <Route exact path="/anime/:animeSlug" element={<Anime />} />
-          <Route exact path="/watch/:epSlug" element={<ComingSoon />} />
+          <Route exact path="/watch/:epSlug" element={<Watch />} />
 
           {/* User */}
           <Route exact path="/myanime" element={<ComingSoon />} />
