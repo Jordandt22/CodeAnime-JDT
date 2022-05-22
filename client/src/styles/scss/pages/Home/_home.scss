@@ -156,11 +156,12 @@
   z-index: -1;
 
   div {
+    $h: 40vh;
     position: absolute;
-    bottom: -15vh;
+    bottom: $h * -0.8;
     background: $primary-bg;
     width: 150vw;
-    height: 20vh;
+    height: $h;
     z-index: 0;
   }
 

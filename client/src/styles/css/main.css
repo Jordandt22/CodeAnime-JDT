@@ -1214,10 +1214,10 @@ html {
 
 .vector div {
   position: absolute;
-  bottom: -15vh;
+  bottom: -32vh;
   background: #00000c;
   width: 150vw;
-  height: 20vh;
+  height: 40vh;
   z-index: 0;
 }
 
@@ -1902,6 +1902,15 @@ body {
   }
   .anime-card p {
     font-size: 0.9rem;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .watch-skeleton .watch__video {
+    width: 55vw;
+    height: 45vh;
   }
 }
 

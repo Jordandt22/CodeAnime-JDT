@@ -12,19 +12,14 @@ function PopularAnime() {
   const { useGetPopularAnime } = useQueryHook();
   const { isLoading, isError, error, data } = useGetPopularAnime(1);
   const sectionProps = { title: "Popular Anime", link: "/popular" };
- 
+
   if (isLoading) {
     return <AnimeSectionSkeleton {...sectionProps} />;
   } else if (isError) {
     return <AnimeSectionError {...sectionProps} message={error.message} />;
   }
 
-  return (
-    <AnimeSection
-    {...sectionProps}
-      anime={data?.data?.data?.anime}
-    />
-  );
+  return <AnimeSection {...sectionProps} anime={data?.data?.data?.anime} />;
 }
 
 export default PopularAnime;
