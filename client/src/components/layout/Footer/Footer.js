@@ -35,52 +35,55 @@ function Footer() {
   ];
 
   return (
-    <footer className="footer between-row">
-      <Box className="footer__about">
-        <Box className="about__info">
-          <h2>
-            Code<span>Anime</span>
-          </h2>
-          <p>
-            A place for you to watch all your favorite anime, ad free, anytime,
-            anywhere.
-          </p>
+    <footer className="footer">
+      <Box className="main-content between-row">
+        <Box className="footer__about">
+          <Box className="about__info">
+            <h2>
+              Code<span>Anime</span>
+            </h2>
+            <p>
+              A place for you to watch all your favorite anime, ad free,
+              anytime, anywhere.
+            </p>
+          </Box>
         </Box>
-        <Box className="row">
-          <p className="about__copyright">© 2022 CodeAnime.</p>
-          <p className="about__copyright">All Rights Reserved.</p>
+
+        {/* Footer Links */}
+        <Box className="footer__links row">
+          {linkSection.map((section) => {
+            const { label: sectionLabel, links, text } = section;
+
+            return (
+              <Box key={sectionLabel + "-footer"} className="links__section">
+                <h6>{sectionLabel}</h6>
+
+                {!text ? (
+                  links.map((link) => {
+                    const { label: linkLabel, path } = link;
+
+                    return (
+                      <NavLink
+                        key={linkLabel}
+                        to={path}
+                        className="section__link"
+                      >
+                        {linkLabel}
+                      </NavLink>
+                    );
+                  })
+                ) : (
+                  <p className="section__link">{text}</p>
+                )}
+              </Box>
+            );
+          })}
         </Box>
       </Box>
 
-      {/* Footer Links */}
-      <Box className="footer__links row">
-        {linkSection.map((section) => {
-          const { label: sectionLabel, links, text } = section;
-
-          return (
-            <Box key={sectionLabel + "-footer"} className="links__section">
-              <h6>{sectionLabel}</h6>
-
-              {!text ? (
-                links.map((link) => {
-                  const { label: linkLabel, path } = link;
-
-                  return (
-                    <NavLink
-                      key={linkLabel}
-                      to={path}
-                      className="section__link"
-                    >
-                      {linkLabel}
-                    </NavLink>
-                  );
-                })
-              ) : (
-                <p className="section__link">{text}</p>
-              )}
-            </Box>
-          );
-        })}
+      <Box className="row">
+        <p className="about__copyright">© 2022 CodeAnime.</p>
+        <p className="about__copyright">All Rights Reserved.</p>
       </Box>
     </footer>
   );

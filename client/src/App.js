@@ -3,9 +3,6 @@ import React from "react";
 // React Router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// MUI
-import { useMediaQuery } from "@mui/material";
-
 // Context
 import ContextProvider from "./context/Context.provider";
 
@@ -23,20 +20,10 @@ import GenreAnime from "./components/pages/GenreAnime/GenreAnime";
 import Genres from "./components/pages/Genres/Genres";
 import ComingSoon from "./components/pages/ComingSoon/ComingSoon";
 import NotFound from "./components/pages/NotFound/NotFound";
-import SmallDeviceAlert from "./components/layout/Alerts/SmallDeviceAlert";
 import Anime from "./components/pages/Anime/Anime";
 import Watch from "./components/pages/Watch/Watch";
 
 function App() {
-  const isSmallDevice = useMediaQuery("(max-width:767px)", { noSsr: true });
-  if (isSmallDevice) {
-    return (
-      <div className="App">
-        <SmallDeviceAlert />
-      </div>
-    );
-  }
-
   return (
     <div className="App">
       <BrowserRouter>

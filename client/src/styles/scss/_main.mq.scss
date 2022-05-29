@@ -20,3 +20,51 @@
     margin: 0 $md-pad;
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  // Global
+  .container {
+    padding: 0 !important;
+  }
+
+  .App {
+    margin: 0;
+    padding-top: $spacer-md * 1.5;
+  }
+
+  // Coming Soon
+  .coming-soon {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: $spacer * 1.5;
+  }
+
+  // Not Found
+  .not-found-container {
+    .not-found-404 {
+      width: 75%;
+      margin-bottom: $spacer;
+
+      h1 {
+        font-size: $lg-fs * 4;
+      }
+
+      h2 {
+        font-size: $lg-fs * 3;
+      }
+    }
+
+    p {
+      width: 85%;
+      font-size: $main-fs * 1.25;
+      margin-bottom: $spacer * 1.25;
+      text-align: center;
+    }
+
+    a {
+      font-size: $main-fs * 0.8;
+    }
+  }
+}

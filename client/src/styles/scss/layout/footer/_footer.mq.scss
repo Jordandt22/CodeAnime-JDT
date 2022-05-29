@@ -20,10 +20,6 @@
           max-width: 35ch;
         }
       }
-
-      .about__copyright {
-        font-size: $main-fs * 0.5;
-      }
     }
 
     .links__section {
@@ -36,6 +32,76 @@
 
       .section__link {
         font-size: $main-fs * 0.7;
+      }
+    }
+
+    .about__copyright {
+      font-size: $main-fs * 0.5;
+    }
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacer * 1.5 $md-pad;
+    transform: none;
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer__about {
+      .about__info {
+        position: relative;
+        margin-bottom: $spacer-md;
+        padding-bottom: $spacer * 1.5;
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          content: "";
+          background: $primary-clr;
+          height: 0.15vh;
+        }
+
+        h2 {
+          text-align: center;
+        }
+
+        p {
+          max-width: 55ch;
+          text-align: center;
+        }
+      }
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .links__section {
+      align-items: center;
+      margin-right: 0;
+      margin-bottom: $spacer;
+
+      h6 {
+        font-size: $main-fs;
+        margin-bottom: $spacer-small * 1.25;
+      }
+
+      .section__link {
+        font-size: $main-fs;
+        text-align: center;
       }
     }
   }

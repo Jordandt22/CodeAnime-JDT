@@ -8,10 +8,13 @@
   transform: translateX($lg-pad * -1);
   margin-top: $spacer-md;
 
+  .main-content {
+    align-items: flex-start;
+    margin-bottom: $spacer-md;
+  }
+
   .footer__about {
     .about__info {
-      margin-bottom: $spacer-lg;
-
       h2 {
         color: white;
         font-size: $main-fs;
@@ -28,12 +31,6 @@
         max-width: 40ch;
         line-height: $spacer-small * 1.5;
       }
-    }
-
-    .about__copyright {
-      color: grey;
-      font-size: $main-fs * 0.65;
-      margin-right: $spacer-small * 0.75;
     }
   }
 
@@ -64,5 +61,11 @@
       text-decoration: none;
       min-width: 20ch;
     }
+  }
+
+  .about__copyright {
+    color: grey;
+    font-size: $main-fs * 0.65;
+    margin-right: $spacer-small * 0.75;
   }
 }

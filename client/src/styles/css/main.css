@@ -828,8 +828,11 @@ html {
   margin-top: 4rem;
 }
 
-.footer .footer__about .about__info {
-  margin-bottom: 8rem;
+.footer .main-content {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 4rem;
 }
 
 .footer .footer__about .about__info h2 {
@@ -847,12 +850,6 @@ html {
   font-size: 1.05rem;
   max-width: 40ch;
   line-height: 1.5rem;
-}
-
-.footer .footer__about .about__copyright {
-  color: grey;
-  font-size: 0.975rem;
-  margin-right: 0.75rem;
 }
 
 .footer .footer__links {
@@ -889,6 +886,12 @@ html {
   margin-bottom: 1.5rem;
   text-decoration: none;
   min-width: 20ch;
+}
+
+.footer .about__copyright {
+  color: grey;
+  font-size: 0.975rem;
+  margin-right: 0.75rem;
 }
 
 .error-message {
@@ -1839,9 +1842,6 @@ body {
     font-size: 1.05rem;
     max-width: 35ch;
   }
-  .footer .footer__about .about__copyright {
-    font-size: 0.75rem;
-  }
   .footer .links__section {
     margin-right: 1rem;
   }
@@ -1851,6 +1851,88 @@ body {
   }
   .footer .links__section .section__link {
     font-size: 1.05rem;
+  }
+  .footer .about__copyright {
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 3rem 4rem;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .footer .main-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer .footer__about .about__info {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+  }
+  .footer .footer__about .about__info::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    background: #2424ff;
+    height: 0.15vh;
+  }
+  .footer .footer__about .about__info h2 {
+    text-align: center;
+  }
+  .footer .footer__about .about__info p {
+    max-width: 55ch;
+    text-align: center;
+  }
+  .footer .footer__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer .links__section {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .footer .links__section h6 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .footer .links__section .section__link {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
 
@@ -2020,6 +2102,42 @@ body {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .App {
     margin: 0 4rem;
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .container {
+    padding: 0 !important;
+  }
+  .App {
+    margin: 0;
+    padding-top: 6rem;
+  }
+  .coming-soon {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 3rem;
+  }
+  .not-found-container .not-found-404 {
+    width: 75%;
+    margin-bottom: 2rem;
+  }
+  .not-found-container .not-found-404 h1 {
+    font-size: 13.5rem;
+  }
+  .not-found-container .not-found-404 h2 {
+    font-size: 10.125rem;
+  }
+  .not-found-container p {
+    width: 85%;
+    font-size: 1.875rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .not-found-container a {
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
