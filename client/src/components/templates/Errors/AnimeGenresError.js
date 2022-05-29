@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 // MUI
 import { Box } from "@mui/material";
-import { ArrowForwardIos } from "@mui/icons-material";
 
 // Components
 import ErrorMessage from "../../layout/Errors/ErrorMessage";
