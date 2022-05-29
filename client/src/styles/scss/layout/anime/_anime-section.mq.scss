@@ -41,3 +41,64 @@
     }
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $spacer-lg;
+  }
+
+  // Anime Section Header
+  .anime-section__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: $spacer * 1.5;
+
+    .header__title {
+      font-size: $main-fs * 1.5;
+      margin-bottom: $spacer-md;
+
+      &::after {
+        bottom: -1.5vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 0.35vh;
+      }
+    }
+
+    .header__tab {
+      width: 7.5vw;
+      height: 0.65vh;
+      margin-left: 0;
+      margin: 0 $spacer-small * 0.75;
+    }
+  }
+
+  // Anime
+  .anime-section__anime {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100vw;
+    scroll-snap-align: center;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .anime-section__button {
+      display: none;
+    }
+
+    .anime-card {
+      margin: 0 $spacer-small;
+    }
+  }
+}

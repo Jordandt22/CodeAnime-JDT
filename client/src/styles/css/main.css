@@ -1093,13 +1093,14 @@ html {
 
 .spotlight__main .anime__image-box .anime__latestEp {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
   background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(black), color-stop(98.44%, rgba(0, 0, 0, 0)));
   background: linear-gradient(0, black, rgba(0, 0, 0, 0) 98.44%);
   padding-top: 30vh;
   padding-bottom: 1rem;
+  border-radius: 5px;
 }
 
 .spotlight__main .anime__image-box .anime__latestEp p {
@@ -1965,6 +1966,78 @@ body {
   }
 }
 
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 8rem;
+  }
+  .anime-section__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 3rem;
+  }
+  .anime-section__header .header__title {
+    font-size: 2.25rem;
+    margin-bottom: 4rem;
+  }
+  .anime-section__header .header__title::after {
+    bottom: -1.5vh;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 50%;
+    height: 0.35vh;
+  }
+  .anime-section__header .header__tab {
+    width: 7.5vw;
+    height: 0.65vh;
+    margin-left: 0;
+    margin: 0 0.75rem;
+  }
+  .anime-section__anime {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100vw;
+    scroll-snap-align: center;
+  }
+  .anime-section__anime::-webkit-scrollbar {
+    display: none;
+  }
+  .anime-section__anime .anime-section__button {
+    display: none;
+  }
+  .anime-section__anime .anime-card {
+    margin: 0 1rem;
+  }
+}
+
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -1984,6 +2057,28 @@ body {
   }
   .anime-card p {
     font-size: 0.9rem;
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-card {
+    width: 50vw;
+    min-width: 50vw;
+  }
+  .anime-card .anime-card__image-box {
+    margin-bottom: 1rem;
+  }
+  .anime-card .anime-card__image-box .anime-card__image {
+    width: 100%;
+  }
+  .anime-card .anime-card__image-box .image__hover {
+    display: none;
+  }
+  .anime-card .anime__title {
+    max-width: 75%;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
   }
 }
 
@@ -2072,6 +2167,128 @@ body {
   }
 }
 
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .spotlight__background,
+  .spotlight__shadow {
+    height: 100vh;
+  }
+  .spotlight__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .spotlight__main .spotlight__anime {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .spotlight__main .anime__image-box {
+    width: 50vw;
+    height: 32.5vh;
+  }
+  .spotlight__main .anime__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .spotlight__main .anime__info h3 {
+    margin-bottom: 0.75rem;
+  }
+  .spotlight__main .anime__info .anime__title {
+    font-size: 1.5rem;
+    max-width: 27ch;
+  }
+  .spotlight__main .anime__info .anime__subText {
+    margin-bottom: 3rem;
+  }
+  .spotlight__buttons {
+    position: absolute;
+    right: 5vw;
+    top: 4rem;
+  }
+  .spotlight__buttons .spotlight__button {
+    margin-bottom: 1.5rem;
+  }
+  .vector {
+    -webkit-transform: translate(-60vw, 5vh);
+            transform: translate(-60vw, 5vh);
+  }
+  .genre-anime-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .genre-anime {
+    width: 100%;
+  }
+  .genre-anime .genre-anime__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 1.25rem 1.5rem;
+  }
+  .genre-anime .genre-anime__header .genre-title {
+    font-size: 1.875rem;
+    text-align: center;
+  }
+  .genre-anime .genre-anime__view-more {
+    padding: 1.25rem 0;
+  }
+  .genre-anime__list .list__anime {
+    margin: 1rem 0;
+  }
+  .genre-anime__list .list__anime .anime__image {
+    width: 15vw;
+  }
+  .genre-anime__list .list__anime .anime__title {
+    font-size: 1.35rem;
+  }
+  .anime-genres {
+    margin-bottom: 16rem;
+  }
+  .anime-genres .anime-genres__title {
+    text-align: center;
+  }
+  .anime-genres .anime-genres__list-box .list__view-all {
+    margin-top: 3.5rem;
+  }
+  .anime-genres .anime-genres__list {
+    gap: 1rem 1.5rem;
+  }
+  .anime-genres .anime-genres__list .list__genre {
+    padding: 0.5rem 2.5rem;
+    font-size: 1.35rem;
+  }
+}
+
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2112,7 +2329,7 @@ body {
   }
   .App {
     margin: 0;
-    padding-top: 6rem;
+    padding-top: 4rem;
   }
   .coming-soon {
     width: 90%;

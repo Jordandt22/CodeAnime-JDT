@@ -45,12 +45,13 @@
 
     .anime__latestEp {
       position: absolute;
-      bottom: 0;
+      bottom: -1px;
       left: 0;
       right: 0;
       background: linear-gradient(0, black, rgba(0, 0, 0, 0) 98.44%);
       padding-top: 30vh;
       padding-bottom: $spacer-small;
+      border-radius: $border-radius;
 
       p {
         color: white;

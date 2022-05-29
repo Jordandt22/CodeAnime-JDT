@@ -20,7 +20,7 @@ function Home() {
       <RecentAnime />
       <PopularAnime />
       <NewSeasonAnime />
-      <Box className="between-row">
+      <Box className="genre-anime-box between-row">
         <AnimeByGenre
           title="Top Action Anime"
           link="/genre/action"

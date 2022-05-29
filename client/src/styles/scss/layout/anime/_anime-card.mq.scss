@@ -28,3 +28,29 @@
     }
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-card {
+    width: 50vw;
+    min-width: 50vw;
+
+    .anime-card__image-box {
+      margin-bottom: $spacer-small;
+
+      .anime-card__image {
+        width: 100%;
+      }
+
+      .image__hover {
+        display: none;
+      }
+    }
+
+    .anime__title {
+      max-width: 75%;
+      font-size: $main-fs * 0.8;
+      margin-bottom: 5px;
+    }
+  }
+}
