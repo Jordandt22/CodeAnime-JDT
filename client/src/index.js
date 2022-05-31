@@ -7,7 +7,7 @@ import App from "./App";
 
 // React Query
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+// import { ReactQueryDevtools } from "react-query/devtools";
 
 // Redux
 import { Provider } from "react-redux";
@@ -23,9 +23,9 @@ root.render(
       </Provider>
 
       {/* React Query Dev Tools */}
-      {process.env.NODE_ENV === "development" && (
+      {/* {process.env.NODE_ENV === "development" && (
         <ReactQueryDevtools initialIsOpen={false} />
-      )}
+      )} */}
     </QueryClientProvider>
   </React.StrictMode>
 );

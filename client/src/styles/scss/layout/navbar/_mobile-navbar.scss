@@ -1,0 +1,95 @@
+// Mobile Navbar Styles
+.mobile-navbar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba($primary-bg, 0.65),
+    rgba($primary-bg, 0.85),
+    $primary-bg
+  );
+  z-index: 1000;
+  padding: $spacer-small $spacer;
+
+  .mb-nav__link {
+    color: grey;
+    text-decoration: none;
+
+    p {
+      font-size: $main-fs * 0.45;
+      margin-top: 5px;
+    }
+  }
+
+  .active {
+    color: white;
+  }
+}
+
+// Nav Search
+.mb-nav__search {
+  overflow-y: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $primary-bg;
+  z-index: 2000;
+
+  .mb-nav__search-bar {
+    margin-top: $spacer-md;
+    margin-bottom: $spacer * 1.5;
+
+    input {
+      width: 80vw;
+      outline: none;
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid white;
+      color: white;
+      font-size: $main-fs * 1.25;
+      padding-bottom: $spacer-small * 0.75;
+      text-align: center;
+      font-family: $main-ft;
+      transition: all 200ms ease-out;
+
+      &:focus {
+        border-color: $primary-clr;
+      }
+    }
+
+    label {
+      display: none;
+    }
+  }
+
+  .mb-nav__close-search {
+    background: white;
+    outline: none;
+    border: none;
+    padding: $spacer-small * 0.25 $spacer * 1.25;
+    border-radius: $border-radius * 3;
+    font-weight: bold;
+    font-size: $main-fs * 0.65;
+    font-family: $main-ft;
+  }
+}
+
+.mb-nav__show-search {
+  transform: translateY(100vh);
+  opacity: 0;
+  animation: slide-up 750ms forwards ease-out;
+}
+
+.mb-nav__hide-search {
+  transform: translateY(0);
+  opacity: 1;
+  animation: slide-down 750ms forwards ease-out;
+}
+
+.hide {
+  display: none;
+}

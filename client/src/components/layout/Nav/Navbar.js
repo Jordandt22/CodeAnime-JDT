@@ -59,7 +59,7 @@ function NavBar() {
         <header className="navbar between-row">
           <NavLink to="/" className="navbar__title">
             Code<span>Anime</span>
-          </NavLink>
+          </NavLink> 
 
           {/* Nav Links */}
           <Box className="navbar__links row">
