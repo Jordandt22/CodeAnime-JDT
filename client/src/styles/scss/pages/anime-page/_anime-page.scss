@@ -25,3 +25,35 @@
     }
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  // Header
+  .anime-page__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      position: relative;
+      padding-left: 0;
+      padding-bottom: $spacer-small;
+      text-align: center;
+      max-width: 80vw;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -1vw;
+        right: -1vw;
+        bottom: 0;
+        background: $primary-clr;
+        height: 0.25vh;
+      }
+    }
+  }
+}

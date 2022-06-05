@@ -21,3 +21,23 @@
     background: $primary-clr;
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-links {
+    margin-left: $sm-pad;
+    margin-bottom: $spacer-md;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100vw;
+    scroll-snap-align: center;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .anime-link {
+      min-width: fit-content;
+    }
+  }
+}

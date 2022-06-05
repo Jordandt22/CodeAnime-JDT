@@ -82,3 +82,33 @@
     }
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-list-container {
+    .anime-list-grid {
+      justify-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
+      gap: $spacer 0;
+    }
+
+    .none {
+      max-width: 80vw;
+      text-align: center;
+      line-height: $spacer;
+    }
+
+    .anime-card {
+      width: 40vw;
+      min-width: 40vw;
+
+      .anime-card__image {
+        height: 25vh;
+      }
+    }
+
+    .anime-list__nav {
+      margin-bottom: $spacer-small;
+    }
+  }
+}

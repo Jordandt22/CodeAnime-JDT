@@ -6,7 +6,7 @@
   left: 0;
   background: linear-gradient(
     180deg,
-    rgba($primary-bg, 0.65),
+    rgba($primary-bg, 0.75),
     rgba($primary-bg, 0.85),
     $primary-bg
   );
@@ -31,7 +31,7 @@
 // Nav Search
 .mb-nav__search {
   overflow-y: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
