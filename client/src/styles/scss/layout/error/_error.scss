@@ -27,3 +27,11 @@
     font-size: $main-fs;
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  // Error Styles
+  .error-message {
+    width: 90vw;
+  }
+}

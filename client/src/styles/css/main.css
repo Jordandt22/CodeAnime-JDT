@@ -594,6 +594,13 @@ html {
   display: none;
 }
 
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-min-device-pixel-ratio: 3) {
+  .mobile-navbar {
+    padding-bottom: 3rem;
+  }
+}
+
 .alert__error {
   position: fixed;
   left: 8rem;
@@ -1069,6 +1076,13 @@ html {
   text-align: center;
   padding: 2rem 0;
   font-size: 1.5rem;
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .error-message {
+    width: 90vw;
+  }
 }
 
 .anime-card-skel .anime-card__image {
@@ -2236,6 +2250,68 @@ body {
   .watch-skeleton .watch__video {
     width: 55vw;
     height: 45vh;
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-spotlight-skeleton .anime__title {
+    width: 60vw;
+    height: 2vh;
+  }
+  .anime-spotlight-skeleton .skeleton__subTexts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 1rem;
+  }
+  .anime-spotlight-skeleton .skeleton__subTexts .subText__1 {
+    width: 40vw;
+  }
+  .anime-spotlight-skeleton .skeleton__subTexts .subText__2 {
+    width: 50vw;
+  }
+  .anime-spotlight-skeleton .skeleton__subTexts .subText__3 {
+    width: 65vw;
+  }
+  .anime-spotlight-skeleton .skeleton__subTexts .subText__4 {
+    width: 40vw;
+  }
+  .anime-spotlight-skeleton .watch__btn,
+  .anime-spotlight-skeleton .info__btn {
+    width: 30vw;
+    margin-right: 0;
+    margin: 0 1rem;
+  }
+  .anime-genres-skeleton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .anime-genres-skeleton .anime-genres__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .anime-genres-skeleton .list__genre {
+    width: 35vw;
   }
 }
 

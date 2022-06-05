@@ -93,3 +93,10 @@
 .hide {
   display: none;
 }
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-min-device-pixel-ratio: 3) {
+  .mobile-navbar {
+    padding-bottom: $spacer * 1.5;
+  }
+}

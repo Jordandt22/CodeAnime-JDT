@@ -12,3 +12,57 @@
     }
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  // Anime Spotlight
+  .anime-spotlight-skeleton {
+    .anime__title {
+      width: 60vw;
+      height: 2vh;
+    }
+
+    .skeleton__subTexts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: $spacer-small;
+
+      .subText__1 {
+        width: 40vw;
+      }
+      .subText__2 {
+        width: 50vw;
+      }
+      .subText__3 {
+        width: 65vw;
+      }
+      .subText__4 {
+        width: 40vw;
+      }
+    }
+
+    .watch__btn,
+    .info__btn {
+      width: 30vw;
+      margin-right: 0;
+      margin: 0 $spacer-small;
+    }
+  }
+
+  // Anime Genres
+  .anime-genres-skeleton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .anime-genres__list {
+      justify-content: center;
+    }
+
+    .list__genre {
+      width: 35vw;
+    }
+  }
+}
