@@ -30,3 +30,25 @@
     }
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .genres-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 $sm-pad;
+
+    .genres__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .list__genre {
+      margin-right: 0;
+      margin: 0 $spacer-small * 0.5;
+      margin-bottom: $spacer-small;
+    }
+  }
+}
