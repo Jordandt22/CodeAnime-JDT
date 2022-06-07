@@ -21,3 +21,89 @@
     margin-top: $spacer-small;
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-info-container {
+    .anime__subText {
+      max-width: 80vw !important;
+      max-height: 40vh;
+      text-align: center;
+    }
+
+    .anime__title {
+      margin-bottom: $spacer;
+    }
+
+    .spotlight__background,
+    .spotlight__shadow {
+      height: 150vh;
+    }
+  }
+
+  // Secondary Title
+  .anime-info__secTitle {
+    justify-content: center;
+
+    p {
+      margin: 0 $spacer-small;
+    }
+  }
+
+  // Genres
+  .display-buttons {
+    overflow-x: scroll;
+    width: 90vw;
+    margin-top: $spacer;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  // Episodes
+  .anime-eps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .episodes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .episodes__ep {
+    width: 90%;
+  }
+
+  // Anime Episode Tabs
+  .anime-eps__tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: $spacer;
+    overflow-x: scroll;
+    width: 90vw;
+    scroll-behavior: smooth;
+    padding: 0 $sm-pad;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tabs__tab {
+      display: inline;
+      margin-right: 0;
+      margin-bottom: 0;
+      margin: 0 $spacer-small * 0.5;
+      padding: $spacer-small * 0.25 $spacer;
+      min-width: fit-content;
+    }
+  }
+}

@@ -2643,6 +2643,94 @@ body {
   }
 }
 
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .anime-info-container .anime__subText {
+    max-width: 80vw !important;
+    max-height: 40vh;
+    text-align: center;
+  }
+  .anime-info-container .anime__title {
+    margin-bottom: 2rem;
+  }
+  .anime-info-container .spotlight__background,
+  .anime-info-container .spotlight__shadow {
+    height: 150vh;
+  }
+  .anime-info__secTitle {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .anime-info__secTitle p {
+    margin: 0 1rem;
+  }
+  .display-buttons {
+    overflow-x: scroll;
+    width: 90vw;
+    margin-top: 2rem;
+    scroll-behavior: smooth;
+  }
+  .display-buttons::-webkit-scrollbar {
+    display: none;
+  }
+  .anime-eps-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .anime-eps-container h1 {
+    text-align: center;
+  }
+  .episodes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .episodes__ep {
+    width: 90%;
+  }
+  .anime-eps__tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin-top: 2rem;
+    overflow-x: scroll;
+    width: 90vw;
+    scroll-behavior: smooth;
+    padding: 0 2rem;
+  }
+  .anime-eps__tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .anime-eps__tabs .tabs__tab {
+    display: inline;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin: 0 0.5rem;
+    padding: 0.25rem 2rem;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+  }
+}
+
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2695,25 +2783,9 @@ body {
     font-size: 1.2rem;
   }
   .btt-btn {
-    width: 3.5rem;
-    height: 3.5rem;
-    position: fixed;
-    bottom: 5vh;
-    right: 5vw;
-    background: #2424ff;
-    border-radius: 50%;
-    z-index: 1000;
-    -webkit-transition: all 200ms ease-out;
-    transition: all 200ms ease-out;
-  }
-  .btt-btn .icon {
-    color: white;
-    font-size: 1.725rem;
-  }
-  .btt-btn:hover {
-    cursor: pointer;
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
+    outline: none;
+    border: none;
+    bottom: 15vh;
   }
 }
 /*# sourceMappingURL=main.css.map */
