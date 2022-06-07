@@ -10,3 +10,59 @@
     height: 45vh;
   }
 }
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .watch-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+
+    .watch__title {
+      text-align: center;
+    }
+  }
+
+  // Video
+  .watch__video {
+    width: 90vw;
+    height: 30vh;
+    margin-bottom: $spacer * 1.5;
+  }
+
+  .watch__video-nav {
+    margin: 0 $spacer-small;
+  }
+
+  .video-row {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .watch__video-sources {
+    flex-direction: row;
+    margin-left: 0;
+    margin-bottom: $spacer-md;
+    overflow-x: scroll;
+    width: 90vw;
+    scroll-behavior: smooth;
+    background: transparent;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    p {
+      padding-right: 0;
+      padding: $spacer-small;
+      min-width: fit-content;
+      background: $light-sec-bg;
+      margin: 0 $spacer-small * 0.5;
+      border-radius: $border-radius;
+    }
+
+    .active {
+      background: $primary-clr;
+    }
+  }
+}

@@ -2427,6 +2427,16 @@ body {
   .anime-genres-skeleton .list__genre {
     width: 35vw;
   }
+  .watch-skeleton .watch__subTitle {
+    margin-bottom: 3rem;
+  }
+  .watch-skeleton .watch__video {
+    width: 90vw;
+    height: 30vh;
+  }
+  .watch-skeleton .watch__btn {
+    margin: 0 1rem;
+  }
 }
 
 /* ----------- iPad 1, 2, Mini and Air ----------- */
@@ -2737,6 +2747,70 @@ body {
   .watch__video {
     width: 55vw;
     height: 45vh;
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .watch-container {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .watch-container .watch__title {
+    text-align: center;
+  }
+  .watch__video {
+    width: 90vw;
+    height: 30vh;
+    margin-bottom: 3rem;
+  }
+  .watch__video-nav {
+    margin: 0 1rem;
+  }
+  .video-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .watch__video-sources {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: 0;
+    margin-bottom: 4rem;
+    overflow-x: scroll;
+    width: 90vw;
+    scroll-behavior: smooth;
+    background: transparent;
+  }
+  .watch__video-sources::-webkit-scrollbar {
+    display: none;
+  }
+  .watch__video-sources p {
+    padding-right: 0;
+    padding: 1rem;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    background: #1e1e1f;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+  }
+  .watch__video-sources .active {
+    background: #2424ff;
   }
 }
 
