@@ -12,7 +12,7 @@ import EpisodesListSkeleton from "../../templates/Skeletons/EpisodesListSkeleton
 import ErrorMessage from "../../layout/Errors/ErrorMessage";
 
 function EpisodesQuery(props) {
-  const { epSection, epsParams } = props;
+  const { animeSlug, epSection, epsParams } = props;
   const navigate = useNavigate();
   const { useGetAnimeEpisodes } = useQueryHook();
   const { isLoading, isError, error, data } = useGetAnimeEpisodes(
@@ -41,7 +41,7 @@ function EpisodesQuery(props) {
               <Box
                 key={slug}
                 className="episodes__ep between-row"
-                onClick={() => navigate(`/watch/${slug}`)}
+                onClick={() => navigate(`/watch/${animeSlug}/${slug}`)}
               >
                 <p>Episode {num}</p>
                 <p>{lang}</p>

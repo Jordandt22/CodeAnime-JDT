@@ -45,7 +45,7 @@ function App() {
 
             {/* Anime Information */}
             <Route exact path="/anime/:animeSlug" element={<Anime />} />
-            <Route exact path="/watch/:epSlug" element={<Watch />} />
+            <Route exact path="/watch/:animeSlug/:epSlug" element={<Watch />} />
 
             {/* User */}
             <Route exact path="/myanime" element={<ComingSoon />} />

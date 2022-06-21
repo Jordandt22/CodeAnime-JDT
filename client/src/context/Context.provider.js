@@ -6,6 +6,7 @@ import QueryContextProvider from "./Query/Query.context";
 import AnimeListContextProvider from "./AnimeList/AnimeList.context";
 import AnimeSpotlightContextProvider from "./Spotlight/Spotlight.context";
 import GlobalContextProvider from "./Global/Global.context";
+import WatchListContextProvider from "./WatchList/WatchList.context";
 
 function ContextProvider(props) {
   return (
@@ -14,7 +15,9 @@ function ContextProvider(props) {
         <QueryContextProvider>
           <AnimeSpotlightContextProvider>
             <AnimeListContextProvider>
-              {props.children}
+              <WatchListContextProvider>
+                {props.children}
+              </WatchListContextProvider>
             </AnimeListContextProvider>
           </AnimeSpotlightContextProvider>
         </QueryContextProvider>

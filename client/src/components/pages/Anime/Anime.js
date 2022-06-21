@@ -33,7 +33,7 @@ function Anime() {
     <Container className="container page-container anime-info-container">
       <AnimeInfo data={data?.data?.data} />
       <Vector />
-      <AnimeEpisodes data={data?.data?.data} />
+      <AnimeEpisodes animeSlug={animeSlug} data={data?.data?.data} />
     </Container>
   );
 }

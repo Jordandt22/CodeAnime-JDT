@@ -43,7 +43,10 @@ function AnimeSpotlight() {
       subText={subText}
       displayButtons={
         <>
-          <NavLink to={`/watch/${epSlug}`} className="watch__btn center">
+          <NavLink
+            to={`/watch/${animeSlug}/${epSlug}`}
+            className="watch__btn center"
+          >
             <PlayCircleFilledWhite className="icon" /> <p>Watch Now</p>
           </NavLink>
           <NavLink to={`/anime/${animeSlug}`} className="info__btn center">

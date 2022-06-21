@@ -9,6 +9,7 @@ import EpisodesQuery from "./EpisodesQuery";
 
 function AnimeEpisodes(props) {
   const {
+    animeSlug,
     data: {
       episodes: { epSections, epsParams },
     },
@@ -44,7 +45,11 @@ function AnimeEpisodes(props) {
         )}
 
         {/* Episodes */}
-        <EpisodesQuery epSection={epSection} epsParams={epsParams} />
+        <EpisodesQuery
+          animeSlug={animeSlug}
+          epSection={epSection}
+          epsParams={epsParams}
+        />
       </Container>
 
       {/* Back To Top */}

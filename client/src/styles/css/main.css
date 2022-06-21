@@ -1897,8 +1897,16 @@ html {
   margin-bottom: 2rem;
 }
 
-.watch__video {
+.video-box {
   width: 50vw;
+}
+
+.video-btns {
+  width: 100%;
+}
+
+.watch__video {
+  width: 100%;
   height: 55vh;
   background: #0f0f0f;
   -webkit-box-shadow: 0 0 10px 5px black;
@@ -1963,6 +1971,28 @@ html {
 
 .watch__video-sources .active {
   background: #2424ff;
+}
+
+.add-anime-btn {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #1e1e1f;
+  color: white;
+  padding: 7.5px 2rem;
+  border: 2px solid white;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.add-anime-btn:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.add-active {
+  border-color: lime;
+  color: lime;
 }
 
 html {

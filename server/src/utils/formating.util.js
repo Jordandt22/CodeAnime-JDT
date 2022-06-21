@@ -89,11 +89,12 @@ module.exports = {
     }),
   },
   recent: {
-    formatRecentData: (image, epSlug, title, subText) => ({
+    formatRecentData: (image, epSlug, title, subText, animeSlug) => ({
       image,
       epSlug,
       title,
       subText: subText.trim(),
+      animeSlug,
     }),
   },
   list: {

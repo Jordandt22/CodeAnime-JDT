@@ -9,7 +9,7 @@ import { Apps, PlayArrow } from "@mui/icons-material";
 function AnimeCard(props) {
   const { sectionTitle, title, subText, image, epSlug, animeSlug } = props;
   const navigate = useNavigate();
-  const link = epSlug ? `/watch/${epSlug}` : `/anime/${animeSlug}`;
+  const link = epSlug ? `/watch/${animeSlug}/${epSlug}` : `/anime/${animeSlug}`;
 
   return (
     <Box className="anime-card center-vertical">

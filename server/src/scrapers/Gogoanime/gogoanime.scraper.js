@@ -255,7 +255,8 @@ module.exports = {
       const epSlug = formatSlug($elem(".img a").attr("href"));
       const title = $elem("p.name").text();
       const subText = $elem("p.episode").text();
-      anime.push(formatRecentData(image, epSlug, title, subText));
+      const animeSlug = epSlug.split("-episode-")[0];
+      anime.push(formatRecentData(image, epSlug, title, subText, animeSlug));
     });
 
     const totalPages = getTotalPages($);

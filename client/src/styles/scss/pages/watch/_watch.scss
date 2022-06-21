@@ -24,8 +24,16 @@
 }
 
 // Video
-.watch__video {
+.video-box {
   width: 50vw;
+}
+
+.video-btns {
+  width: 100%;
+}
+
+.watch__video {
+  width: 100%;
   height: 55vh;
   background: $dark-sec-bg;
   box-shadow: 0 0 10px 5px black;
@@ -80,4 +88,26 @@
   .active {
     background: $primary-clr;
   }
+}
+
+// Add Anime Btn
+.add-anime-btn {
+  outline: none;
+  border: none;
+  border-radius: $border-radius;
+  background: $light-sec-bg;
+  color: white;
+  padding: 7.5px $spacer;
+  border: 2px solid white;
+  transition: all 200ms ease-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
+}
+
+.add-active {
+  border-color: lime;
+  color: lime;
 }
