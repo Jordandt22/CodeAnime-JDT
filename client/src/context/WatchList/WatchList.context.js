@@ -10,15 +10,21 @@ export default (props) => {
     localStorage.setItem("WATCH_LIST", JSON.stringify(updatedWatchList));
 
   const getWatchList = () => JSON.parse(localStorage.getItem("WATCH_LIST"));
-  const toggleEpFromWatchList = (animeSlug, epSlug, title, setBtnActive) => {
+  const toggleEpFromWatchList = (
+    animeSlug,
+    { epSlug, prev, next },
+    title,
+    setBtnActive
+  ) => {
     const watchListData = getWatchList();
     const watchList = watchListData ? watchListData : {};
+    const ep = { epSlug, prev, next };
 
     // Add New Anime and Episode
     const animeAdded = watchList[animeSlug];
     if (!animeAdded) {
       const updatedWatchList = watchList;
-      updatedWatchList[animeSlug] = { title, eps: [epSlug] };
+      updatedWatchList[animeSlug] = { title, eps: [ep] };
       setBtnActive(true);
       return updateWatchList(updatedWatchList);
     }
@@ -29,7 +35,7 @@ export default (props) => {
       const updatedWatchList = watchList;
       updatedWatchList[animeSlug] = {
         ...animeAdded,
-        eps: [...animeAdded.eps, epSlug],
+        eps: [...animeAdded.eps, ep],
       };
 
       setBtnActive(true);

@@ -114,7 +114,7 @@ function Watch() {
               onClick={() =>
                 toggleEpFromWatchList(
                   dataAnimeSlug,
-                  dataEpSlug,
+                  { epSlug: dataEpSlug, prev, next },
                   title,
                   setBtnActive
                 )
