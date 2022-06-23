@@ -47,16 +47,17 @@ function Watch() {
     video: { type, src, prev, next },
     videoSources,
   } = data.data.data;
+  const epNumData = dataEpSlug.split("-episode-")[1];
+  const epNum = epNumData ? Number(epNumData) : 0;
   const vidSrc = videoSources[currentSource]
     ? videoSources[currentSource].src
     : src;
-
   return (
     <Container className="container page-container watch-container">
       <NavLink to={`/anime/${dataAnimeSlug}`} className="watch__title">
         {title}
       </NavLink>
-      <h3>Episode {dataEpSlug.split("-episode-")[1]}</h3>
+      <h3>Episode {epNum}</h3>
 
       {/* Video Section */}
       <Box className="row video-row">
@@ -114,7 +115,7 @@ function Watch() {
               onClick={() =>
                 toggleEpFromWatchList(
                   dataAnimeSlug,
-                  { epSlug: dataEpSlug, prev, next },
+                  { epSlug: dataEpSlug, prev, next, epNum },
                   title,
                   setBtnActive
                 )

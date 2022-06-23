@@ -1,0 +1,34 @@
+// My Anime Page Styles
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .anime__remove {
+    opacity: 1;
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  // My Anime Page Styles
+  .myanime-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // Watch List
+  .watch-list__anime {
+    justify-content: center;
+    width: 95vw;
+
+    .anime__info {
+      width: 85%;
+    }
+  }
+
+  .anime__remove {
+    opacity: 1;
+  }
+}

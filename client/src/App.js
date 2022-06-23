@@ -22,6 +22,7 @@ import ComingSoon from "./components/pages/ComingSoon/ComingSoon";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Anime from "./components/pages/Anime/Anime";
 import Watch from "./components/pages/Watch/Watch";
+import MyAnime from "./components/pages/MyAnime/MyAnime";
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
             <Route exact path="/watch/:animeSlug/:epSlug" element={<Watch />} />
 
             {/* User */}
-            <Route exact path="/myanime" element={<ComingSoon />} />
+            <Route exact path="/myanime" element={<MyAnime />} />
 
             {/* Not Found */}
             <Route path="*" element={<NotFound />} />

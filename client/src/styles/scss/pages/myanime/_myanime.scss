@@ -1,0 +1,79 @@
+// My Anime Page Styles
+.myanime-container {
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: $md-fs;
+    margin-bottom: $spacer-md;
+  }
+
+  .none {
+    color: grey;
+    font-size: $main-fs;
+  }
+}
+
+// Watch List
+.watch-list__anime {
+  width: 80%;
+  margin-bottom: $spacer;
+
+  &:hover {
+    .anime__remove {
+      opacity: 1;
+    }
+  }
+
+  .anime__info {
+    width: 65%;
+    border-left: 6px solid $dark-sec-bg;
+    background: $light-sec-bg;
+    padding: $spacer-small * 0.75 $spacer-small;
+    transition: all 200ms ease-out;
+
+    h3 {
+      color: white;
+      font-size: $main-fs * 0.8;
+      font-weight: normal;
+      margin-bottom: $spacer-small * 0.25;
+    }
+
+    p {
+      font-size: $main-fs * 0.7;
+      color: grey;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .last-episode {
+    border-left: 6px solid limegreen;
+  }
+
+  .anime__remove-box {
+    width: 15%;
+    background: $light-sec-bg;
+    padding: $spacer-small * 0.75 $spacer-small;
+  }
+}
+
+.anime__remove {
+  $s: 2.5rem;
+  width: $s;
+  height: $s;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  color: red;
+  font-size: $main-fs * 1.25;
+  opacity: 0;
+  transition: all 200ms ease-out;
+
+  &:hover {
+    cursor: pointer;
+    background: rgba(red, 0.25);
+  }
+}

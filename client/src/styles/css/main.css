@@ -1995,6 +1995,81 @@ html {
   color: lime;
 }
 
+.myanime-container h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 2.25rem;
+  margin-bottom: 4rem;
+}
+
+.myanime-container .none {
+  color: grey;
+  font-size: 1.5rem;
+}
+
+.watch-list__anime {
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+.watch-list__anime:hover .anime__remove {
+  opacity: 1;
+}
+
+.watch-list__anime .anime__info {
+  width: 65%;
+  border-left: 6px solid #0f0f0f;
+  background: #1e1e1f;
+  padding: 0.75rem 1rem;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.watch-list__anime .anime__info h3 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+.watch-list__anime .anime__info p {
+  font-size: 1.05rem;
+  color: grey;
+}
+
+.watch-list__anime .anime__info:hover {
+  cursor: pointer;
+}
+
+.watch-list__anime .last-episode {
+  border-left: 6px solid limegreen;
+}
+
+.watch-list__anime .anime__remove-box {
+  width: 15%;
+  background: #1e1e1f;
+  padding: 0.75rem 1rem;
+}
+
+.anime__remove {
+  width: 2.5rem;
+  height: 2.5rem;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  color: red;
+  font-size: 1.875rem;
+  opacity: 0;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.anime__remove:hover {
+  cursor: pointer;
+  background: rgba(255, 0, 0, 0.25);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -2841,6 +2916,42 @@ body {
   }
   .watch__video-sources .active {
     background: #2424ff;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .anime__remove {
+    opacity: 1;
+  }
+}
+
+/* Mobile Phones */
+@media only screen and (max-device-width: 428px) {
+  .myanime-container {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .watch-list__anime {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 95vw;
+  }
+  .watch-list__anime .anime__info {
+    width: 85%;
+  }
+  .anime__remove {
+    opacity: 1;
   }
 }
 
