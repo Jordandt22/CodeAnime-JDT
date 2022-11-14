@@ -136,5 +136,59 @@ body {
   }
 }
 
+// Ads Warning
+.ads-warning-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(black, 0.75);
+  z-index: 2000;
+  transition: all 200ms ease-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.25;
+  }
+}
+
+.ads-warning-content {
+  background: $dark-sec-bg;
+  width: 30vw;
+  min-height: 30vh;
+  padding: $spacer;
+  border-radius: $border-radius;
+  z-index: 3000;
+
+  .icon {
+    color: red;
+    font-size: $lg-fs * 1.5;
+  }
+
+  h1 {
+    color: white;
+    font-size: $main-fs * 1.15;
+    margin-top: $spacer-small * 1.5;
+    margin-bottom: $spacer-small;
+    text-align: center;
+  }
+
+  p {
+    color: lightgrey;
+    text-align: center;
+    line-height: $spacer;
+  }
+}
+
 // Media Queries
 @import "./main.mq";

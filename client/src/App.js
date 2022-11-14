@@ -23,6 +23,7 @@ import NotFound from "./components/pages/NotFound/NotFound";
 import Anime from "./components/pages/Anime/Anime";
 import Watch from "./components/pages/Watch/Watch";
 import MyAnime from "./components/pages/MyAnime/MyAnime";
+import AdsWarning from "./components/layout/AdsWarning";
 
 function App() {
   return (
@@ -60,6 +61,9 @@ function App() {
 
           {/* Footer */}
           <Footer />
+
+          {/* Inappropriate Ads Warning */}
+          <AdsWarning />
         </ContextProvider>
       </BrowserRouter>
     </div>

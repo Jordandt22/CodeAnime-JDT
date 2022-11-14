@@ -175,13 +175,11 @@ select {
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Variables */
@@ -208,160 +206,70 @@ html {
 }
 
 .between-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .around-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .center-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .center {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .center-vertical {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@-webkit-keyframes slide-in-left {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-50vw);
-            transform: translateX(-50vw);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes slide-in-left {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-50vw);
-            transform: translateX(-50vw);
+    transform: translateX(-50vw);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 }
-
-@-webkit-keyframes slide-in-right {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(50vw);
-            transform: translateX(50vw);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
 @keyframes slide-in-right {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(50vw);
-            transform: translateX(50vw);
+    transform: translateX(50vw);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 }
-
-@-webkit-keyframes grow {
-  0% {
-    opacity: 0.5;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 @keyframes grow {
   0% {
     opacity: 0.5;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
-
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -370,102 +278,60 @@ html {
     opacity: 1;
   }
 }
-
-@-webkit-keyframes slide-up {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 @keyframes slide-up {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
+    transform: translateY(100vh);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
-
-@-webkit-keyframes slide-down {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
-  }
-}
-
 @keyframes slide-down {
   0% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateY(100vh);
-            transform: translateY(100vh);
+    transform: translateY(100vh);
   }
 }
-
 .navbar {
   position: absolute;
   left: 0;
   right: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#000000), color-stop(98.44%, rgba(0, 0, 0, 0)));
   background: linear-gradient(180deg, #000000, rgba(0, 0, 0, 0) 98.44%);
   padding: 2rem 8rem;
   z-index: 100;
 }
-
 .navbar .navbar__title {
   font-size: 1.875rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
 }
-
 .navbar .navbar__title span {
   color: #2424ff;
 }
-
 .navbar .navbar__link {
   padding: 0 1rem;
   color: white;
   font-size: 1.125rem;
   text-decoration: none;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .navbar .navbar__link:hover {
   opacity: 0.5;
 }
-
 .navbar .navbar__search {
   margin-left: 1rem;
   background: #1e1e1f;
   border-radius: 5px;
   padding: 3.5px 1rem;
-  -webkit-box-shadow: 0 0 5px black;
-          box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
 }
-
 .navbar .navbar__search input {
   outline: none;
   border: none;
@@ -475,27 +341,12 @@ html {
   font-family: "Teko", sans-serif;
   font-size: 1.125rem;
 }
-
-.navbar .navbar__search input::-webkit-input-placeholder {
-  color: white;
-}
-
-.navbar .navbar__search input:-ms-input-placeholder {
-  color: white;
-}
-
-.navbar .navbar__search input::-ms-input-placeholder {
-  color: white;
-}
-
 .navbar .navbar__search input::placeholder {
   color: white;
 }
-
 .navbar .navbar__search .icon {
   color: white;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
   font-size: 1.2rem;
 }
 
@@ -504,22 +355,18 @@ html {
   bottom: 0;
   right: 0;
   left: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 12, 0.75)), color-stop(rgba(0, 0, 12, 0.85)), to(#00000c));
   background: linear-gradient(180deg, rgba(0, 0, 12, 0.75), rgba(0, 0, 12, 0.85), #00000c);
   z-index: 1000;
   padding: 1rem 2rem;
 }
-
 .mobile-navbar .mb-nav__link {
   color: grey;
   text-decoration: none;
 }
-
 .mobile-navbar .mb-nav__link p {
   font-size: 0.675rem;
   margin-top: 5px;
 }
-
 .mobile-navbar .active {
   color: white;
 }
@@ -534,12 +381,10 @@ html {
   background: #00000c;
   z-index: 2000;
 }
-
 .mb-nav__search .mb-nav__search-bar {
   margin-top: 4rem;
   margin-bottom: 3rem;
 }
-
 .mb-nav__search .mb-nav__search-bar input {
   width: 80vw;
   outline: none;
@@ -551,18 +396,14 @@ html {
   padding-bottom: 0.75rem;
   text-align: center;
   font-family: "Teko", sans-serif;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .mb-nav__search .mb-nav__search-bar input:focus {
   border-color: #2424ff;
 }
-
 .mb-nav__search .mb-nav__search-bar label {
   display: none;
 }
-
 .mb-nav__search .mb-nav__close-search {
   background: white;
   outline: none;
@@ -575,19 +416,15 @@ html {
 }
 
 .mb-nav__show-search {
-  -webkit-transform: translateY(100vh);
-          transform: translateY(100vh);
+  transform: translateY(100vh);
   opacity: 0;
-  -webkit-animation: slide-up 750ms forwards ease-out;
-          animation: slide-up 750ms forwards ease-out;
+  animation: slide-up 750ms forwards ease-out;
 }
 
 .mb-nav__hide-search {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
   opacity: 1;
-  -webkit-animation: slide-down 750ms forwards ease-out;
-          animation: slide-down 750ms forwards ease-out;
+  animation: slide-down 750ms forwards ease-out;
 }
 
 .hide {
@@ -600,32 +437,27 @@ html {
     padding-bottom: 3rem;
   }
 }
-
 .alert__error {
   position: fixed;
   left: 8rem;
   bottom: 10vh;
   min-width: 20vw;
   padding: 0.75rem 1rem;
-  border-left: 6px solid #fa1e1e;
+  border-left: 6px solid rgb(250, 30, 30);
   border-radius: 2.5px;
   background: #0f0f0f;
-  -webkit-animation: slide-in-left 1000ms forwards ease-out;
-          animation: slide-in-left 1000ms forwards ease-out;
+  animation: slide-in-left 1000ms forwards ease-out;
   z-index: 5000;
 }
-
 .alert__error .icon {
-  color: #fa1e1e;
+  color: rgb(250, 30, 30);
   font-size: 1.875rem;
 }
-
 .alert__error h4 {
   color: white;
   margin-bottom: 4px;
   font-weight: 500;
 }
-
 .alert__error p {
   color: grey;
   font-size: 1.125rem;
@@ -633,22 +465,17 @@ html {
 
 .small-device-alert {
   padding-top: 4rem !important;
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
   display: flex !important;
 }
-
 .small-device-alert h1 {
   color: white;
   font-size: 2.25rem;
   text-align: center;
   margin-bottom: 2rem;
 }
-
 .small-device-alert h1 span {
   color: #2424ff;
 }
-
 .small-device-alert p {
   width: 35ch;
   color: white;
@@ -656,7 +483,6 @@ html {
   line-height: 3rem;
   font-size: 1.5rem;
 }
-
 .small-device-alert strong {
   margin-top: 4rem;
   color: white;
@@ -668,32 +494,24 @@ html {
   background: #00000c;
   margin-bottom: 6rem;
 }
-
 .anime-section .anime-section__none {
   color: grey;
   font-size: 1.5rem;
 }
 
 .anime-section__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 4rem;
 }
-
 .anime-section__header .header__title {
   position: relative;
   color: white;
   font-weight: bold;
   font-size: 1.875rem;
   text-decoration: none;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-section__header .header__title::after {
   position: absolute;
   bottom: -2.5vh;
@@ -702,126 +520,94 @@ html {
   width: 40%;
   height: 0.35vh;
   background: grey;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-section__header .header__title:hover {
   opacity: 0.5;
 }
-
 .anime-section__header .header__title:hover::after {
   width: 100%;
 }
-
 .anime-section__header .header__tab {
   width: 2.5vw;
   height: 0.65vh;
   background: grey;
   margin-left: 1rem;
   border-radius: 5px;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-section__header .header__tab:hover {
   cursor: pointer;
   opacity: 0.5;
 }
-
 .anime-section__header .active {
   background: #2424ff;
 }
 
 .anime-section__anime {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .anime-section__anime .anime-section__button {
   position: absolute;
   outline: none;
   border: none;
   background: transparent;
   top: 50%;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  transform: translateY(-100%);
   z-index: 5;
 }
-
 .anime-section__anime .anime-section__button .icon {
   color: white;
   font-size: 3rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-section__anime .button__prev {
   left: -5vw;
 }
-
 .anime-section__anime .button__prev:hover {
   cursor: pointer;
 }
-
 .anime-section__anime .button__prev:hover .icon {
   color: #2424ff;
-  -webkit-transform: translateX(-1vw);
-          transform: translateX(-1vw);
+  transform: translateX(-1vw);
 }
-
 .anime-section__anime .button__next {
   right: -5vw;
 }
-
 .anime-section__anime .button__next:hover {
   cursor: pointer;
 }
-
 .anime-section__anime .button__next:hover .icon {
   color: #2424ff;
-  -webkit-transform: translateX(1vw);
-          transform: translateX(1vw);
+  transform: translateX(1vw);
 }
 
 .anime-card {
   width: 10vw;
-  -webkit-animation: grow 500ms forwards ease-out;
-          animation: grow 500ms forwards ease-out;
+  animation: grow 500ms forwards ease-out;
 }
-
 .anime-card .anime-card__image-box {
   position: relative;
   width: 100%;
   margin-bottom: 1rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-card .anime-card__image-box:hover {
   cursor: pointer;
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  transform: scale(0.95);
 }
-
 .anime-card .anime-card__image-box:hover .image__hover {
   opacity: 1;
 }
-
 .anime-card .anime-card__image-box .anime-card__image {
   width: 100%;
   height: 30vh;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px 5px black;
-          box-shadow: 0 0 5px 5px black;
+  box-shadow: 0 0 5px 5px black;
   background: #1e1e1f;
 }
-
 .anime-card .anime-card__image-box .image__hover {
   position: absolute;
   top: 0;
@@ -831,15 +617,12 @@ html {
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   border-radius: 5px;
-  -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
 }
-
 .anime-card .anime-card__image-box .image__hover .icon {
   font-size: 4.5rem;
   color: white;
 }
-
 .anime-card .anime__title {
   color: white;
   max-width: 80%;
@@ -847,11 +630,9 @@ html {
   text-align: center;
   font-size: 0.975rem;
 }
-
 .anime-card .anime__title:hover {
   text-decoration: underline;
 }
-
 .anime-card p {
   max-width: 65%;
   color: grey;
@@ -861,7 +642,6 @@ html {
 .anime-links {
   margin-bottom: 4rem;
 }
-
 .anime-links .anime-link {
   display: block;
   text-decoration: none;
@@ -870,14 +650,11 @@ html {
   padding: 0.5rem 2rem;
   border-radius: 5px;
   margin-right: 2rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-links .anime-link:hover {
   background: #0f0f0f;
 }
-
 .anime-links .active {
   background: #2424ff;
 }
@@ -896,69 +673,50 @@ html {
     display: none;
   }
   .anime-links .anime-link {
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
     min-width: fit-content;
   }
 }
-
 .anime-list-container {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
   display: flex !important;
 }
-
 .anime-list-container .anime-list-grid {
-  display: -ms-grid !important;
   display: grid !important;
-  -ms-grid-columns: (minmax(10vw, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
   gap: 2rem 1rem;
   width: 100%;
 }
-
 .anime-list-container .none {
   color: grey;
   font-size: 1.5rem;
 }
-
 .anime-list-container .anime-list__nav {
   margin-top: 8rem;
 }
-
 .anime-list-container .anime-list__nav .nav__btn {
   outline: none;
   border: none;
   background: transparent;
 }
-
 .anime-list-container .anime-list__nav .nav__btn .icon {
   color: white;
   font-size: 1.875rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-list-container .anime-list__nav .nav__btn:hover {
   cursor: pointer;
 }
-
 .anime-list-container .anime-list__nav .nav__btn:hover .icon {
   color: #2424ff;
 }
-
 .anime-list-container .anime-list__nav .disabled .icon {
   color: grey;
 }
-
 .anime-list-container .anime-list__nav .disabled:hover {
   cursor: not-allowed;
 }
-
 .anime-list-container .anime-list__nav .disabled:hover .icon {
   color: red;
 }
-
 .anime-list-container .anime-list__nav .nav__page-btn {
   outline: none;
   border: none;
@@ -968,23 +726,18 @@ html {
   color: black;
   border-radius: 50%;
   margin: 0 0.5rem;
-  -webkit-transition: all 350ms ease-out;
   transition: all 350ms ease-out;
 }
-
 .anime-list-container .anime-list__nav .nav__page-btn p {
   font-family: "Teko", sans-serif;
   font-size: 1.5rem;
-  -webkit-transform: translateY(0.25vh);
-          transform: translateY(0.25vh);
+  transform: translateY(0.25vh);
 }
-
 .anime-list-container .anime-list__nav .nav__page-btn:hover {
   cursor: pointer;
   background: #1e1e1f;
   color: white;
 }
-
 .anime-list-container .anime-list__nav .active {
   background: #2424ff;
   color: white;
@@ -994,8 +747,7 @@ html {
 @media only screen and (max-device-width: 428px) {
   .anime-list-container .anime-list-grid {
     justify-items: center;
-    -ms-grid-columns: (minmax(40vw, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
     gap: 2rem 0;
   }
   .anime-list-container .none {
@@ -1014,72 +766,50 @@ html {
     margin-bottom: 1rem;
   }
 }
-
 .footer {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
   background: #0f0f0f;
   padding: 3rem 8rem;
   padding-bottom: 2rem;
   width: 100vw;
-  -webkit-transform: translateX(-8rem);
-          transform: translateX(-8rem);
+  transform: translateX(-8rem);
   margin-top: 4rem;
 }
-
 .footer .main-content {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
   margin-bottom: 4rem;
 }
-
 .footer .footer__about .about__info h2 {
   color: white;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .footer .footer__about .about__info h2 span {
   color: #2424ff;
 }
-
 .footer .footer__about .about__info p {
   color: grey;
   font-size: 1.05rem;
   max-width: 40ch;
   line-height: 1.5rem;
 }
-
 .footer .footer__links {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
-
 .footer .links__section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-right: 2rem;
 }
-
 .footer .links__section h6 {
   color: grey;
   font-size: 1.2rem;
   font-weight: normal;
   margin-bottom: 1rem;
 }
-
 .footer .links__section a:hover {
   text-decoration: underline;
 }
-
 .footer .links__section .section__link {
   color: white;
   font-size: 1.2rem;
@@ -1087,7 +817,6 @@ html {
   text-decoration: none;
   min-width: 20ch;
 }
-
 .footer .about__copyright {
   color: grey;
   font-size: 0.975rem;
@@ -1099,7 +828,6 @@ html {
   background: white;
   border-radius: 5px;
 }
-
 .error-message .error__icon {
   background: red;
   padding: 4rem;
@@ -1109,13 +837,11 @@ html {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-
 .error-message .error__icon .icon {
   color: white;
   font-size: 2.25rem;
   margin-right: 0.5rem;
 }
-
 .error-message p {
   color: grey;
   text-align: center;
@@ -1131,17 +857,14 @@ html {
     margin-bottom: 4rem;
   }
 }
-
 .anime-card-skel .anime-card__image {
   background: #0f0f0f;
 }
-
 .anime-card-skel .anime__title {
   background: white;
   width: 80%;
   height: 1.5vh;
 }
-
 .anime-card-skel .anime__subText {
   background: grey;
   width: 50%;
@@ -1152,18 +875,15 @@ html {
 .genre-anime-skeleton .anime__info {
   width: 100%;
 }
-
 .genre-anime-skeleton .anime__image {
   background: #1e1e1f;
 }
-
 .genre-anime-skeleton .anime__title {
   width: 70%;
   height: 1.5vh;
   background: white;
   margin-bottom: 5px;
 }
-
 .genre-anime-skeleton .anime__subText {
   width: 50%;
   height: 1vh;
@@ -1178,40 +898,32 @@ html {
   background: #1e1e1f !important;
   border-radius: 5px;
 }
-
 .anime-spotlight-skeleton .anime__title {
   background: white;
   width: 40vw;
   height: 3vh;
 }
-
 .anime-spotlight-skeleton .skeleton__subTexts {
   margin-top: 2rem;
   margin-bottom: 4rem;
 }
-
 .anime-spotlight-skeleton .skeleton__subTexts .anime__subText {
   height: 1.25vh;
   background: grey;
   margin: 1rem 0 !important;
 }
-
 .anime-spotlight-skeleton .skeleton__subTexts .subText__1 {
   width: 15vw;
 }
-
 .anime-spotlight-skeleton .skeleton__subTexts .subText__2 {
   width: 25vw;
 }
-
 .anime-spotlight-skeleton .skeleton__subTexts .subText__3 {
   width: 35vw;
 }
-
 .anime-spotlight-skeleton .skeleton__subTexts .subText__4 {
   width: 15vw;
 }
-
 .anime-spotlight-skeleton .watch__btn,
 .anime-spotlight-skeleton .info__btn {
   width: 7.5vw;
@@ -1227,7 +939,6 @@ html {
   height: 2.5vh;
   background: white;
 }
-
 .watch-skeleton .watch__subTitle {
   width: 20vw;
   height: 2vh;
@@ -1235,13 +946,11 @@ html {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
-
 .watch-skeleton .watch__video {
   width: 50vw;
   height: 55vh;
   background: #0f0f0f;
 }
-
 .watch-skeleton .watch__btn {
   width: 2.5rem;
   height: 2.5rem;
@@ -1271,78 +980,59 @@ html {
 }
 
 .spotlight__main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .spotlight__main .spotlight__anime {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .spotlight__main .anime__image-box {
   position: relative;
   width: 15vw;
   height: 40vh;
-  -webkit-box-shadow: 0 0 10px black;
-          box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
   border-radius: 5px;
 }
-
 .spotlight__main .anime__image-box .anime__image {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
-
 .spotlight__main .anime__image-box .anime__latestEp {
   position: absolute;
   bottom: -1px;
   left: 0;
   right: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(black), color-stop(98.44%, rgba(0, 0, 0, 0)));
   background: linear-gradient(0, black, rgba(0, 0, 0, 0) 98.44%);
   padding-top: 30vh;
   padding-bottom: 1rem;
   border-radius: 5px;
 }
-
 .spotlight__main .anime__image-box .anime__latestEp p {
   color: white;
   text-align: center;
   font-size: 1.2rem;
 }
-
 .spotlight__main .anime__info {
   margin-left: 3rem;
 }
-
 .spotlight__main .anime__info h3 {
   color: grey;
   font-weight: normal;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-
 .spotlight__main .anime__info .anime__title {
   display: block;
   color: white;
   font-weight: bold;
   font-size: 1.875rem;
   text-decoration: none;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .spotlight__main .anime__info .anime__title:hover {
   opacity: 0.5;
 }
-
 .spotlight__main .anime__info .anime__subText {
   color: grey;
   font-size: 1.35rem;
@@ -1350,7 +1040,6 @@ html {
   margin-bottom: 4rem;
   max-width: 80ch;
 }
-
 .spotlight__main .anime__info .watch__btn,
 .spotlight__main .anime__info .info__btn {
   outline: none;
@@ -1361,58 +1050,42 @@ html {
   font-size: 1.35rem;
   border-radius: 5px;
   background: black;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .spotlight__main .anime__info .watch__btn .icon,
 .spotlight__main .anime__info .info__btn .icon {
   margin-right: 4px;
 }
-
 .spotlight__main .anime__info .watch__btn p,
 .spotlight__main .anime__info .info__btn p {
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
+  transform: translateY(2px);
 }
-
 .spotlight__main .anime__info .watch__btn:hover,
 .spotlight__main .anime__info .info__btn:hover {
   opacity: 0.75;
 }
-
 .spotlight__main .anime__info .watch__btn {
   background: #2424ff;
   margin-right: 2rem;
 }
 
 .spotlight__buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .spotlight__buttons .spotlight__button {
   outline: none;
   border: none;
   background: rgba(30, 30, 31, 0.75);
-  -webkit-box-shadow: 0 0 5px black;
-          box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 5px;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .spotlight__buttons .spotlight__button .icon {
   color: white;
 }
-
 .spotlight__buttons .spotlight__button:hover {
   cursor: pointer;
   background: #2424ff;
@@ -1420,11 +1093,9 @@ html {
 
 .vector {
   position: relative;
-  -webkit-transform: translate(-20vw, 5vh);
-          transform: translate(-20vw, 5vh);
+  transform: translate(-20vw, 5vh);
   z-index: -1;
 }
-
 .vector div {
   position: absolute;
   bottom: -32vh;
@@ -1433,7 +1104,6 @@ html {
   height: 40vh;
   z-index: 0;
 }
-
 .vector path {
   stroke: #2424ff;
   stroke-width: 3px;
@@ -1445,59 +1115,47 @@ html {
   width: 30%;
   min-height: 75vh;
   border-radius: 2.5px;
-  -webkit-box-shadow: 0 0 5px 5px black;
-          box-shadow: 0 0 5px 5px black;
+  box-shadow: 0 0 5px 5px black;
 }
-
 .genre-anime .genre-anime__header {
   background: #1e1e1f;
   border-top-left-radius: 2.5px;
   border-top-right-radius: 2.5px;
   padding: 1rem 1.5rem;
 }
-
 .genre-anime .genre-anime__header .genre-title {
   color: white;
   font-weight: normal;
   font-size: 1.875rem;
   text-decoration: none;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .genre-anime .genre-anime__header .genre-title:hover {
   opacity: 0.5;
 }
-
 .genre-anime .none {
   color: grey;
   margin: 2rem 1rem;
   text-align: center;
   font-size: 1.2rem;
 }
-
 .genre-anime .genre-anime__view-more {
   background: #1e1e1f;
   padding: 1rem 0;
   border-bottom-left-radius: 2.5px;
   border-bottom-right-radius: 2.5px;
 }
-
 .genre-anime .genre-anime__view-more a {
   color: white;
   text-decoration: none;
   font-size: 1.35rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .genre-anime .genre-anime__view-more a .icon {
   font-size: 1.35rem;
-  -webkit-transform: translateY(-0.25vh);
-          transform: translateY(-0.25vh);
+  transform: translateY(-0.25vh);
   margin-left: 0.5rem;
 }
-
 .genre-anime .genre-anime__view-more a:hover {
   opacity: 0.5;
 }
@@ -1505,28 +1163,21 @@ html {
 .genre-anime__list {
   padding: 0.5rem 1.5rem;
 }
-
 .genre-anime__list .list__anime {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
   margin: 1rem 0;
 }
-
 .genre-anime__list .list__anime .anime__image {
   width: 4vw;
   height: 10vh;
   border-radius: 2.5px;
   margin-right: 1rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .genre-anime__list .list__anime .anime__image:hover {
   cursor: pointer;
   opacity: 0.5;
 }
-
 .genre-anime__list .list__anime .anime__title {
   display: block;
   color: white;
@@ -1534,11 +1185,9 @@ html {
   font-size: 1.275rem;
   max-width: 30ch;
 }
-
 .genre-anime__list .list__anime .anime__title:hover {
   text-decoration: underline;
 }
-
 .genre-anime__list .list__anime p {
   color: grey;
   margin-top: 2.5px;
@@ -1547,7 +1196,6 @@ html {
 .anime-genres {
   margin-top: 8rem;
 }
-
 .anime-genres .anime-genres__title {
   display: block;
   color: white;
@@ -1555,56 +1203,43 @@ html {
   font-size: 1.875rem;
   text-decoration: none;
   margin-bottom: 2rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-genres .anime-genres__title:hover {
   opacity: 0.5;
 }
-
 .anime-genres .anime-genres__list-box {
   background: #1e1e1f;
   border-radius: 5px;
   padding: 1.5rem;
 }
-
 .anime-genres .anime-genres__list-box .list__view-all {
   color: white;
   text-decoration: none;
   font-size: 1.35rem;
   margin-top: 3rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-genres .anime-genres__list-box .list__view-all .icon {
   font-size: 1.35rem;
-  -webkit-transform: translateY(-0.25vh);
-          transform: translateY(-0.25vh);
+  transform: translateY(-0.25vh);
   margin-left: 0.5rem;
 }
-
 .anime-genres .anime-genres__list-box .list__view-all:hover {
   opacity: 0.5;
 }
-
 .anime-genres .anime-genres__list {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 1rem 1.5rem;
 }
-
 .anime-genres .anime-genres__list .list__genre {
   text-decoration: none;
   color: white;
   background: #00000c;
   padding: 0.5rem 2rem;
   border-radius: 5px;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-genres .anime-genres__list .list__genre:hover {
   background: #2424ff;
 }
@@ -1622,7 +1257,6 @@ html {
   margin-bottom: 3rem;
   text-transform: capitalize;
 }
-
 .anime-page__header h2::before {
   content: "";
   position: absolute;
@@ -1636,16 +1270,9 @@ html {
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .anime-page__header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .anime-page__header h2 {
     position: relative;
@@ -1667,7 +1294,6 @@ html {
     height: 0.25vh;
   }
 }
-
 .genres-container .genres__title {
   display: block;
   color: white;
@@ -1676,15 +1302,10 @@ html {
   font-weight: bold;
   margin-bottom: 2rem;
 }
-
 .genres-container .genres__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .genres-container .list__genre {
   color: white;
   font-size: 1.2rem;
@@ -1693,40 +1314,25 @@ html {
   margin-right: 1rem;
   margin-bottom: 1rem;
   padding: 0.65rem 2rem;
-  -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
-
 .genres-container .list__genre:hover {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
   background: #2424ff;
 }
 
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .genres-container {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
     display: flex !important;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     padding: 0 2rem;
   }
   .genres-container .genres__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .genres-container .list__genre {
     margin-right: 0;
@@ -1734,14 +1340,12 @@ html {
     margin-bottom: 1rem;
   }
 }
-
 .anime-info-container .anime__subText {
   max-width: 90ch !important;
   line-height: 2rem;
   max-height: 30vh;
   overflow-y: scroll;
 }
-
 .anime-info-container .spotlight__background,
 .anime-info-container .spotlight__shadow {
   height: 125vh;
@@ -1750,23 +1354,19 @@ html {
 .anime-info__secTitle {
   margin-bottom: 1rem;
 }
-
 .anime-info__secTitle p {
   font-size: 1.125rem;
   margin-right: 2rem;
 }
-
 .anime-info__secTitle .dot {
   position: relative;
 }
-
 .anime-info__secTitle .dot::after {
   content: "";
   position: absolute;
   right: -1.35rem;
   top: 50%;
-  -webkit-transform: translateY(-75%);
-          transform: translateY(-75%);
+  transform: translateY(-75%);
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 50%;
@@ -1781,25 +1381,20 @@ html {
   border-radius: 5px;
   text-decoration: none;
   font-size: 1.05rem;
-  -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
 }
-
 .anime-info__genre:hover {
-  -webkit-transform: translateY(-2vh);
-          transform: translateY(-2vh);
+  transform: translateY(-2vh);
 }
 
 .anime-eps-container {
   background: #00000c;
   z-index: 10;
 }
-
 .anime-eps-container h1 {
   color: white;
   font-size: 2.25rem;
 }
-
 .anime-eps-container .none {
   color: grey;
   font-size: 1.35rem;
@@ -1816,37 +1411,27 @@ html {
   padding: 1rem 1rem;
   border-left: 4px solid #2424ff;
   margin-bottom: 2rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   opacity: 0;
-  -webkit-animation: fade-in 1500ms forwards ease-out 200ms;
-          animation: fade-in 1500ms forwards ease-out 200ms;
+  animation: fade-in 1500ms forwards ease-out 200ms;
 }
-
 .episodes__ep p {
   color: white;
   font-size: 1.2rem;
 }
-
 .episodes__ep:hover {
   cursor: pointer;
-  -webkit-transform: translateY(-2vh);
-          transform: translateY(-2vh);
+  transform: translateY(-2vh);
 }
-
 .episodes__ep:hover p {
   color: yellow;
 }
 
 .anime-eps__tabs {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-top: 2rem;
 }
-
 .anime-eps__tabs .tabs__tab {
   outline: none;
   border: none;
@@ -1857,16 +1442,13 @@ html {
   margin-bottom: 1rem;
   padding: 0.25rem 2rem;
   border-radius: 10px;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime-eps__tabs .tabs__tab:hover {
   cursor: pointer;
   background: rgba(36, 36, 255, 0.5);
   color: white;
 }
-
 .anime-eps__tabs .active {
   background: #2424ff;
   color: white;
@@ -1875,20 +1457,16 @@ html {
 .watch-container {
   padding-bottom: 16rem !important;
 }
-
 .watch-container .watch__title {
   color: white;
   text-decoration: none;
   font-size: 2.25rem;
   font-weight: bold;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .watch-container .watch__title:hover {
   opacity: 0.5;
 }
-
 .watch-container h3 {
   color: grey;
   font-weight: normal;
@@ -1909,8 +1487,7 @@ html {
   width: 100%;
   height: 55vh;
   background: #0f0f0f;
-  -webkit-box-shadow: 0 0 10px 5px black;
-          box-shadow: 0 0 10px 5px black;
+  box-shadow: 0 0 10px 5px black;
   margin-bottom: 2rem;
 }
 
@@ -1921,10 +1498,8 @@ html {
   border-radius: 5px;
   padding: 7.5px;
   border: 2px solid #2424ff;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .watch__video-nav:hover {
   background: rgba(36, 36, 255, 0.25);
 }
@@ -1933,42 +1508,30 @@ html {
   color: grey;
   border-color: grey;
 }
-
 .watch__disabled:hover {
   cursor: not-allowed;
 }
 
 .video-row {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  align-items: start;
 }
 
 .watch__video-sources {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background: #1e1e1f;
   margin-left: 2rem;
 }
-
 .watch__video-sources p {
   color: white;
   padding: 1rem;
   padding-right: 2rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .watch__video-sources p:hover {
   cursor: pointer;
   background: #2424ff;
 }
-
 .watch__video-sources .active {
   background: #2424ff;
 }
@@ -1981,10 +1544,8 @@ html {
   color: white;
   padding: 7.5px 2rem;
   border: 2px solid white;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .add-anime-btn:hover {
   cursor: pointer;
   opacity: 0.75;
@@ -2001,7 +1562,6 @@ html {
   font-size: 2.25rem;
   margin-bottom: 4rem;
 }
-
 .myanime-container .none {
   color: grey;
   font-size: 1.5rem;
@@ -2011,40 +1571,32 @@ html {
   width: 80%;
   margin-bottom: 2rem;
 }
-
 .watch-list__anime:hover .anime__remove {
   opacity: 1;
 }
-
 .watch-list__anime .anime__info {
   width: 65%;
   border-left: 6px solid #0f0f0f;
   background: #1e1e1f;
   padding: 0.75rem 1rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .watch-list__anime .anime__info h3 {
   color: white;
   font-size: 1.2rem;
   font-weight: normal;
   margin-bottom: 0.25rem;
 }
-
 .watch-list__anime .anime__info p {
   font-size: 1.05rem;
   color: grey;
 }
-
 .watch-list__anime .anime__info:hover {
   cursor: pointer;
 }
-
 .watch-list__anime .last-episode {
   border-left: 6px solid limegreen;
 }
-
 .watch-list__anime .anime__remove-box {
   width: 15%;
   background: #1e1e1f;
@@ -2061,10 +1613,8 @@ html {
   color: red;
   font-size: 1.875rem;
   opacity: 0;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .anime__remove:hover {
   cursor: pointer;
   background: rgba(255, 0, 0, 0.25);
@@ -2093,56 +1643,42 @@ body {
 }
 
 .not-found-container {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
   display: flex !important;
 }
-
 .not-found-container .not-found-404 {
   width: 40%;
   margin-bottom: 2rem;
 }
-
 .not-found-container .not-found-404 h1 {
   color: #2424ff;
   font-size: 16.875rem;
   font-weight: normal;
 }
-
 .not-found-container .not-found-404 .left {
   opacity: 0;
-  -webkit-animation: slide-in-left 1000ms forwards ease-out 500ms;
-          animation: slide-in-left 1000ms forwards ease-out 500ms;
+  animation: slide-in-left 1000ms forwards ease-out 500ms;
 }
-
 .not-found-container .not-found-404 .right {
   opacity: 0;
-  -webkit-animation: slide-in-right 1000ms forwards ease-out 500ms;
-          animation: slide-in-right 1000ms forwards ease-out 500ms;
+  animation: slide-in-right 1000ms forwards ease-out 500ms;
 }
-
 .not-found-container .not-found-404 h2 {
   color: white;
   font-size: 13.5rem;
   font-weight: normal;
   opacity: 0;
-  -webkit-animation: fade-in 2000ms forwards ease-out 500ms;
-          animation: fade-in 2000ms forwards ease-out 500ms;
+  animation: fade-in 2000ms forwards ease-out 500ms;
 }
-
 .not-found-container p,
 .not-found-container a {
   opacity: 0;
-  -webkit-animation: fade-in 1000ms forwards ease-out 1500ms;
-          animation: fade-in 1000ms forwards ease-out 1500ms;
+  animation: fade-in 1000ms forwards ease-out 1500ms;
 }
-
 .not-found-container p {
   color: white;
   font-size: 2.25rem;
   margin-bottom: 2rem;
 }
-
 .not-found-container a {
   text-decoration: none;
   color: grey;
@@ -2151,10 +1687,8 @@ body {
   border-radius: 25px;
   padding: 0.5rem 2rem;
   padding-top: 0.65rem;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .not-found-container a:hover {
   background: #2424ff;
   color: white;
@@ -2170,19 +1704,64 @@ body {
   background: #2424ff;
   border-radius: 50%;
   z-index: 1000;
-  -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
-
 .btt-btn .icon {
   color: white;
   font-size: 1.725rem;
 }
-
 .btt-btn:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.ads-warning-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 2000;
+  transition: all 200ms ease-out;
+}
+.shadow:hover {
+  cursor: pointer;
+  opacity: 0.25;
+}
+
+.ads-warning-content {
+  background: #0f0f0f;
+  width: 30vw;
+  min-height: 30vh;
+  padding: 2rem;
+  border-radius: 5px;
+  z-index: 3000;
+}
+.ads-warning-content .icon {
+  color: red;
+  font-size: 5.0625rem;
+}
+.ads-warning-content h1 {
+  color: white;
+  font-size: 1.725rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.ads-warning-content p {
+  color: lightgrey;
+  text-align: center;
+  line-height: 2rem;
 }
 
 /* ----------- iPad 1, 2, Mini and Air ----------- */
@@ -2207,14 +1786,12 @@ body {
     font-size: 0.975rem;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .footer {
     padding: 3rem 4rem;
-    -webkit-transform: translateX(-4rem);
-            transform: translateX(-4rem);
+    transform: translateX(-4rem);
     margin-top: 4rem;
   }
   .footer .footer__about .about__info h2 {
@@ -2238,35 +1815,19 @@ body {
     font-size: 0.75rem;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     padding: 3rem 4rem;
-    -webkit-transform: none;
-            transform: none;
+    transform: none;
   }
   .footer .main-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .footer .footer__about .about__info {
     position: relative;
@@ -2290,21 +1851,12 @@ body {
     text-align: center;
   }
   .footer .footer__links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .footer .links__section {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     margin-right: 0;
     margin-bottom: 2rem;
   }
@@ -2317,7 +1869,6 @@ body {
     text-align: center;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2346,36 +1897,19 @@ body {
     font-size: 2.25rem;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .anime-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 8rem;
   }
   .anime-section__header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     margin-bottom: 3rem;
   }
   .anime-section__header .header__title {
@@ -2385,8 +1919,7 @@ body {
   .anime-section__header .header__title::after {
     bottom: -1.5vh;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     width: 50%;
     height: 0.35vh;
   }
@@ -2397,12 +1930,8 @@ body {
     margin: 0 0.75rem;
   }
   .anime-section__anime {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     overflow-x: scroll;
     scroll-behavior: smooth;
     width: 100vw;
@@ -2418,7 +1947,6 @@ body {
     margin: 0 1rem;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2440,7 +1968,6 @@ body {
     font-size: 0.9rem;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .anime-card {
@@ -2462,7 +1989,6 @@ body {
     margin-bottom: 5px;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2471,7 +1997,6 @@ body {
     height: 45vh;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .anime-spotlight-skeleton .anime__title {
@@ -2479,19 +2004,10 @@ body {
     height: 2vh;
   }
   .anime-spotlight-skeleton .skeleton__subTexts {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     margin-top: 1rem;
   }
   .anime-spotlight-skeleton .skeleton__subTexts .subText__1 {
@@ -2507,27 +2023,18 @@ body {
     width: 40vw;
   }
   .anime-spotlight-skeleton .watch__btn,
-  .anime-spotlight-skeleton .info__btn {
+.anime-spotlight-skeleton .info__btn {
     width: 30vw;
     margin-right: 0;
     margin: 0 1rem;
   }
   .anime-genres-skeleton {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .anime-genres-skeleton .anime-genres__list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .anime-genres-skeleton .list__genre {
     width: 35vw;
@@ -2543,7 +2050,6 @@ body {
     margin: 0 1rem;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2568,12 +2074,12 @@ body {
     font-size: 1.2rem;
   }
   .spotlight__main .anime__info .watch__btn,
-  .spotlight__main .anime__info .info__btn {
+.spotlight__main .anime__info .info__btn {
     padding: 6.5px 2rem;
     font-size: 1.125rem;
   }
   .spotlight__main .anime__info .watch__btn .icon,
-  .spotlight__main .anime__info .info__btn .icon {
+.spotlight__main .anime__info .info__btn .icon {
     margin-right: 6px;
   }
   .genre-anime {
@@ -2619,49 +2125,29 @@ body {
     font-size: 1.2rem;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .spotlight__background,
-  .spotlight__shadow {
+.spotlight__shadow {
     height: 100vh;
   }
   .spotlight__main {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .spotlight__main .spotlight__anime {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .spotlight__main .anime__image-box {
     width: 50vw;
     height: 32.5vh;
   }
   .spotlight__main .anime__info {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     margin-left: 0;
     margin-top: 2rem;
   }
@@ -2684,28 +2170,18 @@ body {
     margin-bottom: 1.5rem;
   }
   .vector {
-    -webkit-transform: translate(-60vw, 5vh);
-            transform: translate(-60vw, 5vh);
+    transform: translate(-60vw, 5vh);
   }
   .genre-anime-box {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .genre-anime {
     width: 100%;
   }
   .genre-anime .genre-anime__header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     padding: 1.25rem 1.5rem;
   }
   .genre-anime .genre-anime__header .genre-title {
@@ -2741,7 +2217,6 @@ body {
     font-size: 1.35rem;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2750,14 +2225,13 @@ body {
     max-height: 20vh;
   }
   .anime-info-container .spotlight__background,
-  .anime-info-container .spotlight__shadow {
+.anime-info-container .spotlight__shadow {
     height: 100vh;
   }
   .anime-eps-container {
     margin-top: 1rem;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .anime-info-container .anime__subText {
@@ -2769,13 +2243,11 @@ body {
     margin-bottom: 2rem;
   }
   .anime-info-container .spotlight__background,
-  .anime-info-container .spotlight__shadow {
+.anime-info-container .spotlight__shadow {
     height: 150vh;
   }
   .anime-info__secTitle {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .anime-info__secTitle p {
     margin: 0 1rem;
@@ -2790,41 +2262,24 @@ body {
     display: none;
   }
   .anime-eps-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .anime-eps-container h1 {
     text-align: center;
   }
   .episodes {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .episodes__ep {
     width: 90%;
   }
   .anime-eps__tabs {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
     margin-top: 2rem;
     overflow-x: scroll;
     width: 90vw;
@@ -2840,12 +2295,9 @@ body {
     margin-bottom: 0;
     margin: 0 0.5rem;
     padding: 0.25rem 2rem;
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
     min-width: fit-content;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2856,20 +2308,12 @@ body {
     height: 40vh;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .watch-container {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
     display: flex !important;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .watch-container .watch__title {
     text-align: center;
@@ -2885,19 +2329,11 @@ body {
     margin: 0 1rem;
   }
   .video-row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column-reverse;
+    align-items: center;
   }
   .watch__video-sources {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     margin-left: 0;
     margin-bottom: 4rem;
     overflow-x: scroll;
@@ -2911,8 +2347,6 @@ body {
   .watch__video-sources p {
     padding-right: 0;
     padding: 1rem;
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
     min-width: fit-content;
     background: #1e1e1f;
     margin: 0 0.5rem;
@@ -2922,7 +2356,6 @@ body {
     background: #2424ff;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2930,25 +2363,15 @@ body {
     opacity: 1;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .myanime-container {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
     display: flex !important;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .watch-list__anime {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     width: 95vw;
   }
   .watch-list__anime .anime__info {
@@ -2958,7 +2381,6 @@ body {
     opacity: 1;
   }
 }
-
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -2966,7 +2388,6 @@ body {
     margin: 0 4rem;
   }
 }
-
 /* Mobile Phones */
 @media only screen and (max-device-width: 428px) {
   .container {
@@ -3006,5 +2427,7 @@ body {
     border: none;
     bottom: 15vh;
   }
-}
-/*# sourceMappingURL=main.css.map */
+  .ads-warning-content {
+    width: 90vw;
+  }
+}/*# sourceMappingURL=main.css.map */
